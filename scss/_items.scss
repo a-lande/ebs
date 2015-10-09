@@ -1,0 +1,199 @@
+
+.AP-item {
+    display: flex;
+
+    label, span {
+        font-size: $font-md;
+        padding: 7px 10px 7px 5px;
+        -ms-flex: none;
+        flex: none;
+    }
+
+    span {
+        line-height: 1.42857;
+    }
+
+    input, div {
+        -ms-flex: 1;
+        flex: 1;
+        font-size: $font-md;
+        border-radius: 3.5px;
+
+        i {
+            padding: 8px 8px 8px 8px;
+        }
+    }
+
+    i {
+        -ms-flex: none;
+        flex: none;
+    }
+
+    .AP-flex-max {
+        -ms-flex: 1;
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}
+
+.AP-item-header {
+    label {
+        color: $secColor-100;
+    }
+
+    span, input {
+        color: $light;
+    }
+
+    div {
+        background-color: $mainColor-100;
+
+        i {
+            color: $light;
+            //font-size: $fa-md;
+        }
+    }
+
+    i {
+        color: $mainColor-100;
+        font-size: $fa-lg;
+    }
+    .AP-input-container {
+        background-color: $mainColor-900;
+        input {
+            background-color: $mainColor-900;
+            color: $light !important;
+        }
+
+        i {
+            color: $light;
+            background-color: $mainColor-100;
+        }
+    }
+    .AP-input-container {
+        margin-top: 15px;
+        input {
+            height: 40px;
+        }
+
+        i {
+            padding: 8px 8px 0px 8px;
+        }
+    }}
+
+.AP-item-header-underline {
+    border-bottom: 1px solid $mainColor-100;
+}
+
+.AP-item-detail {
+    padding: 10px 0px 10px 0px;
+    border-top: 1px solid $secColor-100;
+
+    label, span {
+        color: $secColor-300;
+    }
+
+    i {
+        color: $mainColor-100;
+        font-size: $fa-md;
+        padding: 11px 8px 0px 8px;
+    }
+}
+.AP-clear-border {
+    border-top: none;
+}
+
+.AP-item-detail-finished {
+    label, span, i {
+        color: $light;
+    }
+
+    background-color: $secColor-300;
+}
+
+.AP-item-selected {
+    border-bottom: 1px solid $light;
+    border-top: 1px solid $light;
+    border-left: 2px solid $mainColor-100;
+    background-color: $secColor-900;
+
+    .AP-item-detail {
+        border-top: none;
+        border-bottom: 1px solid $secColor-100;
+    }
+    label, span {
+        color: $light;
+    }
+}
+
+.AP-item-selected-detail, .AP-item-selected-input {
+    border-bottom: 1px solid $secColor-100;
+
+    label, span {
+        color: $secColor-300;
+        font-size: $font-sm;
+    }
+
+}
+
+.AP-item-selected-input {
+    padding: 10px 0 10px 0;
+    label, span {
+        font-size: $font-md;
+        align-self: center;
+    }
+    .AP-input-container {
+        background-color: $secColor;
+        input {
+            background-color: $secColor;
+            color: $light !important;
+        }
+
+        i {
+            color: $secColor-900;
+            background-color: $secColor-100;
+            padding: 11px 7px 0px 7px;
+        }
+    }
+}
+
+.AP-item-selected-Button {
+    i {
+        color: $mainColor-100;
+        font-size: $fa-md;
+        padding: 11px 8px 8px 8px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button-fab {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.ebsMainMenuLabel {
+    font-size: 18px;
+    font-family: Raleway !important;
+    padding: 10px;
+}
+
+.ebs-item-divider {
+    height: unset !important;
+    border-top-style: none !important;
+    border-bottom: solid 1px $light !important;
+}

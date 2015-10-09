@@ -1,0 +1,110 @@
+/* CSS Document */
+
+
+.LinePage
+{
+	
+}
+
+.IMG
+{
+	width:100%;
+}
+
+
+#dayStatus
+{
+	width:100%; 
+	position:relative;  
+	background-image:url(../img/menu/pubsline.jpg); 
+	background-repeat:repeat
+}
+
+#dayStatus p
+{
+	color:white; 
+	width:100%;  
+	text-align:center; 
+	margin:0; 
+	padding:1.5% 0 1% 0%;
+}
+
+#Line_Logo
+{
+	width:30%; 
+	float:right; 
+	margin-top:3%; 
+	margin-right:1%;
+}
+
+#InfDv
+{
+	width:67%; 
+	float:left; 
+}
+
+.lpubTitle
+{
+	text-align:right; 
+	color:white; 
+	font-size:18; 
+	font-weight:bold; 
+	margin-top:3%;
+}
+
+.lpubAdress
+{
+	text-align:right; 
+	color:white; 
+	z-index:1; 
+	font-size:16; 
+	margin-top:-3%
+}
+
+#LineTitle
+{
+	width:100%; 
+	overflow:hidden; 
+	margin-top:-3%; 
+	z-index:100;
+}
+
+#LineTitleDv1
+{
+	width:60%; 
+	float:right;
+}
+
+#LineTitleDv1 p
+{
+	text-align:right; 
+	color:white; 
+	font-size:16; 
+	margin-top:0%
+}
+
+#LineTitleDv2
+{
+	width:18%; 
+	float:left; 
+	margin-left:2%; 
+	margin-top:0%;
+}
+
+#LineTitleDv2 img
+{
+	width:100%; 
+	margin-top:0%;
+}
+
+.lpubType
+{
+	text-align:right; 
+	color:white; 
+	font-size:16; 
+	margin-top:-4%
+}
+
+
+
+

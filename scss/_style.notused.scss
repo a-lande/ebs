@@ -1,0 +1,305 @@
+/*************************************************************/ 
+/************************ Menu Page **************************/
+/*************************************************************/ 
+
+body
+{
+	color:black;
+}
+
+
+#menuContainer
+{
+	width:100%;
+	margin-top:10%;
+}
+
+#menuFirstRow
+{
+	width:100%;
+	overflow:hidden;
+}
+
+#fRowLeft
+{
+	float:left;
+	width:30%;
+	left:3.3%;
+	position:relative;
+}
+
+#fRowCenter
+{
+	float:left;
+	width:30%;
+	left:5%;
+	position:relative;
+}
+
+#fRowRight
+{
+	float:right;
+	width:30%;
+	right:3.3%;
+	position:relative;
+}
+
+#menuSecondRow
+{
+	width:100%;
+	overflow:hidden;
+	margin-top:30px;
+}
+
+#f2RowLeft
+{
+	float:left;
+	width:30%;
+	left:17%;
+	position:relative;
+}
+
+#f2RowRight
+{
+	float:right;
+	width:30%;
+	right:17%;
+	position:relative;
+}
+
+
+#InventoryHeader
+{
+	margin-top:-20px;
+	padding-left:10px;
+	margin-bottom:-10px;
+}
+
+
+
+/*************************************************************/ 
+/************************ OnHand Page **************************/
+/*************************************************************/ 
+
+
+#onHandSearch
+{
+	background-color:red; 
+	height:70px; 
+	margin-top:15px; 
+	overflow:hidden;
+}
+
+#onHandSearchLeftDiv
+{
+	width:80%; 
+	padding-top:20px; 
+	padding-left:30px; 
+	float:left
+}
+
+
+#onHandSearchRightDiv
+{
+	float:left; 
+	width:30px; 
+	margin-top:22px;  
+	margin-left:10px;
+}
+
+.onHandCombo
+{
+	float:left; 
+	width:80%; 
+	margin-left:5%; 
+	padding-top:30px;
+}
+
+.onHandComboQr
+{
+	float:left; 
+	width:30px; 
+	padding-top:55px;  
+	margin-left:10px;
+}
+
+.onHandMainComboDiv
+{
+	width:100%; 
+	margin-top:-30px; 
+	overflow:hidden;
+}
+
+.TitleInfo
+{
+	font-size:20px;
+	font-weight:bold;
+	padding-left:20px; 
+	color:red;
+	width:25%;
+}
+
+.TitleRight
+{
+	font-size:20px;
+	font-weight:400;
+	padding-left:20px; 
+	color:black;
+}
+
+/*************************************************************/ 
+/************************ OnHand Search Page **************************/
+/*************************************************************/ 
+
+.onHand_Search_Title
+{
+	float:left;
+	font-size:15px; 
+	color:red;
+	margin-top:-1px;
+	text-align:left;
+}
+
+.onHand_Search_Description
+{
+	float:left;
+	padding-left:10px; 
+	text-align:left;
+	font-size:14px;
+}
+
+.onHand_Search_Item_Description
+{
+	float:left;
+	overflow:hidden;
+	padding-left:10px; 
+	text-align:left;
+	font-size:14px;
+}
+
+.onHandSearchSection
+{
+	width:100%;	
+}
+
+.searchItem
+{
+	float:left;
+	padding-left:40px;
+}
+
+.searchItem span
+{
+	color:red; 
+	font-weight:bold;
+	font-size:15px;
+}
+
+
+/*************************************************************/ 
+/************************ OnHand Resault Page **************************/
+/*************************************************************/ 
+
+.onHand_Resault_Title
+{
+	float:left;
+	font-size:15px; 
+	color:red;
+	margin-top:-1px;
+	text-align:left;
+	width:25%;
+}
+
+.onHand_Resault_Description
+{
+	float:left;
+	padding-left:10px; 
+	text-align:left;
+	font-size:14px;
+	width:75%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+
+
+/*************************************************************/ 
+/************************ Animation **************************/
+/*************************************************************/ 
+
+.animClass1.ng-enter,  
+.animClass1.ng-leave,  
+.animClass1.ng-enter,  
+.animClass1.ng-leave 
+{
+    top: 0; right: 0; bottom: 0; left: 0;  
+    background: inherit;  
+    -ms-transition: 0.50s ease-in-out;  
+    -webkit-transition: 0.50s ease-in-out;  
+    transition:  0.50s ease-in-out;  
+}  
+/*
+.animClass1.ng-enter {  
+    z-index: 101;  
+    -webkit-transform: translateX(100%);  
+    transform: translateX(100%);  
+}  
+.animClass1.ng-enter.ng-enter-active {  
+    -webkit-transform: translateX(0);  
+    transform: translateX(0);  
+}  
+.animClass1.ng-leave {  
+    z-index: 100;  
+    -webkit-transform: translateX(0);  
+    transform: translateX(0);  
+}  
+.animClass1.ng-leave.ng-leave-active {  
+    -webkit-transform: translateX(-100%);  
+    transform: translateX(-100%);  
+}  */
+
+
+.animClass1.ng-enter {  
+    z-index: 100;  
+    -webkit-transform: translateX(-100%);  
+    transform: translateX(-100%);  
+}  
+.animClass1.ng-enter.ng-enter-active {  
+    -webkit-transform: translateX(0);  
+    transform: translateX(0);  
+}  
+.animClass1.ng-leave {  
+    z-index: 101;  
+    -webkit-transform: translateX(0);  
+    transform: translateX(0);  
+}  
+.animClass1.ng-leave.ng-leave-active {  
+    -webkit-transform: translateX(100%);  
+    transform: translateX(100%);  
+}  

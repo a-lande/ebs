@@ -1,0 +1,29 @@
+﻿
+// colors
+$light:                 #fff !default;
+$mainColor:             #0c4da2 !default;
+$mainColor-900:         #103b5b !default;
+$mainColor-700:         #1b6498 !default;
+$mainColor-100:         #2ba6fe !default;
+$secColor:              #525252 !default;
+$secColor-900:          #313131 !default;
+$secColor-300:          #bababa !default;
+$secColor-100:          #bad0e0 !default;
+
+// font sizes
+$font-sm:               14px;
+$font-md:               18px;
+$font-lg:               24px;
+$fa-md:                 20px;
+$fa-lg:                 30px;
+
+
+// imports
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,200,100,500,600,700,800,900);
+
+@import "_app.scss";
+@import "_forms.scss";
+@import "_items.scss";
+@import "_menu.scss";
+
+

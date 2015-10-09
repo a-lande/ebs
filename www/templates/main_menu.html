@@ -1,0 +1,60 @@
+<ion-view title="{{navTitle}}" class="dark-bg">
+    <ion-content class="animate-fade-slide-in">
+        <ion-list class="dark-bg">
+            <div class="item item-divider ebs-item-divider dark-bg light">
+                <h1>Item Management</h1>
+            </div>
+            <div class="list half padding">
+                <div class="item dark-bg light" ui-sref="app.OnHand">
+                    <div class="text-center">
+                        <button class="button-calm button button-fab"><i class="fa fa-search"></i></button>
+                        <div class="ebsMainMenuLabel">Item Search</div>
+                    </div>
+                </div>
+            </div>
+            <div class="list half padding">
+                <div class="item dark-bg light">
+                    <div class="text-center">
+                        <button class="button-calm button button-fab"><i class="fa fa-barcode"></i></button>
+                        <div class="ebsMainMenuLabel">Item On Hand Lookup</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-divider ebs-item-divider dark-bg light">
+                <h1>Inventory Management</h1>
+            </div>
+            <div class="list half padding">
+                <div class="item dark-bg light" ui-sref="app.TagCount">
+                    <div class="text-center">
+                        <button class="button-calm button button-fab"><i class="fa fa-list-ol"></i></button>
+                        <div class="ebsMainMenuLabel">Physical Inventory Count</div>
+                    </div>
+                </div>
+            </div>
+            <div class="list half padding">
+                <div class="item dark-bg light" ui-sref="app.CycleCount">
+                    <div class="text-center">
+                        <button class="button-calm button button-fab"><i class="fa fa-calendar"></i></button>
+                        <div class="ebsMainMenuLabel">Cycle Inventory Count</div>
+                    </div>
+                </div>
+            </div>
+            <div class="list half padding">
+                <div class="item dark-bg light">
+                    <div class="text-center">
+                        <button class="button-calm button button-fab"><i class="fa fa-share-square-o"></i></button>
+                        <div class="ebsMainMenuLabel">Sub-inventory Transfer</div>
+                    </div>
+                </div>
+            </div>
+            <div class="list half padding">
+                <div class="item dark-bg light">
+                    <div class="text-center">
+                        <button class="button-calm button button-fab"><i class="fa fa-truck"></i></button>
+                        <div class="ebsMainMenuLabel">Inter-organization Transfer</div>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

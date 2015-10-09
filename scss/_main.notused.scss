@@ -1,0 +1,755 @@
+
+body
+{
+	padding:0px;
+	margin:0px;
+	width:100%;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	background-image:url('../img/menu/back.jpg');
+	overflow:hidden;
+	position:fixed;
+	color:black;
+}
+
+
+
+.title-image
+{
+	width:120px;
+	max-width:120px;
+	padding-top:5px;
+}
+
+.right-button
+{
+	height:47px;
+	margin-top:-6px;
+}
+/*  ////////////////////   Header  ///////////////////////////////////*/
+
+.Header
+{
+	background-color:#333;
+	position:fixed;
+	top:0px;
+	z-index:10000;
+}
+
+.HeadTable
+{
+	position:relative;
+	width:95%;
+	overflow:hidden;
+}
+
+.HeadTdLeft
+{
+	width:15%;
+	left:-5%;
+	position:relative;
+}
+
+.HeadTdCenter
+{
+	width:40%;
+	left:3%;
+	position:relative;
+}
+
+.HeadTdRight
+{
+	width:15%;
+	left:5%;
+	position:relative;
+}
+
+
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/ 
+/*  ////////////////////   Main Page  ///////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+
+.MainPage
+{
+	width:100%;
+	overflow:hidden;	
+}
+
+.MainPage .Content
+{
+	background-image:url('../img/main/back.jpg');
+	background-size:100% 100%;
+	width:100%;
+	position:relative;
+}
+
+#MainPageContent
+{
+	padding-top:10%;
+}
+
+#MainButtons
+{
+	position:relative;
+	margin-bottom:5%;
+}
+
+#MainButtonsDiv
+{
+	padding-top:10%;
+	width:90%;
+}
+
+.MainButtonsClass
+{
+	width:32%;
+}
+
+
+#mainPageLogo
+{
+	margin-top:0px; 
+	position:relative;
+}
+
+#mainPageLogo img
+{
+	width:40%;
+}
+
+
+#mainPageWhere
+{
+	margin-top:0px; 
+	position:relative
+}
+
+#mainPageWhere img
+{
+	width:55%;
+}
+
+
+#mainPageNext
+{
+	margin-top:0px; 
+	position:relative
+}
+
+#mainPageNext img
+{
+	width:20%;
+}
+
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/ 
+/*  ////////////////////   Menu Page  ///////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+
+.MenuPage
+{
+	width:100%;
+	overflow:hidden;
+}
+
+.MenuPage .Content
+{
+	background-image:url('../img/menu/back.jpg');
+	background-size:100% 100%;
+	width:100%;
+	position:relative;
+}
+
+
+
+#menuTable
+{
+	width:100%;
+	padding-top:5%;
+}
+
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/ 
+/*  ////////////////////   ListPage Page  ///////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+
+.ListPage
+{
+
+}
+
+.ListPage .Content1
+{
+	background-image:url('../img/menu/back.jpg');
+	width:100%;
+	position:relative;
+	margin-top:21%;
+}
+
+.ListPage .Content2
+{
+	background-image:url('../img/menu/back.jpg');
+	width:100%;
+	position:relative;
+	margin-top:26%;
+}
+
+#pubList1
+{
+	margin-top:0%;	
+}
+
+#pubList2
+{
+	margin-top:0%;	
+}
+
+
+#DaysTable
+{
+	background-color:#999; 
+	padding:9px 1px 7px 1px;
+	width:100%;
+	margin-top:-1%;
+}
+
+#DaysThead
+{
+	overflow:auto;
+	display:block;
+}
+
+#tBody
+{
+	width:100%;
+	display:block
+}
+
+#DaysRow
+{
+	display:inline;
+}
+
+
+.dayThumb
+{
+	width:40px;
+	border-radius:4px; 
+	padding:6px;
+	background-color:#f9f9f9; 
+	margin:14px;
+	padding-top:1%;
+	padding-bottom:1%;
+	color:black;
+}
+
+.dayThumb div
+{
+	
+}
+
+
+.spDays
+{
+	top:17%; 
+	position:relative;
+}
+
+.fixDiv
+{
+	margin:0;
+	padding:0; 
+	border:none;
+}
+
+
+
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/ 
+/*  ////////////////////   Line Page  ///////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+
+.LinePage
+{
+	width:100%;
+	overflow:hidden;
+}
+
+.LinePage #LineDiv
+{
+	position:relative; 
+	margin-top:20%;
+	background-image:url('../img/menu/back.jpg');
+	background-size:100% 100%;
+	width:100%;
+	position:relative;
+	overflow-y:scroll; 	
+	height:4px; 
+	z-index:2;
+}
+
+
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/ 
+/*  ////////////////////   Gallery Page  ///////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+
+
+.GalleryPage
+{
+	width:100%; 
+	overflow:hidden;
+	height:100%;
+}
+
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/ 
+/*  ////////////////////   Birthday Page  ///////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+
+.BirthdayPage
+{
+	width:100%;
+	overflow:hidden;
+}
+
+
+#BirthdayContent
+{
+	margin-top:20%;
+	width:100%;
+	position:relative;
+	overflow-y:scroll; 	
+	height:4px; 
+	z-index:2;
+}
+
+
+
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/ 
+/*  ////////////////////   Coupon Page  ///////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+
+.CouponPage
+{
+	width:100%;
+	overflow:hidden;
+}
+
+
+
+#CouponContent
+{
+	margin-top:24%;
+	width:100%;
+	position:relative;
+	overflow-y:scroll; 	
+	height:4px; 
+	z-index:2;
+}
+
+
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/ 
+/*  ////////////////////   Team ///////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+/* //////////////////////////////////////////////////////////////////////*/
+
+
+
+.teamRow
+{
+	text-align:right; 
+	margin-bottom:4px; 
+	cursor:pointer; 
+	width:95%;  
+	font-size:17px; 
+	position:relative; 
+	background-color:white; 
+	color:#666; 
+	padding:2px 3px 3px 3px;
+	border-radius:2px;
+}
+
+
+.teamInfo
+{
+	text-align:right; 
+	width:95%; 
+	background-color:white; 
+	height:9%; 
+	margin-top:0%; 
+	border-radius:3px; 
+	color:#666; 
+	padding:3px;  
+	font-size:17px; 
+	position:relative;
+}
+
+
+
+
+
+
+/*/////////////////////////////////////////////////////News //////////////////////////////////////////////////*/
+
+
+#NewsHeader
+{
+	color:white;
+	font-size:32px;
+	margin-top:0%;
+}
+
+.MainNewsRow
+{
+	width:100%;
+	overflow:hidden;
+	padding:0 0% 5% 0%;
+	margin-top:-3%;
+}
+
+.LeftNewsRow
+{
+	width:30%;
+	float:left;
+	margin-left:3%;
+	margin-bottom:3%;
+	position:relative;
+}
+
+.LeftNewsRow img
+{
+	margin-top:0%;
+}
+
+.RightNewsRow
+{
+	width:60%;
+	float:right;
+	top:0;
+	margin-top:-3%;
+	cursor:pointer;
+}
+
+.RightNewsRow h3
+{
+	text-align:right;
+	direction:rtl;
+	padding-right:7%;
+	font-size:1.3em;
+	margin-bottom:-2%;
+}
+
+.RightNewsRow #rowp
+{
+	text-align:right;
+	direction:rtl;
+	padding-right:7%;
+	font-size:medium;
+	height:46pt;
+	overflow:hidden;
+	margin-bottom:3%;
+}
+
+.newsLine
+{
+	
+}
+
+.NewsBanner
+{
+	margin:-3% 0 6% 0;
+}
+
+.NewsBanner img
+{
+	margin:0 0 2% 0;
+}
+
+.FooterNewsRow
+{
+	overflow:hidden;
+	width:100%;
+	position:relative;
+	margin-right:5%;
+	margin-top:2%;
+}
+
+.FooterNewsRow #left
+{
+	width:30%;
+	float:left;
+	margin-left:3%;
+	margin-bottom:3%;
+	cursor:pointer;
+}
+
+.FooterNewsRow #right
+{
+	width:60%;
+	position:relative;
+	float:right;
+	margin-left:3%;
+	margin-bottom:3%;
+}
+
+.FooterNewsRow #right img
+{
+	float:right;
+	margin-left:5%;
+}
+
+.FooterNewsRow #right p
+{
+	font-size:12px;
+	text-align:right;
+	margin-top:3%;
+	margin-right:3%;
+}
+
+.FooterNewsRow #left
+{
+	margin-top:2%;
+}
+
+
+/* News Info Page*/
+#NewsInfoTitle
+{
+	font-size:16pt;
+	padding:0 5% 0 5%;
+}
+
+#NewsBannerInfo
+{
+	width:100%;
+}
+
+#NewsBannerInfo_Title
+{
+	text-align:right;
+	padding:0 6% 0 6%;
+}
+
+#newsView
+{
+	padding:1% 0 1% 0;
+	overflow:hidden;
+	background: rgba(0,0,0,0.5);
+}
+
+#newsView img
+{
+	float:right;
+	margin-right:10%;
+	margin-top:1%;
+}
+
+#newsView p
+{
+	float:right;
+	margin-right:3%;
+	margin-top:2%;
+}
+
+
+#newsbtns
+{
+	width:100%;
+}
+
+#newsbtns tr
+{
+	width:32%
+}
+
+
+.ClassPopUp
+{
+	background: rgba(0,0,0,0.9);
+}
+
+
+#GalInfo
+{
+	overflow:hidden;
+	width:90%;
+}
+
+#GalInfo #left
+{
+	width:49%;
+	float:left;
+}
+
+#GalInfo #right
+{
+	width:49%;
+	float:right;
+}
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////// 
+/* ////////////////////////////////////////////////////////////////////// 
+/* ////////////////////////////////////////////////////////////////////// 
+/* ////////////////////////////////////////////////////////////////////// 
+/* ////////////////////////////////////////////////////////////////////// 
+/* //////////////////////////////////////////////////////////////////////*/
+
+
+
+/* about ------------------------ 
+.animClass1.ng-leave        {
+     -webkit-animation:slideInRight 0.8s both ease;
+	-moz-animation:slideInRight 0.8s both ease;
+	animation:slideInRight 0.8s both ease;    
+}
+.animClass1.ng-enter 		{  
+    -webkit-animation:slideInRight 0.8s both ease;
+	-moz-animation:slideInRight 0.8s both ease;
+	animation:slideInRight 0.8s both ease;    
+}
+
+ 
+.animClass1.ng-leave        {
+    -webkit-animation:slideOutLeft 0.8s both ease;
+	-moz-animation:slideOutLeft 0.8s both ease;
+	animation:slideOutLeft 0.8s both ease;   
+}
+
+
+/* slide in from the right 
+@keyframes slideInRight {
+	from 	{ transform:translateX(100%); translateY(0%);}
+	to 		{ transform: translateX(0); translateY(0%);}
+}
+@-moz-keyframes slideInRight {
+	from 	{ -moz-transform:translateX(100%); translateY(0%);}
+	to 		{ -moz-transform: translateX(0); translateY(0%);}
+}
+@-webkit-keyframes slideInRight {
+	from 	{ -webkit-transform:translateX(100%); translateY(0%);}
+	to 		{ -webkit-transform: translateX(0); translateY(0%);}
+}
+
+
+
+/* slide in from the bottom 
+@keyframes slideOutLeft {
+	to 		{ transform: translateX(-100%); translateY(0%);}
+}
+@-moz-keyframes slideOutLeft {	
+	to 		{ -moz-transform: translateX(-100%); translateY(0%);}
+}
+@-webkit-keyframes slideOutLeft {
+	to 		{ -webkit-transform: translateX(-100%); translateY(0%);}
+}
+
+
+
+
+
+
+.animClass1.ng-enter,  
+.animClass1.ng-leave,  
+.animClass1.ng-enter,  
+.animClass1.ng-leave 
+{
+    top: 0; right: 0; bottom: 0; left: 0;  
+    background: inherit;  
+    -ms-transition: 0.50s ease-out;  
+    -webkit-transition: 0.50s ease-out;  
+    transition:  0.50s ease-out;  
+}  
+
+.animClass1.ng-enter {  
+    z-index: 101;  
+    -webkit-transform: translateX(100%);  
+    transform: translateX(100%);  
+}  
+.animClass1.ng-enter.ng-enter-active {  
+    -webkit-transform: translateX(0);  
+    transform: translateX(0);  
+}  
+.animClass1.ng-leave {  
+    z-index: 100;  
+    -webkit-transform: translateX(0);  
+    transform: translateX(0);  
+}  
+.animClass1.ng-leave.ng-leave-active {  
+    -webkit-transform: translateX(-100%);  
+    transform: translateX(-100%);  
+} 
+
+
+.animClass1.ng-enter {  
+    z-index: 100;  
+    -webkit-transform: translateX(-100%);  
+    transform: translateX(-100%);  
+}  
+.animClass1.ng-enter.ng-enter-active {  
+    -webkit-transform: translateX(0);  
+    transform: translateX(0);  
+}  
+.animClass1.ng-leave {  
+    z-index: 101;  
+    -webkit-transform: translateX(0);  
+    transform: translateX(0);  
+}  
+.animClass1.ng-leave.ng-leave-active {  
+    -webkit-transform: translateX(100%);  
+    transform: translateX(100%);  
+}   */
+
+
+.animClass1.ng-enter 		{  
+    -webkit-animation:slideInRight 0.8s both ease;
+	-moz-animation:slideInRight 0.8s both ease;
+	animation:slideInRight 0.8s both ease;    
+}
+
+.animClass1.ng-leave 		{  
+    -webkit-animation:slideOutLeft 0.8s both ease;
+	-moz-animation:slideOutLeft 0.8s both ease;
+	animation:slideOutLeft 0.8s both ease;    
+}
+
+
+
+@keyframes slideInRight {
+	from 	{ transform:translateX(100%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+	from 	{ -moz-transform:translateX(100%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+	from 	{ -webkit-transform:translateX(100%); }
+	to 		{ -webkit-transform: translateX(0); }
+}
+
+
+
+@keyframes slideOutLeft {
+	to 		{ transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {	
+	to 		{ -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+	to 		{ -webkit-transform: translateX(-100%); }
+}
+

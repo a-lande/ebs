@@ -1,0 +1,88 @@
+<ion-view title="{{navTitle}}">
+  <ion-content>
+  		<div class="list">
+              <label class="item item-input" >
+                <span class="input-label" style="font-size:20px; font-weight:bold; color:red">On Hand Inventory Availability</span>
+              </label>
+  		</div>
+        
+        <div>
+              <label class="item-input" style="margin-top:-10px; font-size:18px; font-weight:bold; ">
+                <span class="input-label1" style="font-size:16px;">Query Criteria</span>
+              </label>
+  		</div>
+        
+       
+        
+        <div class="row">
+         <div class="col col-50" style="font-size:15px; padding-left:20px; font-weight:bold; color:red">Item : <span style="padding-left:73px; font-weight:400; color:black">{{AvailebleArray[0].AVAILABILITY_ITEM_0}}</span></div>
+          <div class="col col-50" style="font-size:15px; padding-left:20px; font-weight:bold; color:red">Status : <span style="padding-left:20px; font-weight:400; color:black">On Hand</span></div>
+        </div>
+        
+        <div class="row">
+          <div class="col col-50" style="font-size:15px; padding-left:20px; font-weight:bold; color:red">Organization : <span style="padding-left:15px; font-weight:400; color:black">v1</span></div>
+          <div class="col col-50" style="font-size:15px; padding-left:20px; font-weight:bold; color:red">Project : <span style="padding-left:15px; font-weight:400; color:black"></span></div>
+        </div>
+        
+        <div class="row">
+         <div class="col col-50" style="font-size:15px; padding-left:20px; font-weight:bold; color:red">Lot : <span style="padding-left:84px; font-weight:400; color:black">All</span></div>
+          <div class="col col-50" style="font-size:15px; padding-left:20px; font-weight:bold; color:red">Sub : <span style="padding-left:40px; font-weight:400; color:black">All</span></div>
+        </div>
+        
+        
+         <label class="item item-input item-select" style=" margin-top:0px;">
+            <div class="input-label" >
+              <div id="fRowLeft" style="cursor:pointer" ng-click='navigatePage("#/app/OnHandSearch/","2")' align="center">
+                        <button class="button button-assertive ion-arrow-left-a" style="width:60px; height:60px; font-size:30px;"></button>
+               </div>
+            </div>
+            <div class="input-label" >
+              <div id="fRowLeft" style="cursor:pointer" ng-click='navigatePage("#/app/OnHandSearch/","2")' align="center">
+                        <button class="button button-assertive ion-ios-flask" style="width:60px; height:60px; font-size:30px;"></button>
+               </div>
+            </div>
+            <div class="input-label" ></div>
+            <div class="input-label" ></div>
+            <div class="input-label" ></div>
+            <div class="input-label" ></div>
+            <div class="input-label" ></div>
+            <div class="input-label" ></div>
+            <div class="input-label" ></div>
+            <div class="input-label" ></div>
+            <select class="form-control" data-ng-options="o for o in details.Project.all" data-ng-model="details.Project.selected"></select>
+  		</label>
+        
+        
+        <ion-list>
+            <div ng-repeat="group in groups">
+              <ion-item class="item-stable"
+                        ng-click="toggleGroup(group)"
+                        ng-class="{active: isGroupShown(group)}" style="background-color:#06F; color:white; font-size:20px;">
+                  <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+                &nbsp;
+                 {{group.name}}
+              </ion-item>
+              <ion-item ng-click='navigatePage("#/app/OnHandResault/","2")' class="item-accordion"
+                        ng-repeat="item in group.items"
+                        ng-show="isGroupShown(group)">
+                		<div>
+                        	<div>
+                            	Item : <span style="font-size:16px; font-weight:400"> {{AvailebleArray[$index].AVAILABILITY_ITEM_0}}<span>
+                            </div>
+                            <div>
+                            	Organization : <span style="font-size:16px; font-weight:400"> {{AvailebleArray[$index].AVAILABILITY_ORGANIZATION_CODE_0}}<span>
+                            </div>
+                            <div>
+                            	Sub : <span style="font-size:16px; font-weight:400"> {{AvailebleArray[$index].AVAILABILITY_SUBINVENTORY_CODE_0}}<span>
+                            </div>
+                            <div>
+                            	Total : <span style="font-size:16px; font-weight:400"> {{AvailebleArray[$index].AVAILABILITY_TOTAL_QUANTITY_0}}<span>
+                            </div>
+                        </div>
+              </ion-item>
+            </div>
+      </ion-list>
+
+    </ion-content>
+  </ion-content>
+</ion-view>

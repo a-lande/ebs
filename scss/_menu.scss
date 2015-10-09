@@ -1,0 +1,26 @@
+.button {
+    border: 0px;
+}
+
+.button.button-fab i {
+    font-size: 2rem;
+    margin-top: 9px;
+}
+
+.button-fab {
+    width: 80px !important;
+    height: 80px !important;
+}
+.ebsMainMenuLabel {
+    font-size:18px;
+    font-family: Raleway !important;
+    padding: 10px;
+}
+.ebs-item-divider{
+    height:unset !important;
+    border-top-style: none !important;
+    border-bottom: solid 1px $light !important;
+}
+
+
+

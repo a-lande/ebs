@@ -1,0 +1,134 @@
+﻿<ion-view title="{{navTitle}}">
+    <!-- the count selection pre screen -->
+    <div class="bar bar-subheader AP-bar-subheader static" style="height:100%" ng-show="selectionScreen&&countSelected">
+        <form class="padding AP-form" style="height:100%">
+            <div class="AP-item AP-item-header">
+                <label>Count Name</label>
+            </div>
+            <div class="AP-item AP-item-header">
+                <div class="AP-input-container" on-tap="countReselect()">
+                    <label class="AP-flex-max">{{selectedValues.count.name}}</label>
+                    <i class="fa fa-angle-down" style=""></i>
+                </div>
+            </div>
+            <div class="AP-item AP-item-header">
+                <label>Description:</label>
+                <span class="AP-flex-max AP-right">{{selectedValues.count.desc}}</span>
+            </div>
+            <div class="AP-item AP-item-header">
+                <label>Snapshot Date:</label>
+                <span class="AP-flex-max AP-right">{{selectedValues.count.date}}</span>
+            </div>
+            <div class="AP-item AP-item-header">
+                <label>Counter:</label>
+                <span class="AP-flex-max AP-right">{{selectedValues.defaultCounter}}</span>
+            </div>
+            <div class="AP-item AP-flex-max"></div>
+            <div class="AP-item AP-item-header" on-tap="countConfirm()">
+                <div><i class="fa fa-check"></i></div>
+
+            </div>
+            <div class="AP-item AP-item-header" style="height:50px"></div>
+        </form>
+    </div>
+    <!-- the main subheader -->
+    <div class="bar bar-subheader AP-bar-subheader static" ng-style="{height:(headerCollapsed)?'120px':'210px'}" ng-hide="selectionScreen">
+        <!--210/120-->
+        <div class="padding-horizontal">
+            <div class="AP-item AP-item-header AP-item-header-underline">
+                <label>Count Name:</label>
+                <span class="AP-flex-max AP-right">{{selectedValues.count.name}}</span>
+                <i class="fa" ng-class="(headerCollapsed)?'fa-angle-down':'fa-angle-up'" on-tap="headerCollapsed = !headerCollapsed"></i>
+            </div>
+            <div style="padding:10px 23px 0px 23px;" ng-hide="headerCollapsed">
+                <div class="AP-item AP-item-header">
+                    <label>Snapshot Date:</label>
+                    <span class="AP-flex-max AP-right">{{selectedValues.count.date}}</span>
+                </div>
+                <div class="AP-item AP-item-header">
+                    <label>Counter:</label>
+                    <span class="AP-flex-max AP-right">{{selectedValues.defaultCounter}}</span>
+                </div>
+            </div>
+            <div class="AP-item AP-item-header">
+                <div class="AP-input-container">
+                    <input type="text" ng-model="selectedValues.item" placeholder="Enter Barcode" ng-change="applyFilter()" />
+                    <i class="fa fa-barcode" style=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ion-content class="AP-bar-subheader" ng-hide="countSelected">
+        <div class="padding-horizontal AP-form">
+            <div class="AP-item AP-item-header">
+                <label>Count Name</label>
+            </div>
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" placeholder="Search" ng-model="selectedValues.countNameFilter">
+            </label>
+            <div class="AP-item AP-item-detail" ng-repeat="countName in tagCountNames | filter : selectedValues.countNameFilter" ng-class="($first)?'AP-clear-border':''"
+                 on-tap="countSelect(countName)">
+                <label class="AP-flex-max">{{countName.name}}</label>
+                <i class="fa fa-angle-right"></i>
+            </div>
+        </div>
+    </ion-content>
+    <ion-content class="AP-content" ng-style="{top:(headerCollapsed)?'164px':'254px'}" ng-hide="selectionScreen">
+        <!-- the main list -->
+        <div class="padding-horizontal" ng-repeat="item in filteredItems" ng-class="(item===currentItem)?'AP-item-selected':(item.isFinished)?'AP-item-detail-finished':''">
+            <!-- Item header -->
+            <div class="AP-item AP-item-detail" on-tap="itemClick(item,$index)" ng-class="($first||$index-1==selectedValues.selectedIndex)?'AP-clear-border':''">
+                <i class="fa fa-check" ng-show="item.isFinished"></i>
+                <label class="AP-flex-max">{{item.itemDesc}}</label>
+                <span class="AP-right" style="color:black">({{item.qty}})</span>
+                <span class="AP-right">{{item.item}}</span>
+                <i class="fa" ng-class="(item===currentItem)?'fa-times':'fa-angle-down'"></i>
+            </div>
+            <!-- Additional information for finished items -->
+            <div class="AP-item AP-item-detail AP-clear-border" ng-show="item.isFinished&&item!==currentItem">
+                <label class="">UOM:</label>
+                <span class="AP-flex-max AP-right">{{item.UOM}}</span>
+                <label class="">Quantity:</label>
+                <span class="AP-flex-max AP-right">{{item.qty}}</span>
+            </div>
+            <!-- Selected item form-->
+            <form ng-show="item===currentItem">
+                <div class="padding-horizontal">
+                    <div class="AP-item AP-item-selected-detail">
+                        <label>Tag</label>
+                        <span class="AP-flex-max AP-right">{{item.id}}</span>
+                    </div>
+                    <div class="AP-item AP-item-selected-detail">
+                        <label>Sub</label>
+                        <span class="AP-flex-max AP-right">{{item.sub}}</span>
+                    </div>
+                    <div class="AP-item AP-item-selected-detail">
+                        <label>Location</label>
+                        <span class="AP-flex-max AP-right">{{item.location}}</span>
+                    </div>
+                    <div class="AP-item AP-item-selected-detail">
+                        <label>Lot</label>
+                        <span class="AP-flex-max AP-right">{{item.lot}}</span>
+                    </div>
+                    <div class="AP-item AP-item-selected-detail">
+                        <label>UOM</label>
+                        <span class="AP-flex-max AP-right">{{item.UOM}}</span>
+                    </div>
+                    <div class="AP-item AP-item-selected-input">
+                        <label>Quantity</label>
+                        <div class="AP-input-container">
+                            <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
+                            <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
+                            <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="AP-item AP-item-selected-Button">
+                    <label class="AP-flex-max"></label>
+                    <i class="fa fa-check" on-tap="itemSave()"></i>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
