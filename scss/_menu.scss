@@ -1,25 +1,56 @@
+.bar-footer {
+  background-color: $mainColor-100;
+  border: none;
+  position: relative;
+  bottom: 0;
+}
+
+.bar-header {
+  background-color: $mainColor;
+  border: none;
+}
+
 .button {
-    border: 0px;
+  border: 0px;
 }
 
 .button.button-fab i {
-    font-size: 2rem;
-    margin-top: 9px;
+  font-size: 2rem;
+  margin-top: 9px;
+}
+
+.AP-button-main-menu {
+  border: none;
+  color: $light;
+  width: 50%;
+  .fa {
+    font-size: $fa-lg;
+
+  }
 }
 
 .button-fab {
-    width: 80px !important;
-    height: 80px !important;
+  width: 80px !important;
+  height: 80px !important;
 }
+
 .ebsMainMenuLabel {
-    font-size:18px;
-    font-family: Raleway !important;
-    padding: 10px;
+  font-size: 18px;
+  font-family: Raleway !important;
+  padding: 10px;
 }
-.ebs-item-divider{
-    height:unset !important;
-    border-top-style: none !important;
-    border-bottom: solid 1px $light !important;
+
+.ebs-item-divider {
+  height: unset !important;
+  border-top-style: none !important;
+  border-bottom: solid 1px $light !important;
+}
+
+.half {
+  width: 50%;
+  display: inline-block;
+  float: left;
+  margin: 0;
 }
 
 .AP-side-menu {
@@ -28,7 +59,13 @@
 
 #AP-header-menu {
   background: $secColor-900;
+  border-bottom: 1px solid $secColor-300;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
   .fa {
     font-size: $fa-lg;
     color: $mainColor-100;
@@ -50,11 +87,10 @@
     padding-left: 0;
     padding-right: 0;
 
-
     div {
       display: flex;
     }
-    .fa,label {
+    .fa, label {
       padding: 0 7px 0 0;
     }
 
@@ -80,6 +116,14 @@
 
 }
 
+.AP-AuraPlayer-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  padding-bottom: 20px;
+
+}
 
 
 
