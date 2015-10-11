@@ -9576,3 +9576,36 @@ h3 {
   height: unset !important;
   border-top-style: none !important;
   border-bottom: solid 1px #fff !important; }
+
+.AP-side-menu {
+  background-color: #313131; }
+
+#AP-header-menu {
+  background: #313131;
+  display: flex; }
+  #AP-header-menu .fa {
+    font-size: 30px;
+    color: #2ba6fe;
+    flex: 1;
+    text-align: right; }
+
+.AP-side-menu-list .item {
+  background-color: #313131;
+  color: #bababa;
+  border-bottom: 1px solid #bababa;
+  border-radius: 3.5px;
+  display: flex; }
+  .AP-side-menu-list .item .fa, .AP-side-menu-list .item label {
+    flex: none;
+    padding: 0 7px 0 0; }
+  .AP-side-menu-list .item .fa {
+    font-size: 20px; }
+  .AP-side-menu-list .item label {
+    flex: 1;
+    font-size: 18px;
+    -ms-flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .AP-side-menu-list .item .AP-angle-right {
+    color: #2ba6fe; }

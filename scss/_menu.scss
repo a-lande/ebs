@@ -22,5 +22,54 @@
     border-bottom: solid 1px $light !important;
 }
 
+.AP-side-menu {
+  background-color: $secColor-900;
+}
+
+#AP-header-menu {
+  background: $secColor-900;
+  display: flex;
+  .fa {
+    font-size: $fa-lg;
+    color: $mainColor-100;
+    flex: 1;
+    text-align: right;
+
+  }
+}
+
+.AP-side-menu-list {
+  .item {
+    background-color: $secColor-900;
+    color: $secColor-300;
+    border-bottom: 1px solid $secColor-300;
+    border-radius: 3.5px;
+    display: flex;
+
+    .fa,label {
+      flex: none;
+      padding: 0 7px 0 0;
+    }
+
+    .fa {
+      font-size: $fa-md;
+    }
+
+    label {
+      flex: 1;
+      font-size: $font-md;
+      -ms-flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .AP-angle-right {
+      color: $mainColor-100;
+    }
+  }
+
+}
+
+
 
 
