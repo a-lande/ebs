@@ -52,10 +52,10 @@ angular.module('ebs.controllers', [])
     });
 })
 
-.controller('MainMenuCtrl', function ($rootScope, $scope, $timeout) {
+.controller('MainMenuCtrl', function ($rootScope, $scope, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     $scope.$on('$ionicView.enter', function (e) {
         $scope.navTitle = $rootScope.MainTitle;
-/*        $timeout(function () { // start the animations
+        $timeout(function () { // start the animations
             ionicMaterialMotion.fadeSlideIn({
                 selector: '.animate-fade-slide-in .item'
             });
@@ -63,7 +63,7 @@ angular.module('ebs.controllers', [])
                 selector: '.animate-fade-slide-in h1'
             });
             ionicMaterialInk.displayEffect();
-        }, 200);*/
+        }, 200);
         $scope.showInfo = function () {
             angular.element('#InfoPopUp').css('visibility', 'visible');
         };

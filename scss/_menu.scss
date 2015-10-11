@@ -43,16 +43,26 @@
     background-color: $secColor-900;
     color: $secColor-300;
     border-bottom: 1px solid $secColor-300;
-    border-radius: 3.5px;
+    border-top: 1px solid $secColor-300;
+    border-left: none;
+    border-right: none;
     display: flex;
+    padding-left: 0;
+    padding-right: 0;
 
+
+    div {
+      display: flex;
+    }
     .fa,label {
-      flex: none;
       padding: 0 7px 0 0;
     }
 
     .fa {
+      flex: none;
+      -ms-flex: none;
       font-size: $fa-md;
+      padding-top: 3px;
     }
 
     label {
