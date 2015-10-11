@@ -21,15 +21,20 @@
     <ion-header-bar id="AP-header-menu" class="bar-stable">
       <i class="fa fa-close" menu-close></i>
     </ion-header-bar>
-    <ion-content>
+    <ion-content class="padding" style="padding-top: 0;">
       <ion-list class="AP-side-menu-list">
         <ion-item menu-close ng-click="">
           <i class="fa fa-home"></i><label>Home</label><i class="fa fa-angle-right AP-angle-right"></i>
         </ion-item>
-        <ion-item menu-close ng-click="">
-            <i class="fa fa-institution"></i><label>!!B1,Northwest Electronic Supply!!</label><i class="fa fa-angle-right AP-angle-right"></i>
-          <label class="AP-angle-right">Change Organization</label>
-        </ion-item>
+        <ion-item menu-close ng-click="" style="flex-direction: column">
+          <div>
+            <i class="fa fa-institution"></i><label>!!B1,Northwest Electronic Supply!!</label>
+            <i class="fa fa-angle-right AP-angle-right"></i>
+          </div>
+          <div>
+            <label class="AP-angle-right AP-right">Change Organization</label>
+          </div>
+
         </ion-item>
         <ion-item menu-close ng-click="">
           <i class="fa fa-cog"></i><label>Settings</label><i class="fa fa-angle-right AP-angle-right"></i>
