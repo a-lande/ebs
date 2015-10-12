@@ -1,0 +1,139 @@
+{
+    "Response": {
+        "EBS_LoginElements": "",
+        "EBS_LoginTableArray": {
+            "EBS_LoginArrayItem": [{
+                "Organizations": "B1,Northwest Electronic Supply"
+            }, {
+                "Organizations": "B2,Discount SuperStore-Atlanta"
+            }, {
+                "Organizations": "CH,Vision Switzerland"
+            }, {
+                "Organizations": "CO1,Vision Columbia"
+            }, {
+                "Organizations": "D1,Singapore Distribution Center"
+            }, {
+                "Organizations": "D2,Seattle Distribution Center"
+            }, {
+                "Organizations": "E1,Vision Germany"
+            }, {
+                "Organizations": "E10,Vision Hungary"
+            }, {
+                "Organizations": "E2,Vision Sweden"
+            }, {
+                "Organizations": "E3,Vision Industries"
+            }, {
+                "Organizations": "E4,Vision Netherlands"
+            }, {
+                "Organizations": "E5,Vision France"
+            }, {
+                "Organizations": "E51,Vision Germany - Hamburg D/C"
+            }, {
+                "Organizations": "E52,Vision Sweden - Gothenburg D/C"
+            }, {
+                "Organizations": "E53,Vision Industries - Birmingham D/C"
+            }, {
+                "Organizations": "E54,Vision Netherlands - Emmen D/C"
+            }, {
+                "Organizations": "E55,Vision France - Calais D/C"
+            }, {
+                "Organizations": "E56,Vision Italy - Gorle Distribution Centre"
+            }, {
+                "Organizations": "E58,Vision Belgium - Brugge Distribution Centre"
+            }, {
+                "Organizations": "E6,Vision Italy"
+            }, {
+                "Organizations": "E8,Vision Belgium"
+            }, {
+                "Organizations": "E9,Progress DE"
+            }, {
+                "Organizations": "FAC,Facility Maintenance Operations"
+            }, {
+                "Organizations": "H1,Vision Stores US"
+            }, {
+                "Organizations": "J1,Vision Corporation Japan"
+            }, {
+                "Organizations": "J2,Vision Services Japan"
+            }, {
+                "Organizations": "KR,Vision Korea"
+            }, {
+                "Organizations": "KR2,KR Changwon"
+            }, {
+                "Organizations": "KR3,KR Busan"
+            }, {
+                "Organizations": "M1,Seattle Manufacturing"
+            }, {
+                "Organizations": "M2,Boston Manufacturing"
+            }, {
+                "Organizations": "M3,Dallas Manufacturing"
+            }, {
+                "Organizations": "M6,Phoenix Manufacturing"
+            }, {
+                "Organizations": "M7,New Orleans Manufacturing"
+            }, {
+                "Organizations": "PO1,Project Operations"
+            }, {
+                "Organizations": "RJ1,Rio de Janeiro (BR)"
+            }, {
+                "Organizations": "S1,Chicago Subassembly Plant"
+            }, {
+                "Organizations": "SP1,Sao Paulo (BR)"
+            }, {
+                "Organizations": "SP2,Campinas (BR)"
+            }, {
+                "Organizations": "U1,Vision University"
+            }, {
+                "Organizations": "V1,Vision Operations"
+            }, {
+                "Organizations": "VA,Vision ADB"
+            }, {
+                "Organizations": "VAR,Vision Argentina"
+            }, {
+                "Organizations": "VC,Vision China"
+            }, {
+                "Organizations": "VCS,Suzhou Factory"
+            }, {
+                "Organizations": "VCT,Tianjin Factory"
+            }, {
+                "Organizations": "B2,Discount SuperStore-Atlanta"
+            }, {
+                "Organizations": "CH,Vision Switzerland"
+            }, {
+                "Organizations": "CO1,Vision Columbia"
+            }, {
+                "Organizations": "D1,Singapore Distribution Center"
+            }, {
+                "Organizations": "D2,Seattle Distribution Center"
+            }, {
+                "Organizations": "E1,Vision Germany"
+            }, {
+                "Organizations": "E10,Vision Hungary"
+            }, {
+                "Organizations": "E2,Vision Sweden"
+            }, {
+                "Organizations": "E3,Vision Industries"
+            }, {
+                "Organizations": "E4,Vision Netherlands"
+            }, {
+                "Organizations": "E5,Vision France"
+            }, {
+                "Organizations": "E51,Vision Germany - Hamburg D/C"
+            }, {
+                "Organizations": "E52,Vision Sweden - Gothenburg D/C"
+            }, {
+                "Organizations": "E53,Vision Industries - Birmingham D/C"
+            }, {
+                "Organizations": "E54,Vision Netherlands - Emmen D/C"
+            }, {
+                "Organizations": "E55,Vision France - Calais D/C"
+            }, {
+                "Organizations": "E56,Vision Italy - Gorle Distribution Centre"
+            }]
+        },
+        "EBS_LoginMessage": {
+            "StatusBarMessages": "Choices in list: 46;;Choices in list: 46;",
+            "PopupMessages": "",
+            "Error": ""
+        }
+    }
+}
