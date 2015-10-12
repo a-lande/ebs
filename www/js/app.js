@@ -8,7 +8,7 @@ angular.module('ebsApp', ['ionic','ionic-material', 'ebs.controllers', 'ap.servi
 
 .run(function ($rootScope, $ionicPlatform, $http, apWebService, AuthService, $state) {
     $rootScope.appId = 'apebs';
-    $rootScope.MainTitle = '<a ui-sref="main_menu"><img class="title-image" src="http://i.imgur.com/HKbtyqR.png"  /></a>';
+    $rootScope.MainTitle = '<a ui-sref="main_menu"><img class="title-image" src="img/samsung$light.png"  /></a>';
     $rootScope.hostName = 'http://52.25.115.99:8080/';
     AuthService.init();
     $ionicPlatform.ready(function () {
