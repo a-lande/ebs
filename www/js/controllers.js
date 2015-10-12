@@ -24,7 +24,7 @@ angular.module('ebs.controllers', [])
                     this.Name = sArray[1];
                 }
             },
-            debug: false
+            debug: ($scope.user.name=='debug'||$scope.user.name=='office')
         };
         AuthService.Login(LoginSvc, function (loginResult) {
             if (loginResult.success) {

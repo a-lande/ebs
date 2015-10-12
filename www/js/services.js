@@ -38,7 +38,7 @@
 						//$timeout(function(){
 							fulfill(wsResult);
 						//}, 1000);
-					} else { 
+					} else {
 						fulfill(wsResult);
 					}
 				}).error(function (data) {
@@ -49,14 +49,14 @@
 				});
 			});
 		}
-		
+
 		// helper private functions
 		function getURL(serviceName, params, debug) {
 			var url = "ServiceManager/Macro/ExecMacro/"
 			if (debug) { url = "debug/"; }
 			else { url = $rootScope.hostName + url; }
 			var paramsString = getQueryString(params);
-			return url + serviceName + "?" + paramsString + "&json=true";
+			return url + serviceName + (debug?'.json':'') + "?" + paramsString + "&json=true";
 		}
 		function getQueryString(params) {
 			var dataArray = new Array();
@@ -144,7 +144,9 @@
                 apWebService.runService(LoginSvc).then(
                     function (loginResult) { // fulfill
                         if (loginResult.Error !== '' || loginResult.PopupMessages !== '') { loginResult.success = false; }
-                        else { loginResult.success = true; }
+                        else { loginResult.success = true;
+                          $rootScope.debug = LoginSvc.debug;
+                        }
                         callback(loginResult);
                     },
                     function (loginResult) { // rejected
