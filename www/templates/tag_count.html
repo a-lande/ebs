@@ -98,14 +98,6 @@
                         <label>Tag</label>
                         <span class="AP-flex-max AP-right">{{item.id}}</span>
                     </div>
-                  <div class="AP-item AP-item-selected-input">
-                    <label>Quantity</label>
-                    <div class="AP-input-container">
-                      <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
-                      <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
-                      <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
-                    </div>
-                  </div>
                     <div class="AP-item AP-item-selected-detail">
                         <label>Sub</label>
                         <span class="AP-flex-max AP-right">{{item.sub}}</span>
@@ -118,6 +110,14 @@
                         <label>Lot</label>
                         <span class="AP-flex-max AP-right">{{item.lot}}</span>
                     </div>
+                  <div class="AP-item AP-item-selected-input">
+                    <label>Quantity</label>
+                    <div class="AP-input-container">
+                      <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
+                      <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
+                      <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
+                    </div>
+                  </div>
                     <div class="AP-item AP-item-selected-detail">
                         <label>UOM</label>
                         <span class="AP-flex-max AP-right">{{item.UOM}}</span>
