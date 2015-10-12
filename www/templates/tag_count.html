@@ -26,7 +26,6 @@
             <div class="AP-item AP-flex-max"></div>
             <div class="AP-item AP-item-header" on-tap="countConfirm()">
                 <div><i class="fa fa-check"></i></div>
-
             </div>
             <div class="AP-item AP-item-header" style="height:50px"></div>
         </form>
@@ -80,10 +79,10 @@
             <!-- Item header -->
             <div class="AP-item AP-item-detail" on-tap="itemClick(item,$index)" ng-class="($first||$index-1==selectedValues.selectedIndex)?'AP-clear-border':''">
                 <i class="fa fa-check" ng-show="item.isFinished"></i>
-                <label class="AP-flex-max">{{item.itemDesc}}</label>
-                <span class="AP-right" style="color:black">({{item.qty}})</span>
                 <span class="AP-right">{{item.item}}</span>
-                <i class="fa" ng-class="(item===currentItem)?'fa-times':'fa-angle-down'"></i>
+              <span class="AP-right" style="color:black">({{item.qty}})</span>
+              <label class="AP-flex-max AP-right">{{item.itemDesc}}</label>
+              <i class="fa" ng-class="(item===currentItem)?'fa-times':'fa-angle-down'"></i>
             </div>
             <!-- Additional information for finished items -->
             <div class="AP-item AP-item-detail AP-clear-border" ng-show="item.isFinished&&item!==currentItem">
@@ -95,6 +94,14 @@
             <!-- Selected item form-->
             <form ng-show="item===currentItem">
                 <div class="padding-horizontal">
+                  <div class="AP-item AP-item-selected-input">
+                    <label>Quantity</label>
+                    <div class="AP-input-container">
+                      <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
+                      <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
+                      <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
+                    </div>
+                  </div>
                     <div class="AP-item AP-item-selected-detail">
                         <label>Tag</label>
                         <span class="AP-flex-max AP-right">{{item.id}}</span>
@@ -115,20 +122,12 @@
                         <label>UOM</label>
                         <span class="AP-flex-max AP-right">{{item.UOM}}</span>
                     </div>
-                    <div class="AP-item AP-item-selected-input">
-                        <label>Quantity</label>
-                        <div class="AP-input-container">
-                            <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
-                            <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
-                            <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
-                        </div>
-                    </div>
                 </div>
-                <div class="AP-item AP-item-selected-Button">
-                    <label class="AP-flex-max"></label>
-                    <i class="fa fa-check" on-tap="itemSave()"></i>
+                <div class="AP-check-form AP-item AP-item-selected-Button">
+                   <div on-tap="itemSave()"><i class="fa fa-check" ></i></div>
                 </div>
             </form>
         </div>
     </ion-content>
 </ion-view>
+

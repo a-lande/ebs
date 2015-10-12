@@ -1,11 +1,11 @@
 ﻿.error-container {
   margin: 5px 0;
 }
- 
+
 .error-container:last-child {
     margin: 5px 0 0;
 }
- 
+
 .error {
   padding: 10px 16px;
   font-family: "Arial Black", Gadget, sans-serif;
@@ -15,21 +15,21 @@
   vertical-align: middle;
   white-space: normal !important;
 }
- 
+
 .error i {
   font-size: $font-lg;
-  color: #B83E2C;  
+  color: #B83E2C;
   vertical-align: middle;
 }
- 
+
 .last-error-container > .error {
   padding: 10px 16px 0;
 }
- 
+
 .has-errors {
-  border-bottom: 3px solid #B83E2C !important; 
+  border-bottom: 3px solid #B83E2C !important;
 }
- 
+
 .no-errors {
   border-bottom: 3px solid green !important;
 }
@@ -60,7 +60,7 @@
     ::-moz-placeholder {  /* Firefox 19+ */
             padding: 5px 0px 5px 0px;
     }
-    :-ms-input-placeholder {  
+    :-ms-input-placeholder {
             padding: 5px 0px 5px 0px;
     }
 
@@ -87,7 +87,7 @@
     ::-moz-placeholder {  /* Firefox 19+ */
             padding: 3px 0px 5px 0px;
     }
-    :-ms-input-placeholder {  
+    :-ms-input-placeholder {
             padding: 3px 0px 5px 0px;
     }
     i {
@@ -118,4 +118,16 @@
             }
         }
     }
+}
+.AP-check-form {
+  div {
+    margin: 10px 10px 10px 10px;
+    background-color: $mainColor-100;
+    border-radius: 3.5px;
+    text-align: center;
+    i {
+      color: $light;
+      font-size: $fa-lg;
+    }
+  }
 }
