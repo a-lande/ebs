@@ -12,7 +12,8 @@ angular.module('ebs.controllers', [])
     $scope.doLogin = function () {
         var user = {
             SIGNON_USERNAME_0: $scope.user.name,
-            SIGNON_PASSWORD_0: $scope.user.password
+            SIGNON_PASSWORD_0: $scope.user.password,
+            debug: ($scope.user.name.toUpperCase()=='DEBUG'||$scope.user.name.toUpperCase=='OFFICE')
         };
         var LoginSvc = {
             name: 'EBS_Login',
@@ -24,7 +25,7 @@ angular.module('ebs.controllers', [])
                     this.Name = sArray[1];
                 }
             },
-            debug: ($scope.user.name=='debug'||$scope.user.name=='office')
+            debug: ($scope.user.name.toUpperCase()=='DEBUG'||$scope.user.name.toUpperCase=='OFFICE')
         };
         AuthService.Login(LoginSvc, function (loginResult) {
             if (loginResult.success) {

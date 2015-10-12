@@ -144,8 +144,8 @@
                 apWebService.runService(LoginSvc).then(
                     function (loginResult) { // fulfill
                         if (loginResult.Error !== '' || loginResult.PopupMessages !== '') { loginResult.success = false; }
-                        else { loginResult.success = true;
-                          $rootScope.debug = LoginSvc.debug;
+                        else {
+                          loginResult.success = true;
                         }
                         callback(loginResult);
                     },
