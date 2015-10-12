@@ -34,10 +34,10 @@
     <div class="bar bar-subheader AP-bar-subheader static" ng-style="{height:(headerCollapsed)?'120px':'210px'}" ng-hide="selectionScreen">
         <!--210/120-->
         <div class="padding-horizontal">
-            <div class="AP-item AP-item-header AP-item-header-underline">
+            <div class="AP-item AP-item-header AP-item-header-underline" on-tap="headerCollapsed = !headerCollapsed">
                 <label>Count Name:</label>
                 <span class="AP-flex-max AP-right">{{selectedValues.count.name}}</span>
-                <i class="fa" ng-class="(headerCollapsed)?'fa-angle-down':'fa-angle-up'" on-tap="headerCollapsed = !headerCollapsed"></i>
+                <i class="fa" ng-class="(headerCollapsed)?'fa-angle-down':'fa-angle-up'"></i>
             </div>
             <div style="padding:10px 23px 0px 23px;" ng-hide="headerCollapsed">
                 <div class="AP-item AP-item-header">
@@ -64,7 +64,7 @@
             </div>
             <label class="item-input-wrapper">
                 <i class="icon ion-ios-search placeholder-icon"></i>
-                <input type="search" placeholder="Search" ng-model="selectedValues.countNameFilter">
+                <input type="search" id="countNameFilter" placeholder="Search" ng-model="selectedValues.countNameFilter">
             </label>
             <div class="AP-item AP-item-detail" ng-repeat="countName in tagCountNames | filter : selectedValues.countNameFilter" ng-class="($first)?'AP-clear-border':''"
                  on-tap="countSelect(countName)">
