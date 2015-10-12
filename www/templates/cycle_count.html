@@ -105,18 +105,18 @@
             <!-- Selected item form-->
             <form ng-show="item===currentItem">
                 <div class="padding-horizontal">
-                    <div class="AP-item AP-item-selected-input">
-                     <label>Quantity</label>
-                      <div class="AP-input-container">
-                        <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
-                       <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
-                       <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
-                     </div>
-                    </div>
                     <div class="AP-item AP-item-selected-detail">
                         <label>Count Seq.</label>
                         <span class="AP-flex-max AP-right">{{item.id}}</span>
                     </div>
+                  <div class="AP-item AP-item-selected-input">
+                    <label>Quantity</label>
+                    <div class="AP-input-container">
+                      <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
+                      <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
+                      <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
+                    </div>
+                  </div>
                     <div class="AP-item AP-item-selected-detail">
                         <label>Class</label>
                         <span class="AP-flex-max AP-right">{{item.class}}</span>
