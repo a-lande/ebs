@@ -47,8 +47,8 @@ angular.module('ebs.controllers', [])
 
   .controller('MenuCtrl', function ($scope, $state) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.gotoLogin = function () {
-        $state.go('login');
+      $scope.goto = function (state) {
+        $state.go(state);
       }
     });
   })
@@ -192,9 +192,9 @@ angular.module('ebs.controllers', [])
         $scope.tagCountNames = data.List;
         $scope.$apply();
       });
-      apWebService.runService(UOMSrv).then(function (data) {
+/*      apWebService.runService(UOMSrv).then(function (data) {
         $scope.UOMLOV = data.List;
-      });
+      });*/
       $scope.countSelect = function (countName) {
         console.log(countName);
         $scope.selectedValues.count = countName;
@@ -259,7 +259,7 @@ angular.module('ebs.controllers', [])
         }
       };
       $scope.itemSave = function () {
-        if ($scope.currentItem.tmpQty != $scope.currentItem.qty) {
+        if ($scope.currentItem.tmpQty !== undefined && $scope.currentItem.tmpQty != $scope.currentItem.qty) {
           //save the data
           apWebService.runService(saveSRV, $scope.currentItem).then(function (data) {
             $scope.currentItem.qty = $scope.currentItem.tmpQty;
@@ -406,9 +406,9 @@ angular.module('ebs.controllers', [])
         $scope.tagCountNames = data.List;
         $scope.$apply();
       });
-      apWebService.runService(UOMSrv).then(function (data) {
+      /*apWebService.runService(UOMSrv).then(function (data) {
         $scope.UOMLOV = data.List;
-      });
+      });*/
       $scope.countSelect = function (countName) {
         console.log(countName);
         $scope.selectedValues.count = countName;
@@ -473,7 +473,7 @@ angular.module('ebs.controllers', [])
         }
       };
       $scope.itemSave = function () {
-        if ($scope.currentItem.tmpQty != $scope.currentItem.qty) {
+        if ($scope.currentItem.tmpQty !== undefined && $scope.currentItem.tmpQty != $scope.currentItem.qty) {
           //save the data
           apWebService.runService(saveSRV, $scope.currentItem).then(function (data) {
             $scope.currentItem.qty = $scope.currentItem.tmpQty;

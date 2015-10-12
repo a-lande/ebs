@@ -86,6 +86,7 @@
     display: flex;
     padding-left: 0;
     padding-right: 0;
+    cursor: pointer;
 
     div {
       display: flex;
@@ -108,6 +109,11 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    label.toggle {
+      padding: 5px;
+      right: 6px;
+      top: 21px;
     }
     .AP-mainColor-100 {
       color: $mainColor-100;
