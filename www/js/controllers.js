@@ -2,7 +2,7 @@ angular.module('ebs.controllers', [])
 
   .controller('LoginCtrl', function ($rootScope, $scope, $timeout, AuthService, $state, $localstorage) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.navTitle = 'Login';
+      $scope.navTitle = $rootScope.MainTitle;
       $scope.loginFail = false;
       $scope.user = {};
       //$scope.username = 'OPERATIONS';
