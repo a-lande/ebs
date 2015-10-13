@@ -2,7 +2,7 @@ angular.module('ebs.controllers', [])
 
   .controller('LoginCtrl', function ($rootScope, $scope, $timeout, AuthService, $state) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.navTitle = $rootScope.MainTitle;
+      $scope.navTitle = 'Login';
       $scope.loginFail = false;
       $scope.user = {};
       //$scope.username = 'OPERATIONS';
@@ -46,7 +46,7 @@ angular.module('ebs.controllers', [])
   })
 
   .controller('OrgCtrl', function($rootScope,$scope,$state) {
-    $scope.navTitle = $rootScope.MainTitle;
+    $scope.navTitle = 'Select Organization';
     $scope.listOfClients = $rootScope.listOfClients;
     $scope.$on('$ionicView.enter', function (e) {
       $scope.selectedValues = {};
@@ -516,8 +516,14 @@ angular.module('ebs.controllers', [])
 
   })
 
+  .controller('OnHandCtrl', function ($scope, apWebService) {
+    $scope.$on('$ionicView.enter', function (e) {
+      $scope.navTitle = 'OnHand Search';
+    });
 
-  .controller('OnHandCtrl', function ($scope, $http, $stateParams, $rootScope, apWebService) {
+  })
+
+  .controller('OnHandOldCtrl', function ($scope, $http, $stateParams, $rootScope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
       var orgListSrv = {
         name: 'Purchasing_Organization_list',

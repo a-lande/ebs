@@ -1,3 +1,53 @@
 <ion-view title="{{navTitle}}">
+  <ion-content class="AP-bar-subheader" ng-hide="countSelected">
+    <div class="padding-horizontal AP-form">
+      <div class="AP-item AP-item-header">
+        <label>Quick Search</label>
+      </div>
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" id="countNameFilter" placeholder="Search" ng-model="selectedValues.countNameFilter">
+      </label>
+      <div class="AP-item AP-item-detail" ng-repeat="countName in tagCountNames | filter : selectedValues.countNameFilter" ng-class="($first)?'AP-clear-border':''"
+           on-tap="countSelect(countName)">
+        <label class="AP-flex-max">{{countName.name}}</label>
+        <i class="fa fa-angle-right"></i>
+      </div>
+    </div>
 
+    <div class="padding-horizontal AP-form">
+      <div class="AP-item AP-item-header">
+        <label class="AP-item-header-underline AP-flex-max">Advanced Search</label>
+      </div>
+
+        <ion-item class="AP-bar-subheader">
+          <div class="AP-item AP-item-header">
+            <label>Lot</label>
+            <div class="AP-input-container">
+              <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
+              <i class="fa fa-angle-down" on-tap=""></i>
+            </div>
+          </div>
+        </ion-item>
+      <ion-item class="AP-bar-subheader">
+        <div class="AP-item AP-item-header">
+          <label>Subinventory</label>
+          <div class="AP-input-container">
+            <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
+            <i class="fa fa-angle-down" on-tap=""></i>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item class="AP-bar-subheader">
+        <div class="AP-item AP-item-header">
+          <label>Project</label>
+          <div class="AP-input-container">
+            <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
+            <i class="fa fa-angle-down" on-tap=""></i>
+          </div>
+        </div>
+      </ion-item>
+    </div>
+
+  </ion-content>
 </ion-view>
