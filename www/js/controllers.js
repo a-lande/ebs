@@ -1,6 +1,6 @@
 angular.module('ebs.controllers', [])
 
-  .controller('LoginCtrl', function ($rootScope, $scope, $timeout, AuthService, $state) {
+  .controller('LoginCtrl', function ($rootScope, $scope, $timeout, AuthService, $state, $localstorage) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.navTitle = 'Login';
       $scope.loginFail = false;
@@ -34,6 +34,7 @@ angular.module('ebs.controllers', [])
           AuthService.SetCredentials(user);
           console.log(loginResult.List);
           $rootScope.listOfClients = loginResult.List;
+          $localstorage.setObject('listOfClients',$rootScope.listOfClients);
           $state.go('org');
         } else {
           console.log('Login Fail');
@@ -45,7 +46,7 @@ angular.module('ebs.controllers', [])
     }
   })
 
-  .controller('OrgCtrl', function($rootScope,$scope,$state) {
+  .controller('OrgCtrl', function($rootScope,$scope,$state,$localstorage) {
     $scope.navTitle = 'Select Organization';
     $scope.listOfClients = $rootScope.listOfClients;
     $scope.$on('$ionicView.enter', function (e) {
@@ -53,17 +54,23 @@ angular.module('ebs.controllers', [])
     });
     $scope.orgSelect = function(org) {
       $rootScope.org=org;
+      $localstorage.setObject('org',$rootScope.org);
       $state.go('app.main_menu');
     }
   })
 
-  .controller('MenuCtrl', function ($rootScope, $scope, $state) {
+  .controller('MenuCtrl', function ($rootScope, $scope, $state, AuthService, $localstorage) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.org=$rootScope.org;
+      $scope.org = $rootScope.org;
       $scope.goto = function (state) {
         $state.go(state);
-      }
-    });
+      };
+      $scope.logout = function () {
+        AuthService.ClearCredentials();
+        $localstorage.setObject('listOfClients', undefined);
+        $scope.goto('login');
+      };
+    })
   })
 
   .controller('MainMenuCtrl', function ($rootScope, $scope, $timeout, ionicMaterialMotion, ionicMaterialInk) {
