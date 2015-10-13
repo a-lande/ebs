@@ -34,7 +34,7 @@ angular.module('ebs.controllers', [])
           AuthService.SetCredentials(user);
           console.log(loginResult.List);
           $rootScope.listOfClients = loginResult.List;
-          $state.go('app.main_menu');
+          $state.go('org');
         } else {
           console.log('Login Fail');
           $scope.loginFail = true;
@@ -45,8 +45,21 @@ angular.module('ebs.controllers', [])
     }
   })
 
-  .controller('MenuCtrl', function ($scope, $state) {
+  .controller('OrgCtrl', function($rootScope,$scope,$state) {
+    $scope.navTitle = $rootScope.MainTitle;
+    $scope.listOfClients = $rootScope.listOfClients;
     $scope.$on('$ionicView.enter', function (e) {
+      $scope.selectedValues = {};
+    });
+    $scope.orgSelect = function(org) {
+      $rootScope.org=org;
+      $state.go('app.main_menu');
+    }
+  })
+
+  .controller('MenuCtrl', function ($rootScope, $scope, $state) {
+    $scope.$on('$ionicView.enter', function (e) {
+      $scope.org=$rootScope.org;
       $scope.goto = function (state) {
         $state.go(state);
       }

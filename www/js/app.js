@@ -36,6 +36,10 @@ angular.module('ebsApp', ['ionic','ionic-material', 'ebs.controllers', 'ap.servi
         url: '/login',
         templateUrl: 'templates/login.html',
         controller: 'LoginCtrl'
+    }).state('org', {
+      url: '/org',
+      templateUrl: 'templates/org_select.html',
+      controller: 'OrgCtrl'
     }).state('app', {
         url: '/app',
         abstract: true,

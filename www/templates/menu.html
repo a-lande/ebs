@@ -35,9 +35,9 @@
         <ion-item menu-close ng-click="goto('app.main_menu')">
           <i class="fa fa-home"></i><label>Home</label><i class="fa fa-angle-right AP-mainColor-100"></i>
         </ion-item>
-        <ion-item menu-close ng-click="" style="flex-direction: column">
+        <ion-item menu-close ng-click="goto('org')" style="flex-direction: column">
           <div>
-            <i class="fa fa-institution"></i><label>!!B1,Northwest Electronic Supply!!</label>
+            <i class="fa fa-institution"></i><label>{{org.Id}}-{{org.Name}}</label>
             <i class="fa fa-angle-right AP-mainColor-100"></i>
           </div>
           <div>
