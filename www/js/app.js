@@ -11,8 +11,8 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
     $rootScope.MainTitle = '<img class="title-image" src="img/samsung$light.png"  />';
     $rootScope.hostName = 'http://52.25.115.99:8080/';
     $rootScope.$on('$stateChangeSuccess',
-      function(event, toState, toParams, fromState, fromParams){
-        if (toState.name!='login') {
+      function (event, toState, toParams, fromState, fromParams) {
+        if (toState.name != 'login') {
           if (!$rootScope.currentUser) {
             AuthService.init();
             if ($rootScope.currentUser) {
@@ -27,12 +27,12 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
         }
       });
     $ionicPlatform.ready(function () {
-/*      $rootScope.$on('$locationChangeStart', function (event, next, current) {
-        // redirect to login page if not logged in
-        if (!$state.is('login') && !$rootScope.currentUser) {
-          $state.go('login');
-        }
-      });*/
+      /*      $rootScope.$on('$locationChangeStart', function (event, next, current) {
+       // redirect to login page if not logged in
+       if (!$state.is('login') && !$rootScope.currentUser) {
+       $state.go('login');
+       }
+       });*/
 
       if (window.cordova && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -84,18 +84,24 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
           controller: 'CycleCountCtrl'
         }
       }
-    })
-
-
-      .state('app.OnHand', {
-        url: '/OnHand/:id',
+    }).state('app.OnHand', {
+        url: '/OnHand',
         views: {
           'menuContent': {
             templateUrl: 'templates/on_hand.html',
             controller: 'OnHandCtrl'
           }
         }
-      })
+    }).state('app.SubInvTrans', {
+      url: '/SubInvTrans',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/sub_inventory.html',
+          controller: 'SubInvCtrl'
+        }
+      }
+    })
+
 
       .state('app.OnHandSearch', {
         url: '/OnHandSearch/:id',

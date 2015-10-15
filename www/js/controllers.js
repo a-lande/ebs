@@ -73,7 +73,7 @@ angular.module('ebs.controllers', [])
     })
   })
 
-  .controller('MainMenuCtrl', function ($rootScope, $scope, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+  .controller('MainMenuCtrl', function ($rootScope, $scope, $timeout, ionicMaterialMotion, ionicMaterialInk, $state) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.navTitle = $rootScope.MainTitle;
       $timeout(function () { // start the animations
@@ -93,6 +93,10 @@ angular.module('ebs.controllers', [])
         angular.element('#InfoPopUp').css('visibility', 'hidden');
       }
     });
+    $scope.goto = function (state) {
+      $state.go(state);
+    };
+
   })
 
   .controller('TagCountCtrl', function ($rootScope, $scope, $ionicPopover, $timeout, $filter, apWebService) {
@@ -528,6 +532,15 @@ angular.module('ebs.controllers', [])
       $scope.headerCollapsed = true;
       $scope.selectedItem = true;
       $scope.navTitle = 'OnHand Search';
+    });
+
+  })
+
+  .controller('SubInvCtrl', function ($scope, apWebService) {
+    $scope.$on('$ionicView.enter', function (e) {
+      $scope.headerCollapsed = true;
+      $scope.selectedItem = true;
+      $scope.navTitle = 'Sub Inventory Transfer';
     });
 
   })
