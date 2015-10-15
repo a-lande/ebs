@@ -72,13 +72,20 @@
 .AP-form {
     display: flex;
     flex-direction: column;
-
-    input {
+.item {
+  padding: 0;
+}
+    input, select{
         font-size:$font-md;
         padding-top: 0px;
         height: 38px;
         width: 100%;
     }
+  select {
+    background-color: $mainColor-900;
+    color: white;
+    border: none;
+  }
     ::-webkit-input-placeholder {
             padding: 3px 0px 5px 0px;
     }
@@ -122,6 +129,7 @@
 }
 .AP-check-form {
   div {
+    display: block !important;
     margin: 10px 10px 10px 10px;
     background-color: $mainColor-100;
     border-radius: 3.5px;

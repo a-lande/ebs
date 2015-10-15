@@ -1,3 +1,11 @@
+
+.AP-debug {
+  position: absolute;
+  bottom: 100px;
+  right: 10px;
+  z-index: 90;
+}
+
 // general html tags
 body {
     background-color: $secColor-900;
