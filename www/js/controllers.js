@@ -538,7 +538,7 @@ angular.module('ebs.controllers', [])
 
   .controller('SubInvCtrl', function ($scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.headerCollapsed = true;
+      $scope.headerCollapsed = false;
       $scope.selectedItem = true;
       $scope.navTitle = 'Sub Inventory Transfer';
     });

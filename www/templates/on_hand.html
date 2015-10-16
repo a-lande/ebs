@@ -1,9 +1,11 @@
 <ion-view title="{{navTitle}}">
-  <!--subheader -->
+  <!--debug -->
   <div class="AP-debug">
     headerCollapsed: <input type="checkbox" ng-model="headerCollapsed"><br>
     selectedItem: <input type="checkbox" ng-model="selectedItem">
   </div>
+  <!--subheader -->
+
   <div class="bar bar-subheader AP-bar-subheader static" style="height: 100%"
        ng-style="{height:(headerCollapsed)?'130px':'100%'}">
     <form class="AP-form padding-horizontal" style="height: 100%">
@@ -61,8 +63,6 @@
         </ion-item>
       </div>
 
-
-      <!-- not an elegant solution for "headerCollapsed" -->
       <div ng-hide="headerCollapsed" class="AP-item AP-flex-max"></div>
       <div ng-hide="headerCollapsed" class="AP-item AP-item-header AP-check-form" on-tap="countConfirm()">
         <div><i class="fa fa-check"></i></div>
@@ -164,7 +164,7 @@
           </div>
           <div class="half AP-check-form" on-tap="subinvetoryTransfer()">
             <div style="margin-right: 0">
-              <i style="font-size: 20px; padding-top: 13px" class="fa fa-share-square-o">
+              <i style="font-size: 18px; padding-top: 13px" class="fa fa-share-square-o">
                 <label>Sub inventory</label> </i>
             </div>
           </div>

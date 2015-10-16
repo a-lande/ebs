@@ -3,7 +3,7 @@
 }
 
 .error-container:last-child {
-    margin: 5px 0 0;
+  margin: 5px 0 0;
 }
 
 .error {
@@ -34,99 +34,106 @@
   border-bottom: 3px solid green !important;
 }
 
-.item-input-wrapper {
+.item-input-wrapper, .item-input {
+  background-color: $mainColor-900;
+  border: none;
+  border-radius: 3.5px;
+  input, span {
     background-color: $mainColor-900;
-    input {
-        background-color: $mainColor-900;
-        color: $light;
-    }
+    color: $light;
+  }
 }
 
 .AP-input-container {
-    -ms-flex: 1;
-    flex: 1;
-    display: flex;
-    border-radius: 3.5px;
-    overflow: hidden;
-    input {
-        padding: 5px 5px 5px 5px;
-    }
-    ::-webkit-input-placeholder {
-            padding: 5px 0px 5px 0px;
-    }
-    :-moz-placeholder { /* Firefox 18- */
-            padding: 5px 0px 5px 0px;
-    }
-    ::-moz-placeholder {  /* Firefox 19+ */
-            padding: 5px 0px 5px 0px;
-    }
-    :-ms-input-placeholder {
-            padding: 5px 0px 5px 0px;
-    }
+  -ms-flex: 1;
+  flex: 1;
+  display: flex;
+  border-radius: 3.5px;
+  overflow: hidden;
+  input {
+    padding: 5px 5px 5px 5px;
+  }
+  ::-webkit-input-placeholder {
+    padding: 5px 0px 5px 0px;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    padding: 5px 0px 5px 0px;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    padding: 5px 0px 5px 0px;
+  }
+  :-ms-input-placeholder {
+    padding: 5px 0px 5px 0px;
+  }
 
-    i {
-        font-size: $fa-md;
-    }
+  i {
+    font-size: $fa-md;
+  }
 }
 
 .AP-form {
-    display: flex;
-    flex-direction: column;
-.item {
-  padding: 0;
-}
-    input, select{
-        font-size:$font-md;
-        padding-top: 0px;
-        height: 38px;
-        width: 100%;
-    }
+  display: flex;
+  flex-direction: column;
+  .item {
+    padding: 0;
+  }
+  input, select {
+    font-size: $font-md;
+    padding-top: 0px;
+    height: 38px;
+    width: 100%;
+  }
   select {
     background-color: $mainColor-900;
     color: white;
     border: none;
   }
-    ::-webkit-input-placeholder {
-            padding: 3px 0px 5px 0px;
-    }
-    :-moz-placeholder { /* Firefox 18- */
-            padding: 3px 0px 5px 0px;
-    }
-    ::-moz-placeholder {  /* Firefox 19+ */
-            padding: 3px 0px 5px 0px;
-    }
-    :-ms-input-placeholder {
-            padding: 3px 0px 5px 0px;
-    }
-    i {
-        font-size:$font-md;
-    }
+  ::-webkit-input-placeholder {
+    padding: 3px 0px 5px 0px;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    padding: 3px 0px 5px 0px;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    padding: 3px 0px 5px 0px;
+  }
+  :-ms-input-placeholder {
+    padding: 3px 0px 5px 0px;
+  }
+  i {
+    font-size: $font-md;
+  }
 
-    .AP-item {
-        -ms-flex: none;
-        flex: none;
-        padding: 10px 0px 10px 0px;
+  .AP-item {
+    -ms-flex: none;
+    flex: none;
+    padding: 10px 0px 10px 0px;
 
-        div {
-            text-align: center;
-        }
+    div {
+      text-align: center;
     }
+  }
 
-    .AP-flex-max {
-        -ms-flex: 1;
-        flex: 1;
-    }
+  .AP-flex-max {
+    -ms-flex: 1;
+    flex: 1;
+  }
 
-    .AP-item {
-        .AP-input-container {
-            margin-top:0;
-            label {
-                margin-left: 5px;
-                text-align: left;
-            }
-        }
+  .AP-item {
+    .AP-input-container {
+      margin-top: 0;
+      label {
+        margin-left: 5px;
+        text-align: left;
+      }
     }
+  }
 }
+
 .AP-check-form {
   div {
     display: block !important;
