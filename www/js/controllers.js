@@ -62,15 +62,15 @@ angular.module('ebs.controllers', [])
   .controller('MenuCtrl', function ($rootScope, $scope, $state, AuthService, $localstorage) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.org = $rootScope.org;
-      $scope.goto = function (state) {
-        $state.go(state);
-      };
-      $scope.logout = function () {
-        AuthService.ClearCredentials();
-        $localstorage.setObject('listOfClients', undefined);
-        $scope.goto('login');
-      };
-    })
+    });
+    $scope.goto = function (state) {
+      $state.go(state);
+    };
+    $scope.logout = function () {
+      AuthService.ClearCredentials();
+      $localstorage.setObject('listOfClients', undefined);
+      $scope.goto('login');
+    };
   })
 
   .controller('MainMenuCtrl', function ($rootScope, $scope, $timeout, ionicMaterialMotion, ionicMaterialInk, $state) {

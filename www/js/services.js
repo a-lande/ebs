@@ -39,7 +39,7 @@
           if (listMapping) {
             wsResult.List = mapList(wsResult.Array, listMapping);
           }
-          if (data.Error === '') {
+          if (wsResult.Error != '') {
             reject(data);
           } else if (debug) {// simulate server delay
             //$timeout(function(){
@@ -105,6 +105,9 @@
       if (msg !== undefined) {
         returnObj.PopupMessages = (msg.PopupMessages !== undefined) ? msg.PopupMessages : "";
         returnObj.StatusBarMessages = (msg.StatusBarMessages !== undefined) ? msg.StatusBarMessages : "";
+		returnObj.FRMList = returnObj.StatusBarMessages.split(";").filter(function (msg) {
+				return msg.startsWith('FRM-');
+			});
         returnObj.Error = (msg.Error !== undefined) ? msg.Error : "";
       } else {
         returnObj.PopupMessages = returnObj.StatusBarMessages = "";
