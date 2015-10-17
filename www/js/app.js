@@ -120,16 +120,6 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
     })
 
 
-      .state('app.OnHandSearch', {
-        url: '/OnHandSearch/:id',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/on_hand_search.html',
-            controller: 'OnHandSearchCtrl'
-          }
-        }
-      })
-
       .state('app.SearchItem', {
         url: '/SearchItem/:id',
         views: {
@@ -139,16 +129,6 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
           }
         }
       })
-
-      .state('app.OnHandResault', {
-        url: '/OnHandResault/:id',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/on_hand_resault.html',
-            controller: 'OnHandResaultCtrl'
-          }
-        }
-      });
 
 
     // if none of the above states are matched, use this as the fallback
