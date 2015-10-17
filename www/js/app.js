@@ -92,6 +92,14 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
             controller: 'OnHandCtrl'
           }
         }
+    }).state('app.OnHandItem', {
+      url: '/OnHandItem/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/on_hand_item.html',
+          controller: 'OnHandItemCtrl'
+        }
+      }
     }).state('app.SubInvTrans', {
       url: '/SubInvTrans',
       views: {
@@ -101,6 +109,8 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
         }
       }
     })
+
+
 
 
       .state('app.OnHandSearch', {

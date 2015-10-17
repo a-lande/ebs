@@ -552,6 +552,15 @@ angular.module('ebs.controllers', [])
 
   })
 
+  .controller('OnHandItemCtrl', function ($rootScope, $scope, $stateParams, apWebService) {
+    $scope.$on('$ionicView.enter', function (e) {
+      $scope.headerCollapsed = true;
+      $scope.selectedItem = true;
+      $scope.navTitle = 'OnHand Search';
+      console.log($stateParams.id);
+    });
+  })
+
   .controller('SubInvCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.headerCollapsed = false;
