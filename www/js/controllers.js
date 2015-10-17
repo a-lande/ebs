@@ -529,9 +529,6 @@ angular.module('ebs.controllers', [])
 
   .controller('OnHandCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.headerCollapsed = true;
-      $scope.selectedItem = true;
-      $scope.navTitle = 'OnHand Search';
     });
     var locationListSrv = {
       name: 'Inventory_Receiving_Locations_list',
@@ -549,15 +546,27 @@ angular.module('ebs.controllers', [])
     });
     apWebService.runService(locationListSrv).then(function (data) {
     });
+    $scope.selectItem = function(item) {
+      $scope.headerShown = false;
+      $scope.selectedItem = item;
+      $scope.goto('app.OnHand.Item')
+    }
 
   })
 
-  .controller('OnHandItemCtrl', function ($rootScope, $scope, $stateParams, apWebService) {
+  .controller('OnHandListCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.headerCollapsed = true;
-      $scope.selectedItem = true;
       $scope.navTitle = 'OnHand Search';
-      console.log($stateParams.id);
+      $scope.$parent.headerShown = true;
+      $scope.headerCollapsed = true;
+    });
+  })
+  .controller('OnHandItemCtrl', function ($rootScope, $scope, apWebService) {
+    $scope.$on('$ionicView.enter', function (e) {
+      $scope.navTitle = 'OnHand Item';
+      $scope.$parent.headerShown = false;
+
+      console.log($scope.$parent.selectedItem);
     });
   })
 
