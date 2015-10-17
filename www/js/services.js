@@ -192,20 +192,31 @@
     }
 
     function mapList(list, mapping) {
+      // init the list
       var newList = [];
-      var seen;
-      if (typeof mapping.filter == 'function') {
-        seen = {};
+      if (mapping.key) {
+        newList = {};
+      } else {
+        newList = [];
       }
       for (var i in list) {
-        if (seen) {
-          var key = mapping.filter(list[i]);
-          if (key && !seen.hasOwnProperty(key)) {
-            seen[key] = true;
-            newList.push(mapObject(list[i], mapping));
+        var newObj = mapObject(list[i], mapping);
+        if (typeof mapping.filter == 'function' && !mapping.filter(newObj)) {
+          continue;
+        }
+        var key = undefined;
+        if (newObj.hasOwnProperty('key')) {
+          key = newObj.key;
+        } else if (typeof mapping.key == 'function') {
+          key = mapping.key(newObj);
+        }
+        if (key) {
+          if (i == 0) newList = {};
+          if (!newList.hasOwnProperty(key)) {
+            newList[key] = newObj;
           }
         } else {
-          newList.push(mapObject(list[i], mapping));
+          newList.push(newObj);
         }
       }
       return newList;

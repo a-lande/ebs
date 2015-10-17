@@ -9,7 +9,7 @@
       listMapping: {
         init: function () {
           var sArray = this.FIND_RECEIVING_LOC_FOR_RECEIPT.split(',');
-          this.id = sArray[0];
+          this.key = sArray[0];
           this.name = sArray[1];
         }
       },
@@ -21,7 +21,7 @@
       listMapping: {
         init: function () {
           var sArray = this.SUBINV_QF.split(',');
-          this.id = sArray[0];
+          this.key = sArray[0];
           this.name = sArray[1];
         }
       },
@@ -33,7 +33,7 @@
       listMapping: {
         init: function () {
           var sArray = this.FIND_PROJECT_NUM.split(',');
-          this.id = sArray.shift();
+          this.key = sArray.shift();
           sArray.shift(); // ignoring second argument
           this.name = sArray.join();
         }
@@ -44,7 +44,7 @@
       name: 'Inventory_Lot_list',
       params: $rootScope.currentUser,
       listMapping: {
-        id: 'LOT_FROM_LOV',
+        key: 'LOT_FROM_LOV',
         name: 'LOT_FROM_LOV'
       },
       cache: true

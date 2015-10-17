@@ -561,7 +561,7 @@ angular.module('ebs.controllers', [])
     $scope.$on('$ionicView.enter', function (e) {
       $scope.navTitle = 'OnHand Search';
       $scope.$parent.headerShown = true;
-      $scope.headerCollapsed = true;
+      $scope.$parent.dDheaderCollapsed = true;
     });
   })
   .controller('OnHandItemCtrl', function ($rootScope, $scope, apWebService) {
