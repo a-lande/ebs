@@ -85,18 +85,27 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
         }
       }
     }).state('app.OnHand', {
-        url: '/OnHand',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/on_hand.html',
-            controller: 'OnHandCtrl'
-          }
-        }
-    }).state('app.OnHandItem', {
-      url: '/OnHandItem/:id',
+      url: '/OnHand',
+      abstract: true,
       views: {
         'menuContent': {
-          templateUrl: 'templates/on_hand_item.html',
+          templateUrl: 'templates/on_hand/on_hand.html',
+          controller: 'OnHandCtrl'
+        }
+      }
+    }).state('app.OnHand.List', {
+      url: '/List',
+      views: {
+        'onHandContent': {
+          templateUrl: 'templates/on_hand/on_hand_list.html',
+          controller: 'OnHandListCtrl'
+        }
+      }
+    }).state('app.OnHand.Item', {
+      url: '/Item',
+      views: {
+        'onHandContent': {
+          templateUrl: 'templates/on_hand/on_hand_item.html',
           controller: 'OnHandItemCtrl'
         }
       }
@@ -109,8 +118,6 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
         }
       }
     })
-
-
 
 
       .state('app.OnHandSearch', {
