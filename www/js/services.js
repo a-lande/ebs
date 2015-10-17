@@ -2,23 +2,60 @@
   'use strict';
 
   var apServices = angular.module('ap.services', []);
-  apServices.factory('apWebService', ['$http', '$rootScope', '$timeout', apWebService]);
-  function apWebService($http, $rootScope, $timeout) {
+  apServices.factory('apWebService', ['$http', '$rootScope', '$localstorage', '$timeout', apWebService]);
+  function apWebService($http, $rootScope, $localstorage, $timeout) {
+    var cacheDic = 'cacheDic';
+    var _cacheDic = undefined;
 
     if (!$rootScope.hostName) {
       $rootScope.hostName = "/";
     }
-    var service = {
-      runService: runService
-    };
+    var service = {};
 
-    function runService(serviceName, params) {
-      var formMapping, listMapping, debug = false;
+    function getCacheDic() {
+      if (!_cacheDic) {
+        _cacheDic = $localstorage.getObject(cacheDic) || {};
+      }
+      return _cacheDic;
+    }
+
+    function saveCacheDic() {
+      $localstorage.setObject(cacheDic, _cacheDic);
+    }
+
+    function getFromCache(wsURL) {
+      if (getCacheDic()[wsURL]) {
+        //todo: check if the service needs refresh
+        return $localstorage.getObject(wsURL);
+      } else {
+        return undefined;
+      }
+    }
+
+    function setToCache(wsURL, data) {
+      $localstorage.setObject(wsURL, data);
+      _cacheDic[wsURL] = {updated: new Date()};
+      saveCacheDic();
+    }
+
+    service.clearCache = function () {
+      var dic = getCacheDic();
+      for (var key in dic) {
+        if (dic.hasOwnProperty(key)) {
+          $localstorage.setObject(key, undefined);
+        }
+      }
+      _cacheDic = undefined;
+      saveCacheDic();
+    }
+    service.runService = function (serviceName, params) {
+      var formMapping, listMapping, cache, debug = false;
       if (typeof serviceName == "object") {
         var paramsInput = params;
         params = serviceName.params;
         formMapping = serviceName.formMapping;
         listMapping = serviceName.listMapping;
+        cache = serviceName.cache;
         debug = serviceName.debug || $rootScope.debug;
         serviceName = serviceName.name;
       } else {
@@ -29,6 +66,15 @@
       }
       return new Promise(function (fulfill, reject) {
         var wsURL = getURL(serviceName, params, debug);
+        if (cache) { // trying to load the data from local storage
+          console.log('trying to get data from cache: ' + wsURL);
+          var cacheSrv = getFromCache(wsURL);
+          if (cacheSrv) {
+            console.log(cacheSrv);
+            fulfill(cacheSrv);
+            return;
+          }
+        }
         console.log('Calling Service: ' + wsURL);
         $http.get(wsURL).success(function (data) {
           console.log(data);
@@ -41,12 +87,17 @@
           }
           if (wsResult.Error != '') {
             reject(data);
-          } else if (debug) {// simulate server delay
-            //$timeout(function(){
-            fulfill(wsResult);
-            //}, 1000);
           } else {
-            fulfill(wsResult);
+            if (cache) {
+              setToCache(wsURL, wsResult);
+            }
+            if (debug) {// simulate server delay
+              //$timeout(function(){
+              fulfill(wsResult);
+              //}, 1000);
+            } else {
+              fulfill(wsResult);
+            }
           }
         }).error(function (data) {
           console.log('Error getting data from ' + serviceName);
@@ -55,7 +106,7 @@
           reject(data);
         });
       });
-    }
+    };
 
     // helper private functions
     function getURL(serviceName, params, debug) {
