@@ -527,16 +527,32 @@ angular.module('ebs.controllers', [])
 
   })
 
-  .controller('OnHandCtrl', function ($scope, apWebService) {
+  .controller('OnHandCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.headerCollapsed = true;
       $scope.selectedItem = true;
       $scope.navTitle = 'OnHand Search';
     });
+    var locationListSrv = {
+      name: 'Inventory_Receiving_Locations_list',
+      params: $rootScope.currentUser,
+      cache: true
+    };
+    var OnHandSrv = {
+      name: 'OnHand',
+      params: $rootScope.currentUser,
+      debug: true
+    };
+    apWebService.runService(OnHandSrv).then(function (data) {
+      $scope.allItems = data.Array;
+      console.log($scope.allItems);
+    });
+    apWebService.runService(locationListSrv).then(function (data) {
+    });
 
   })
 
-  .controller('SubInvCtrl', function ($scope, apWebService) {
+  .controller('SubInvCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.headerCollapsed = false;
       $scope.selectedItem = true;
