@@ -1,0 +1,122 @@
+{
+  "Response": {
+    "Inventory_SubInventories_ListElements": "",
+    "Inventory_SubInventories_ListTableArray": {
+      "Inventory_SubInventories_ListArrayItem": [
+        {
+          "SUBINV_QF": "ConsignVen,Vendor Consigned Inventory",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "Consumable,Consumables Inventory",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "CustReturn,Customer Returns",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "Depot,Depot Repair Subinventory",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "DropShip,DropShipments wash Inventory",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "Engineer,Engineering Inventory",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FGI,Finished Goods Inventory",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck1,Field Service Truck 1",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck2,Field Service Truck 2",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck3,Field Service Truck 3",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck4,Field Service Truck 4",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck5,Field Service Truck 5",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck6,Field Service Truck 6",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck7,Field Service Truck  7",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck8,Field Service Truck 8",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck9,Field Service Truck 9",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FldSvc,Field Service Stores",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FloorStock,Floor Stock Inventory",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "INTRANSIT,Spares Intransit Subinventory",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "LOP1,Line Side Inventory",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FGI,Finished Goods Inventory",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck1,Field Service Truck 1",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck2,Field Service Truck 2",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck3,Field Service Truck 3",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck4,Field Service Truck 4",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck5,Field Service Truck 5",
+          "null": ""
+        },
+        {
+          "SUBINV_QF": "FS_Truck6,Field Service Truck 6",
+          "null": ""
+        }
+      ]
+    },
+    "Inventory_SubInventories_ListMessage": {
+      "StatusBarMessages": "Choices in list: 46;;Choices in list: 46;Choices in list: 30;;Choices in list: 30;",
+      "PopupMessages": "",
+      "Error": ""
+    }
+  }
+}

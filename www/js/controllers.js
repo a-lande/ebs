@@ -59,7 +59,7 @@ angular.module('ebs.controllers', [])
     }
   })
 
-  .controller('MenuCtrl', function ($rootScope, $scope, $state, AuthService, $localstorage) {
+  .controller('MenuCtrl', function ($rootScope, $scope, $state, AuthService, $localstorage, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.org = $rootScope.org;
     });
@@ -71,6 +71,9 @@ angular.module('ebs.controllers', [])
       $localstorage.setObject('listOfClients', undefined);
       $scope.goto('login');
     };
+    $scope.clearCache = function () {
+      apWebService.clearCache();
+    }
   })
 
   .controller('MainMenuCtrl', function ($rootScope, $scope, $timeout, ionicMaterialMotion, ionicMaterialInk, $state) {
@@ -527,29 +530,29 @@ angular.module('ebs.controllers', [])
 
   })
 
-  .controller('OnHandCtrl', function ($rootScope, $scope, apWebService) {
+  .controller('OnHandCtrl', function ($rootScope, $scope, apWebService, ebsWS) {
     $scope.$on('$ionicView.enter', function (e) {
     });
-    var locationListSrv = {
-      name: 'Inventory_Receiving_Locations_list',
-      params: $rootScope.currentUser,
-      cache: true
-    };
-    var OnHandSrv = {
-      name: 'OnHand',
-      params: $rootScope.currentUser,
-      debug: true
-    };
-    apWebService.runService(OnHandSrv).then(function (data) {
+    apWebService.runService(ebsWS.OnHandSrv).then(function (data) {
       $scope.allItems = data.Array;
       console.log($scope.allItems);
     });
-    apWebService.runService(locationListSrv).then(function (data) {
+    apWebService.runService(ebsWS.locationListSrv).then(function (data) {
+      $scope.locationLOV = data.List;
+    });
+    apWebService.runService(ebsWS.SubInvListSrv).then(function (data) {
+      $scope.subInvLOV = data.List;
+    });
+    apWebService.runService(ebsWS.ProjectListSrv).then(function (data) {
+      $scope.projectLOV = data.List;
+    });
+    apWebService.runService(ebsWS.LotListSrv).then(function (data) {
+      $scope.lotLOV = data.List;
     });
     $scope.selectItem = function(item) {
       $scope.headerShown = false;
       $scope.selectedItem = item;
-      $scope.goto('app.OnHand.Item')
+      $scope.goto('app.OnHand.Item');
     }
 
   })
@@ -851,32 +854,3 @@ angular.module('ebs.controllers', [])
 
     })
   });
-
-
-/*
- var SearchText = ""; //$stateParams.id;
- $http.get($rootScope.hostName+"ServiceManager/Macro/ExecMacro/EBS_MasterItemSearchList?json=true&username=OPERATIONS&password=welcome&Organizations="+$rootScope.OnHandCurrentValue.organization+"&Items="+$stateParams.id).success(function(data)
- {
-
- $scope.ItemsArray = [];
- var Items = data.Response.EBS_MasterItemSearchListTableArray.EBS_MasterItemSearchListArrayItem;
-
- for (i in Items) {
- if (Items[i].MTL_SYSTEM_ITEMS_DESCRIPTION_0 !== undefined){
- $scope.ItemsArray.push({
- description:Items[i].MTL_SYSTEM_ITEMS_DESCRIPTION_0,
- name:Items[i].MTL_SYSTEM_ITEMS_INVENTORY_ITEM_0,
- code:Items[i].MTL_SYSTEM_ITEMS_INVENTORY_ITEM_STATUS_CODE_0,
- unit_of_measure:Items[i].MTL_SYSTEM_ITEMS_PRIMARY_UNIT_OF_MEASURE_0,
- });
- }
- }
-
- console.log("ItemsSS")
- console.log($scope.ItemsArray)
- }).error(function(data)
- {
- alert("Error : " + data);
- });
-
- */
