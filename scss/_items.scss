@@ -117,6 +117,14 @@
   background-color: $secColor-300;
 }
 
+.AP-view-by {
+  label, span, i {
+    color: $light;
+  }
+
+  background-color: $secColor-900;
+}
+
 .AP-item-selected {
   border-bottom: 1px solid $light;
   border-top: 1px solid $light;
