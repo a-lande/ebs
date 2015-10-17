@@ -119,7 +119,7 @@
 
 .AP-view-by {
   label, span, i {
-    color: $light;
+    color: $secColor-300;
   }
 
   background-color: $secColor-900;
@@ -150,6 +150,17 @@
 
 }
 
+.AP-item-header-detail {
+
+  label, span {
+    color: $secColor-300;
+    font-size: $font-sm;
+    padding: 0 7px 0 7px;
+  }
+
+}
+
+
 .AP-item-selected-input {
   padding: 10px 0 10px 0;
   label, span {
@@ -179,10 +190,8 @@
   }
 }
 
-.AP-clear-padding {
-  label, span {
-    padding-top: 0;
-  }
+.AP-padding {
+  padding-bottom: 10px;
 }
 
 .button-fab {
@@ -200,4 +209,20 @@
   height: unset !important;
   border-top-style: none !important;
   border-bottom: solid 1px $light !important;
+}
+
+.AP-onhand {
+  .AP-item {
+    label, span {
+      color: $light !important;
+    }
+
+  }
+}
+
+.AP-border {
+  border-top: 1px solid $secColor-300;
+  label, span {
+    padding-top: 10px;
+  }
 }

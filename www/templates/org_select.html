@@ -2,7 +2,8 @@
   <ion-nav-bar class="AP-bar">
     <ion-header-bar class="">
     </ion-header-bar>
-  </ion-nav-bar>  <ion-content class="AP-bar-subheader">
+  </ion-nav-bar>
+  <ion-content class="AP-bar-subheader">
     <div class="padding-horizontal AP-form">
       <div class="AP-item AP-item-header">
         <label>Select Organization</label>
@@ -11,7 +12,9 @@
         <i class="icon ion-ios-search placeholder-icon"></i>
         <input type="search" id="orgFilter" placeholder="Search" ng-model="selectedValues.orgFilter">
       </label>
-      <div class="AP-item AP-item-detail" ng-repeat="org in listOfClients | filter : selectedValues.orgFilter" ng-class="($first)?'AP-clear-border':''"
+
+      <div class="AP-item AP-item-detail" ng-repeat="org in listOfClients | filter : selectedValues.orgFilter"
+           ng-class="($first)?'AP-clear-border':''"
            on-tap="orgSelect(org)">
         <label class="AP-flex-max">{{org.Id}}-{{org.Name}}</label>
         <i class="fa fa-angle-right"></i>
