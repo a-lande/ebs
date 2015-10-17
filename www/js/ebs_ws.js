@@ -43,7 +43,7 @@
     this.LotListSrv = {
       name: 'Inventory_Lot_list',
       params: $rootScope.currentUser,
-      ListMapping: {
+      listMapping: {
         id: 'LOT_FROM_LOV',
         name: 'LOT_FROM_LOV'
       },
