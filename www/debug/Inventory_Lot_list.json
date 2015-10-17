@@ -1,0 +1,134 @@
+{
+  "Response": {
+    "Inventory_Lot_listTableArray": {
+      "Inventory_Lot_listArrayItem": [
+        {
+          "LOT_FROM_LOV": "01"
+        },
+        {
+          "LOT_FROM_LOV": "44342"
+        },
+        {
+          "LOT_FROM_LOV": "5564"
+        },
+        {
+          "LOT_FROM_LOV": "AF2100"
+        },
+        {
+          "LOT_FROM_LOV": "BC2500"
+        },
+        {
+          "LOT_FROM_LOV": "CP8200"
+        },
+        {
+          "LOT_FROM_LOV": "DD5162"
+        },
+        {
+          "LOT_FROM_LOV": "DL3500"
+        },
+        {
+          "LOT_FROM_LOV": "J2E111"
+        },
+        {
+          "LOT_FROM_LOV": "LOT1"
+        },
+        {
+          "LOT_FROM_LOV": "LPU2500"
+        },
+        {
+          "LOT_FROM_LOV": "LPU8200"
+        },
+        {
+          "LOT_FROM_LOV": "S00001"
+        },
+        {
+          "LOT_FROM_LOV": "S00007"
+        },
+        {
+          "LOT_FROM_LOV": "S00008"
+        },
+        {
+          "LOT_FROM_LOV": "S00009"
+        },
+        {
+          "LOT_FROM_LOV": "S00010"
+        },
+        {
+          "LOT_FROM_LOV": "S00022"
+        },
+        {
+          "LOT_FROM_LOV": "S00023"
+        },
+        {
+          "LOT_FROM_LOV": "S00044"
+        },
+        {
+          "LOT_FROM_LOV": "44342"
+        },
+        {
+          "LOT_FROM_LOV": "5564"
+        },
+        {
+          "LOT_FROM_LOV": "AF2100"
+        },
+        {
+          "LOT_FROM_LOV": "BC2500"
+        },
+        {
+          "LOT_FROM_LOV": "CP8200"
+        },
+        {
+          "LOT_FROM_LOV": "DD5162"
+        },
+        {
+          "LOT_FROM_LOV": "DL3500"
+        },
+        {
+          "LOT_FROM_LOV": "J2E111"
+        },
+        {
+          "LOT_FROM_LOV": "LOT1"
+        },
+        {
+          "LOT_FROM_LOV": "LPU2500"
+        },
+        {
+          "LOT_FROM_LOV": "LPU8200"
+        },
+        {
+          "LOT_FROM_LOV": "S00001"
+        },
+        {
+          "LOT_FROM_LOV": "S00007"
+        },
+        {
+          "LOT_FROM_LOV": "S00008"
+        },
+        {
+          "LOT_FROM_LOV": "S00009"
+        },
+        {
+          "LOT_FROM_LOV": "S00010"
+        },
+        {
+          "LOT_FROM_LOV": "S00022"
+        },
+        {
+          "LOT_FROM_LOV": "S00023"
+        },
+        {
+          "LOT_FROM_LOV": "S00044"
+        },
+        {
+          "LOT_FROM_LOV": "S00064"
+        }
+      ]
+    },
+    "Inventory_Lot_listElements": "",
+    "Inventory_Lot_listMessage": {
+      "StatusBarMessages": "Choices in list: 46;;Choices in list: 46;Choices in list: 0;;Choices in list: 0;Choices in list: 26;Choices in list: 26;",
+      "PopupMessages": "",
+      "Error": ""
+    }
+  }
+}

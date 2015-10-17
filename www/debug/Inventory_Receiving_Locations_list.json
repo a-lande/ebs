@@ -1,0 +1,164 @@
+{
+  "Response": {
+    "Inventory_Receiving_Locations_listElements": "",
+    "Inventory_Receiving_Locations_listTableArray": {
+      "Inventory_Receiving_Locations_listArrayItem": [
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Acme Training Facility,",
+          "FIND_OPERATING_UNIT_0": "Vision Operations",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Addison TX,Addison TX",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Adelaide,Adelaide",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Air Force Pentagon,Air Force Pentagon",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Alvin Campus Vision University,Satellite Campus",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Anschrift,Anschrift Krankenkasse",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Army Pentagon,Army Pentagon",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Ashburn,",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Ashburn Training Facility,Acme Training Facility",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Athens,Athens",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Atlanta,Receiving",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Auckland,Auckland Office",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Autonome de Retraite,",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "AVD Hauptverwaltung,Allgemeines Verwaltungsdezernat",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Beijing,Beijing",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Beijing-China,Beijing, Vision China",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Berlin Office, Berlin Office Germany",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Beverley Hills Durban,Beverley Hills Durban Training Centre",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "BE_GLB11025,",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Bloemfontein,Bloemfontein",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Air Force Pentagon,Air Force Pentagon",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Alvin Campus Vision University,Satellite Campus",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Anschrift,Anschrift Krankenkasse",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Army Pentagon,Army Pentagon",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Ashburn,",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Ashburn Training Facility,Acme Training Facility",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Athens,Athens",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Atlanta,Receiving",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Auckland,Auckland Office",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        },
+        {
+          "FIND_RECEIVING_LOC_FOR_RECEIPT": "Autonome de Retraite,",
+          "FIND_OPERATING_UNIT_0": "",
+          "null": ""
+        }
+      ]
+    },
+    "Inventory_Receiving_Locations_listMessage": {
+      "StatusBarMessages": "Choices in list: 46;;Choices in list: 46;Choices in list: 0;;Choices in list: 0;Choices in list: 385;Choices in list: 385;",
+      "PopupMessages": "",
+      "Error": ""
+    }
+  }
+}
