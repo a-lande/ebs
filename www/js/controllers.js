@@ -581,14 +581,70 @@ angular.module('ebs.controllers', [])
     });
   })
 
+
+  .controller('SubInvTransCtrl', function ($rootScope, $scope, apWebService, ebsWS) {
+    $scope.$on('$ionicView.enter', function (e) {
+    });
+    apWebService.runService(ebsWS.OnHandSrv).then(function (data) {
+      $scope.allItems = data.Array;
+      console.log($scope.allItems);
+    });
+    apWebService.runService(ebsWS.locationListSrv).then(function (data) {
+      $scope.locationLOV = data.List;
+    });
+    apWebService.runService(ebsWS.SubInvListSrv).then(function (data) {
+      $scope.subInvLOV = data.List;
+    });
+    apWebService.runService(ebsWS.ProjectListSrv).then(function (data) {
+      $scope.projectLOV = data.List;
+    });
+    apWebService.runService(ebsWS.LotListSrv).then(function (data) {
+      $scope.lotLOV = data.List;
+    });
+    $scope.selectItem = function (item) {
+      $scope.headerShown = false;
+      $scope.selectedItem = item;
+      $scope.goto('app.SubInvTrans.Item');
+    }
+    $scope.closeItem = function () {
+      $scope.headerShown = true;
+      $scope.selectedItem = undefined;
+      $scope.goto('app.SubInvTrans.List');
+    }
+    $scope.closeSearch = function () {
+      $scope.headerCollapsed = true;
+    }
+
+  })
+
+  .controller('SubInvTransListCtrl', function ($rootScope, $scope, apWebService) {
+    $scope.$on('$ionicView.enter', function (e) {
+      $scope.navTitle = 'Sub Inventory';
+      $scope.$parent.headerShown = true;
+      $scope.$parent.headerCollapsed = true;
+    });
+  })
+  .controller('SubInvTransItemCtrl', function ($rootScope, $scope, apWebService) {
+    $scope.$on('$ionicView.enter', function (e) {
+      $scope.navTitle = 'SubInvTrans !!itemid!!';
+      $scope.$parent.headerShown = false;
+
+      console.log($scope.$parent.selectedItem);
+    });
+  })
+
+
+  /*
   .controller('SubInvCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.headerCollapsed = false;
-      $scope.selectedItem = true;
+   $scope.headerCollapsed = true;
+   $scope.selectedItem = false;
       $scope.navTitle = 'Sub Inventory Transfer';
     });
 
   })
+   */
+
 
   .controller('OnHandOldCtrl', function ($scope, $http, $stateParams, $rootScope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {

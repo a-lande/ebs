@@ -84,41 +84,72 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
           controller: 'CycleCountCtrl'
         }
       }
-    }).state('app.OnHand', {
-      url: '/OnHand',
-      abstract: true,
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/on_hand/on_hand.html',
-          controller: 'OnHandCtrl'
-        }
-      }
-    }).state('app.OnHand.List', {
-      url: '/List',
-      views: {
-        'onHandContent': {
-          templateUrl: 'templates/on_hand/on_hand_list.html',
-          controller: 'OnHandListCtrl'
-        }
-      }
-    }).state('app.OnHand.Item', {
-      url: '/Item',
-      views: {
-        'onHandContent': {
-          templateUrl: 'templates/on_hand/on_hand_item.html',
-          controller: 'OnHandItemCtrl'
-        }
-      }
-    }).state('app.SubInvTrans', {
-      url: '/SubInvTrans',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/sub_inventory.html',
-          controller: 'SubInvCtrl'
-        }
-      }
     })
+      .state('app.OnHand', {
+        url: '/OnHand',
+        abstract: true,
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/on_hand/on_hand.html',
+            controller: 'OnHandCtrl'
+          }
+        }
+      }).state('app.OnHand.List', {
+        url: '/List',
+        views: {
+          'onHandContent': {
+            templateUrl: 'templates/on_hand/on_hand_list.html',
+            controller: 'OnHandListCtrl'
+          }
+        }
+      }).state('app.OnHand.Item', {
+        url: '/Item',
+        views: {
+          'onHandContent': {
+            templateUrl: 'templates/on_hand/on_hand_item.html',
+            controller: 'OnHandItemCtrl'
+          }
+        }
+      })
 
+
+      .state('app.SubInvTrans', {
+        url: '/SubInvTrans',
+        abstract: true,
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/sub_inventory/sub_inventory.html',
+            controller: 'SubInvTransCtrl'
+          }
+        }
+      }).state('app.SubInvTrans.List', {
+        url: '/List',
+        views: {
+          'SubInvTransContent': {
+            templateUrl: 'templates/sub_inventory/sub_inventory_list.html',
+            controller: 'SubInvTransListCtrl'
+          }
+        }
+      }).state('app.SubInvTrans.Item', {
+        url: '/Item',
+        views: {
+          'SubInvTransContent': {
+            templateUrl: 'templates/sub_inventory/sub_inventory_item.html',
+            controller: 'SubInvTransItemCtrl'
+          }
+        }
+
+      })
+      /*.state('app.SubInvTrans', {
+       url: '/SubInvTrans',
+       views: {
+       'menuContent': {
+       templateUrl: 'templates/sub_inventory.html',
+       controller: 'SubInvCtrl'
+       }
+       }
+       })
+       */
 
       .state('app.SearchItem', {
         url: '/SearchItem/:id',

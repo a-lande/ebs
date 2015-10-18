@@ -1,0 +1,75 @@
+<ion-view title="{{navTitle}}">
+  <!-- selected item-->
+  <ion-content class="AP-content" style="top: 40px">
+
+    <div class="padding-horizontal AP-onhand">
+      <!-- item header -->
+      <div class="fa-lg AP-item AP-item-detail AP-clear-border">
+        <span class="AP-flex-max">!!Battery Extended Life!!</span>
+        <i class="fa fa-times" on-tap="closeItem()"></i>
+      </div>
+
+      <div class="padding-horizontal">
+
+        <div class="AP-item AP-item-header-detail AP-border">
+          <label class="">Available:</label>
+          <span class="AP-flex-max AP-right">!!586!!</span>
+          <span class="AP-right">!!UOM!!</span>
+        </div>
+        <div class="AP-item AP-item-header-detail AP-padding">
+          <label class="">On Hand:</label>
+          <span class="AP-flex-max AP-right">!!586!!</span>
+          <span class="AP-right">!!un!!</span>
+        </div>
+
+        <div class="AP-item AP-item-header AP-border AP-padding" style="padding-top: 10px">
+          <label style="min-width: 70px;">Date:</label>
+          <label class="item-input AP-flex-max AP-right">
+            <input type="date">
+          </label>
+        </div>
+        <div class="AP-item AP-item-header AP-padding">
+          <label style="min-width: 70px;">Time:</label>
+          <label class="item-input AP-flex-max AP-right">
+            <input type="Time">
+          </label>
+        </div>
+
+        <div class="AP-item AP-item-header-detail">
+          <label class="">Sub:</label>
+          <span class="AP-flex-max AP-right">!!sub!!</span>
+        </div>
+
+        <div class="AP-item AP-item-header AP-padding" style="padding-top: 10px">
+          <label style="min-width: 70px;">Sub:</label>
+          <select class="AP-right AP-flex-max item-input" ng-model="selectedValues.subInv">
+            <option ng-repeat="option in subInvLOV" id="{{option.key}}">{{option.key}}- {{option.name}}</option>
+          </select>
+        </div>
+
+        <div class="AP-item AP-item-header AP-padding">
+          <label style="min-width: 70px;">UOM:</label>
+          <select class="AP-right AP-flex-max item-input" ng-model="selectedValues.subInv">
+            <option>!!UOM!!</option>
+          </select>
+        </div>
+
+        <div class="AP-item AP-item-selected-input">
+          <label>Quantity</label>
+
+          <div class="AP-input-container secColor-900">
+            <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
+            <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max"/>
+            <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
+          </div>
+        </div>
+        <div class="AP-check-form AP-item AP-item-selected-Button">
+          <div style="margin: 10px 0 10px 0" on-tap="itemSave()">
+            <i class="fa fa-check"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

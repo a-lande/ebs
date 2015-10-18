@@ -1,11 +1,11 @@
 ﻿<ion-view title="{{navTitle}}">
     <!-- the count selection pre screen -->
     <div class="bar bar-subheader AP-bar-subheader static" style="height:100%" ng-show="selectionScreen&&countSelected">
-        <form class="padding AP-form" style="height:100%">
+      <form class="padding-horizontal AP-form" style="height:100%">
             <div class="AP-item AP-item-header">
                 <label>Count Name</label>
             </div>
-            <div class="AP-item AP-item-header">
+        <div class="AP-item AP-item-header" style="padding-top: 0">
                 <div class="AP-input-container" on-tap="countReselect()">
                     <label class="AP-flex-max">{{selectedValues.count.name}}</label>
                     <i class="fa fa-angle-down" style=""></i>

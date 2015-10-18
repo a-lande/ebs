@@ -23,7 +23,7 @@
 
         <ion-item class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
-            <label style="min-width: 70px;">Lot</label>
+            <label style="min-width: 70px;">Lot:</label>
             <select class="AP-right AP-flex-max" ng-model="selectedValues.lot">
               <option ng-repeat="option in lotLOV" id="{{option.key}}">{{option.name}}</option>
             </select>
@@ -32,17 +32,16 @@
 
         <ion-item class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
-            <label style="min-width: 70px;">Subinv.</label>
+            <label style="min-width: 70px;">Sub:</label>
             <select class="AP-right AP-flex-max" ng-model="selectedValues.subInv">
               <option ng-repeat="option in subInvLOV" id="{{option.key}}">{{option.key}}- {{option.name}}</option>
-
             </select>
           </div>
         </ion-item>
 
         <ion-item class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
-            <label style="min-width: 70px;">Project</label>
+            <label style="min-width: 70px;">Project:</label>
             <select class="AP-right AP-flex-max" ng-model="selectedValues.Project">
               <option ng-repeat="option in projectLOV" id="{{option.key}}">{{option.name}}</option>
             </select>
@@ -56,7 +55,7 @@
 
         <ion-item style="padding-top: 5px" class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
-            <label style="min-width: 70px;">View By</label>
+            <label style="min-width: 70px;">View By:</label>
             <select class="AP-right AP-flex-max" ng-model="selectedValues">
               <option>!!Location!!</option>
             </select>

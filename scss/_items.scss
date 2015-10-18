@@ -41,6 +41,7 @@
 }
 
 .AP-item-header {
+
   label {
     color: $secColor-100;
   }
@@ -48,8 +49,18 @@
   span, input {
     color: $light;
   }
+  .item-input {
+    color: $secColor-300;
+    background-color: $mainColor-900;
+    padding: 0 10px 0 10px;
+    input {
+      color: $secColor-300;
+      padding-right: 0;
 
+    }
+  }
   div {
+
     background-color: $mainColor-100;
 
     i {
@@ -71,7 +82,7 @@
 
     i {
       color: $light;
-      background-color: $mainColor-100;
+      background-color: $secColor-300;
     }
   }
   .AP-input-container {
@@ -90,6 +101,7 @@
   border-bottom: 1px solid $mainColor-100;
 }
 
+
 .AP-item-detail {
   padding: 10px 0px 10px 0px;
   border-top: 1px solid $secColor-100;
@@ -107,6 +119,10 @@
 
 .AP-clear-border {
   border-top: none;
+}
+
+.AP-clear-padding {
+  padding: 0;
 }
 
 .AP-item-detail-finished {
@@ -176,7 +192,7 @@
 
     i {
       color: $secColor-900;
-      background-color: $secColor-100;
+      background-color: $secColor-300;
       padding: 11px 7px 0px 7px;
     }
   }
@@ -212,11 +228,37 @@
 }
 
 .AP-onhand {
+  .secColor-900 {
+    background-color: $secColor-900;
+  }
+  .AP-input-container {
+    input, {
+      background-color: $secColor-900;
+
+    }
+  }
+
+  .item-input {
+    color: $secColor-300;
+    background-color: $secColor-900;
+    padding: 0 10px 0 10px;
+    input {
+      color: $secColor-300;
+      padding-right: 0;
+      background-color: $secColor-900;
+
+    }
+  }
+  .fa-lg {
+    i {
+      font-size: $fa-lg;
+      padding: 4px 8px 0px 8px;
+    }
+  }
   .AP-item {
     label, span {
       color: $light !important;
     }
-
   }
 }
 
