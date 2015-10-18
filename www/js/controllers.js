@@ -554,6 +554,14 @@ angular.module('ebs.controllers', [])
       $scope.selectedItem = item;
       $scope.goto('app.OnHand.Item');
     }
+    $scope.closeItem = function () {
+      $scope.headerShown = true;
+      $scope.selectedItem = undefined;
+      $scope.goto('app.OnHand.List');
+    }
+    $scope.closeSearch = function () {
+      $scope.headerCollapsed = true;
+    }
 
   })
 
@@ -566,7 +574,7 @@ angular.module('ebs.controllers', [])
   })
   .controller('OnHandItemCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.navTitle = 'OnHand Item';
+      $scope.navTitle = 'OnHand !!itemid!!';
       $scope.$parent.headerShown = false;
 
       console.log($scope.$parent.selectedItem);
