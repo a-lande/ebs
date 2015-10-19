@@ -6,6 +6,12 @@
   z-index: 90;
 }
 
+.ui-notification {
+  &.success {
+    background-color: $mainColor-100;
+  }
+}
+
 // general html tags
 body, .pane {
   background-color: $secColor !important;

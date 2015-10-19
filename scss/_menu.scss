@@ -87,7 +87,10 @@
     padding-left: 0;
     padding-right: 0;
     cursor: pointer;
-
+    span {
+      font-size: $font-md;
+      padding-top: 3px;
+    }
     div {
       display: flex;
     }
