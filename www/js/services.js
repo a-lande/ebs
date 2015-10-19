@@ -208,6 +208,9 @@
         newList = [];
       }
       for (var i in list) {
+        if (typeof list[i] != 'object') {
+          continue;
+        }
         var newObj = mapObject(list[i], mapping);
         if (typeof mapping.filter == 'function' && !mapping.filter(newObj)) {
           continue;
