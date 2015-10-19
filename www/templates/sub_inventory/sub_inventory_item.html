@@ -5,6 +5,7 @@
     <div class="padding-horizontal AP-onhand">
       <!-- item header -->
       <div class="fa-lg AP-item AP-item-detail AP-clear-border">
+        <label>!!CM11222!!</label>
         <span class="AP-flex-max">!!Battery Extended Life!!</span>
         <i class="fa fa-times" on-tap="closeItem()"></i>
       </div>
@@ -23,13 +24,13 @@
         </div>
 
         <div class="AP-item AP-item-header AP-border AP-padding" style="padding-top: 10px">
-          <label style="min-width: 70px;">Date:</label>
+          <label style="min-width: 90px;">Date:</label>
           <label class="item-input AP-flex-max AP-right">
             <input type="date">
           </label>
         </div>
         <div class="AP-item AP-item-header AP-padding">
-          <label style="min-width: 70px;">Time:</label>
+          <label style="min-width: 90px;">Time:</label>
           <label class="item-input AP-flex-max AP-right">
             <input type="Time">
           </label>
@@ -41,21 +42,21 @@
         </div>
 
         <div class="AP-item AP-item-header AP-padding" style="padding-top: 10px">
-          <label style="min-width: 70px;">Sub:</label>
+          <label style="min-width: 90px;">Sub:</label>
           <select class="AP-right AP-flex-max item-input" ng-model="selectedValues.subInv">
             <option ng-repeat="option in subInvLOV" id="{{option.key}}">{{option.key}}- {{option.name}}</option>
           </select>
         </div>
 
         <div class="AP-item AP-item-header AP-padding">
-          <label style="min-width: 70px;">UOM:</label>
+          <label style="min-width: 90px;">UOM:</label>
           <select class="AP-right AP-flex-max item-input" ng-model="selectedValues.subInv">
             <option>!!UOM!!</option>
           </select>
         </div>
 
         <div class="AP-item AP-item-selected-input">
-          <label>Quantity</label>
+          <label style="min-width: 90px;">Quantity:</label>
 
           <div class="AP-input-container secColor-900">
             <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
