@@ -79,6 +79,33 @@
       }
     };
 
+    this.OnHandQntSrv = function (item, subInv, lot) {
+      var s = (subInv && subInv != '');
+      var l = (lot && lot != '');
+      var srv = {
+        params: Object.create($rootScope.currentUser),
+        formMapping: {
+          priQty: "AVAILABILITY_TOTAL_QUANTITY_0",
+          priUOM: "AVAILABILITY_PRIMARY_UOM_CODE_0",
+          priATR: "AVAILABILITY_ATR_0",
+          priATT: "AVAILABILITY_ATT_0",
+          secQty: "AVAILABILITY_SECONDARY_ONHAND_0",
+          secUOM: "AVAILABILITY_SECONDARY_UOM_CODE_0",
+          secATR: "AVAILABILITY_SATR_0",
+          secATT: "AVAILABILITY_SATT_0",
+        }
+      };
+      // deciding which service to call
+      if (!s && !l) srv.name = 'Inventory_Onhand_Quantity';
+      if (s && !l) srv.name = 'Inventory_Onhand_Quantity_by_Subinventory';
+      if (!s && l) srv.name = 'Inventory_Onhand_Quantity_by_Lot';
+      if (s && l) srv.name = '';
+      // assigning paramaters
+      srv.params.MATERIAL_QF_ITEM_0 = item;
+      if (s) srv.params.MATERIAL_QF_SUBINVENTORY_CODE_0 = subInv;
+      if (l) srv.params.MATERIAL_QF_LOT_FROM_0 = lot;
+      return srv;
+    };
 
   }]);
 })();

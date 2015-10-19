@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  var apServices = angular.module('ap.services', []);
-  apServices.factory('apWebService', ['$http', '$rootScope', '$localstorage', '$timeout', apWebService]);
-  function apWebService($http, $rootScope, $localstorage, $timeout) {
+  var apServices = angular.module('ap.services', ['ui-notification']);
+  apServices.factory('apWebService', ['$http', '$rootScope', '$localstorage', '$timeout', 'Notification', apWebService]);
+  function apWebService($http, $rootScope, $localstorage, $timeout, Notification) {
     var cacheDic = 'cacheDic';
     var _cacheDic = undefined;
 
@@ -12,6 +12,10 @@
     }
     var service = {};
 
+    function displayError(errMsg) {
+      console.log(errMsg);
+      Notification.error({message: errMsg, delay: 10000});
+    }
     function getCacheDic() {
       if (!_cacheDic) {
         _cacheDic = $localstorage.getObject(cacheDic) || {};
@@ -65,6 +69,11 @@
         params = params(paramsInput);
       }
       return new Promise(function (fulfill, reject) {
+        if (!serviceName || serviceName == '') {
+          displayError('AuraPlayer Service mast have a name');
+          reject({error: 'AuraPlayer Service mast have a name'});
+          return;
+        }
         var wsURL = getURL(serviceName, params, debug);
         if (cache) { // trying to load the data from local storage
           console.log('trying to get data from cache: ' + wsURL);
@@ -100,9 +109,8 @@
             }
           }
         }).error(function (data) {
-          console.log('Error getting data from ' + serviceName);
+          displayError('Error getting data from ' + serviceName);
           console.log(data);
-          alert('Error getting data from ' + serviceName);
           reject(data);
         });
       });
@@ -172,7 +180,7 @@
         returnObj.Array = [];
       }
       if (returnObj.Error !== "") {
-        alert('WS Reported an Error: ' + returnObj.Error + '\nStatusBarMessages: ' + returnObj.StatusBarMessages);
+        displayError('AuraPlayer Service Reported an Error: ' + returnObj.Error + '<br>StatusBarMessages: ' + returnObj.StatusBarMessages);
       }
       return returnObj;
     }

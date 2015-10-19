@@ -535,6 +535,7 @@ angular.module('ebs.controllers', [])
 
   .controller('OnHandCtrl', function ($rootScope, $scope, apWebService, ebsWS, $timeout) {
     $scope.$on('$ionicView.enter', function (e) {
+      $scope.selectedValues = {};
     });
     apWebService.runService(ebsWS.OnHandSrv).then(function (data) {
       $scope.allItems = data.List;
@@ -581,12 +582,21 @@ angular.module('ebs.controllers', [])
       $scope.$parent.dDheaderCollapsed = true;
     });
   })
-  .controller('OnHandItemCtrl', function ($rootScope, $scope, apWebService) {
+  .controller('OnHandItemCtrl', function ($rootScope, $scope, apWebService, ebsWS) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.navTitle = 'OnHand Item';
+      $scope.itemQtys = {};
       $scope.$parent.headerShown = false;
-
-      console.log($scope.$parent.selectedItem);
+      var item = $scope.$parent.selectedItem;
+      if (!item) {
+        $scope.goto('app.OnHand.List');
+      }
+      console.log(item);
+      apWebService.runService(ebsWS.OnHandQntSrv(item.ITEM, item.SUBINVENTORY_CODE, item.LOT_NUMBER)).then(function (data) {
+        $scope.itemQtys = data.Form;
+        $scope.$apply();
+        console.log($scope.itemQtys);
+      });
     });
   })
 

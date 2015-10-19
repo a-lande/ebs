@@ -24,27 +24,24 @@
         <ion-item class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
             <label style="min-width: 70px;">Lot:</label>
-            <select class="AP-right AP-flex-max" ng-model="selectedValues.lot">
-              <option ng-repeat="option in lotLOV" id="{{option.key}}">{{option.name}}</option>
-            </select>
+            <select class="AP-right AP-flex-max" ng-model="selectedValues.lot"
+                    ng-options="key as val.name for (key,val) in lotLOV"></select>
           </div>
         </ion-item>
 
         <ion-item class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
             <label style="min-width: 70px;">Sub:</label>
-            <select class="AP-right AP-flex-max" ng-model="selectedValues.subInv">
-              <option ng-repeat="option in subInvLOV" id="{{option.key}}">{{option.key}}- {{option.name}}</option>
-            </select>
+            <select class="AP-right AP-flex-max" ng-model="selectedValues.subInv"
+                    ng-options="key as val.name for (key,val) in subInvLOV"></select>
           </div>
         </ion-item>
 
         <ion-item class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
             <label style="min-width: 70px;">Project:</label>
-            <select class="AP-right AP-flex-max" ng-model="selectedValues.Project">
-              <option ng-repeat="option in projectLOV" id="{{option.key}}">{{option.name}}</option>
-            </select>
+            <select class="AP-right AP-flex-max" ng-model="selectedValues.Project"
+                    ng-options="key as val.name for (key,val) in projectLOV"></select>
           </div>
         </ion-item>
       </div>

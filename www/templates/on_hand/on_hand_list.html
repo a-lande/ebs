@@ -11,7 +11,7 @@
 
     <!-- item-->
     <div class="padding-horizontal" on-tap="selectItem(item)"
-         ng-repeat="item in allItems | filter : {ITEM:selectedValues.itemFilter, SUBINVENTORY_CODE:selectedValues.subInv} | limitTo : 50">
+         ng-repeat="item in allItems | filter : {ITEM:selectedValues.itemFilter, SUBINVENTORY_CODE:selectedValues.subInv, LOT_NUMBER:selectedValues.lot} | limitTo : 50">
       <!-- item header -->
       <div class="AP-clear-padding AP-item AP-item-detail" ng-class="($first)?'AP-clear-border':''">
         <label>{{item.ITEM}}</label>
