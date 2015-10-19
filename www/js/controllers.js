@@ -102,7 +102,7 @@ angular.module('ebs.controllers', [])
 
   })
 
-  .controller('TagCountCtrl', function ($rootScope, $scope, $ionicPopover, $timeout, $filter, apWebService) {
+  .controller('TagCountCtrl', function ($rootScope, $scope, $ionicPopover, $timeout, $filter, apWebService, Notification) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.navTitle = 'Physical Inventory';
       $scope.countSelected = false;
@@ -292,17 +292,20 @@ angular.module('ebs.controllers', [])
             $scope.currentItem.qty = $scope.currentItem.tmpQty;
             $scope.currentItem.isFinished = true;
             $scope.clearSelectedItem();
+            Notification.success({message: 'Successfully saved'});
           }, function (data) {
-            alert(data.Error);
+            Notification.error({message: data.Error, delay: 20000});
           });
         } else {
           $scope.currentItem.isFinished = true;
+          Notification.success({message: 'No Changes'});
           $scope.clearSelectedItem();
         }
         $scope.selectedValues.item = '';
       };
       var holding = true;
       $scope.adjustQty = function (addQ, delay) {
+        if (!$scope.currentItem.tmpQty || $scope.currentItem.tmpQty == '') $scope.currentItem.tmpQty = 0;
         if (delay === undefined) delay = 500;
         holding = addQ != 0;
         $scope.currentItem.tmpQty += addQ;
@@ -530,11 +533,11 @@ angular.module('ebs.controllers', [])
 
   })
 
-  .controller('OnHandCtrl', function ($rootScope, $scope, apWebService, ebsWS) {
+  .controller('OnHandCtrl', function ($rootScope, $scope, apWebService, ebsWS, $timeout) {
     $scope.$on('$ionicView.enter', function (e) {
     });
     apWebService.runService(ebsWS.OnHandSrv).then(function (data) {
-      $scope.allItems = data.Array;
+      $scope.allItems = data.List;
       console.log($scope.allItems);
     });
     apWebService.runService(ebsWS.locationListSrv).then(function (data) {
@@ -550,17 +553,23 @@ angular.module('ebs.controllers', [])
       $scope.lotLOV = data.List;
     });
     $scope.selectItem = function(item) {
-      $scope.headerShown = false;
+      $timeout(function () { // start the animations
+        $scope.headerShown = false;
+      }, 100);
       $scope.selectedItem = item;
       $scope.goto('app.OnHand.Item');
-    }
+    };
     $scope.closeItem = function () {
       $scope.headerShown = true;
       $scope.selectedItem = undefined;
       $scope.goto('app.OnHand.List');
-    }
+    };
     $scope.closeSearch = function () {
       $scope.headerCollapsed = true;
+    }
+    $scope.subinvetoryTransfer = function () {
+      $rootScope.SubInvItem = $scope.selectedItem;
+      $scope.goto('app.SubInvTrans.Item');
     }
 
   })
@@ -574,7 +583,7 @@ angular.module('ebs.controllers', [])
   })
   .controller('OnHandItemCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.navTitle = 'OnHand !!itemid!!';
+      $scope.navTitle = 'OnHand Item';
       $scope.$parent.headerShown = false;
 
       console.log($scope.$parent.selectedItem);
@@ -626,7 +635,11 @@ angular.module('ebs.controllers', [])
   })
   .controller('SubInvTransItemCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.navTitle = 'SubInvTrans !!itemid!!';
+      if ($rootScope.SubInvItem) {
+        $scope.$parent.selectedItem = $rootScope.SubInvItem;
+        $rootScope.SubInvItem = undefined;
+      }
+      $scope.navTitle = 'SubInvTrans';
       $scope.$parent.headerShown = false;
 
       console.log($scope.$parent.selectedItem);

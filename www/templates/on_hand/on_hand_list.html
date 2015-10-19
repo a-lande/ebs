@@ -2,200 +2,43 @@
   <ion-content class="AP-content" style="top:170px;">
     <!-- the main list -->
 
-    <!-- filter headline-->
+    <!-- filter headline
     <div class="padding-horizontal AP-view-by">
       <div class="AP-item AP-item-detail AP-clear-border">
         <label>Location</label>
       </div>
-    </div>
+    </div>-->
 
     <!-- item-->
-    <div class="padding-horizontal" on-tap="selectItem('11')">
+    <div class="padding-horizontal" on-tap="selectItem(item)"
+         ng-repeat="item in allItems | filter : {ITEM:selectedValues.itemFilter, SUBINVENTORY_CODE:selectedValues.subInv} | limitTo : 50">
       <!-- item header -->
-      <div class="AP-clear-padding AP-item AP-item-detail AP-clear-border">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Batterv Extended Life!!</span>
-        <i class="fa fa-angle-right"></i>
+      <div class="AP-clear-padding AP-item AP-item-detail" ng-class="($first)?'AP-clear-border':''">
+        <label>{{item.ITEM}}</label>
+        <span class="AP-flex-max">{{item.DESCRIPTION}}</span>
+        <i class="fa fa-angle-down"></i>
       </div>
       <div class="AP-item AP-item-header-detail">
         <div class="half">
           <label class="">Sub:</label>
-          <span class="AP-flex-max AP-right">!!Sub!!</span>
+          <span class="AP-flex-max AP-right">{{item.SUBINVENTORY_CODE}}</span>
         </div>
         <div class="half">
           <label class="">Locator:</label>
-          <span class="AP-flex-max AP-right">!!Locator!!</span>
+          <span class="AP-flex-max AP-right">{{item.LOCATOR}}</span>
         </div>
       </div>
       <div class="AP-item AP-item-header-detail AP-padding">
         <div class="half">
           <label class="">Lot:</label>
-          <span class="AP-flex-max AP-right">!!Lot!!</span>
+          <span class="AP-flex-max AP-right">{{item.LOT_NUMBER}}</span>
         </div>
         <div class="half">
           <label class="">Projct:</label>
-          <span class="AP-flex-max AP-right">!!projct!!</span>
+          <span class="AP-flex-max AP-right">{{item.PROJECT_NAME}}</span>
         </div>
       </div>
     </div>
-
-
-    <!-- DUPLICATE-->
-
-    <!-- item -->
-    <div class="padding-horizontal" on-tap="selectItem('11')">
-      <!-- item header -->
-      <div class="AP-clear-padding AP-item AP-item-detail">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Batterv Extended Life!!</span>
-        <i class="fa fa-angle-right"></i>
-      </div>
-      <div class="AP-item AP-item-header-detail">
-        <div class="half">
-          <label class="">Sub:</label>
-          <span class="AP-flex-max AP-right">!!Sub!!</span>
-        </div>
-        <div class="half">
-          <label class="">Locator:</label>
-          <span class="AP-flex-max AP-right">!!Locator!!</span>
-        </div>
-      </div>
-      <div class="AP-item AP-item-header-detail AP-padding">
-        <div class="half">
-          <label class="">Lot:</label>
-          <span class="AP-flex-max AP-right">!!Lot!!</span>
-        </div>
-        <div class="half">
-          <label class="">Projct:</label>
-          <span class="AP-flex-max AP-right">!!projct!!</span>
-        </div>
-      </div>
-    </div>
-    <!-- item -->
-    <div class="padding-horizontal" on-tap="selectItem('11')">
-      <!-- item header -->
-      <div class="AP-clear-padding AP-item AP-item-detail">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Batterv Extended Life!!</span>
-        <i class="fa fa-angle-right"></i>
-      </div>
-      <div class="AP-item AP-item-header-detail">
-        <div class="half">
-          <label class="">Sub:</label>
-          <span class="AP-flex-max AP-right">!!Sub!!</span>
-        </div>
-        <div class="half">
-          <label class="">Locator:</label>
-          <span class="AP-flex-max AP-right">!!Locator!!</span>
-        </div>
-      </div>
-      <div class="AP-item AP-item-header-detail AP-padding">
-        <div class="half">
-          <label class="">Lot:</label>
-          <span class="AP-flex-max AP-right">!!Lot!!</span>
-        </div>
-        <div class="half">
-          <label class="">Projct:</label>
-          <span class="AP-flex-max AP-right">!!projct!!</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- filter headline -->
-    <div class="padding-horizontal AP-view-by">
-      <div class="AP-item AP-item-detail AP-clear-border">
-        <label>Location</label>
-      </div>
-    </div>
-
-    <!-- item-->
-    <div class="padding-horizontal" on-tap="selectItem('11')">
-      <!-- item header -->
-      <div class="AP-clear-padding AP-item AP-item-detail AP-clear-border">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Batterv Extended Life!!</span>
-        <i class="fa fa-angle-right"></i>
-      </div>
-      <div class="AP-item AP-item-header-detail">
-        <div class="half">
-          <label class="">Sub:</label>
-          <span class="AP-flex-max AP-right">!!Sub!!</span>
-        </div>
-        <div class="half">
-          <label class="">Locator:</label>
-          <span class="AP-flex-max AP-right">!!Locator!!</span>
-        </div>
-      </div>
-      <div class="AP-item AP-item-header-detail AP-padding">
-        <div class="half">
-          <label class="">Lot:</label>
-          <span class="AP-flex-max AP-right">!!Lot!!</span>
-        </div>
-        <div class="half">
-          <label class="">Projct:</label>
-          <span class="AP-flex-max AP-right">!!projct!!</span>
-        </div>
-      </div>
-    </div>
-    <!-- item -->
-    <div class="padding-horizontal" on-tap="selectItem('11')">
-      <!-- item header -->
-      <div class="AP-clear-padding AP-item AP-item-detail">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Batterv Extended Life!!</span>
-        <i class="fa fa-angle-right"></i>
-      </div>
-      <div class="AP-item AP-item-header-detail">
-        <div class="half">
-          <label class="">Sub:</label>
-          <span class="AP-flex-max AP-right">!!Sub!!</span>
-        </div>
-        <div class="half">
-          <label class="">Locator:</label>
-          <span class="AP-flex-max AP-right">!!Locator!!</span>
-        </div>
-      </div>
-      <div class="AP-item AP-item-header-detail AP-padding">
-        <div class="half">
-          <label class="">Lot:</label>
-          <span class="AP-flex-max AP-right">!!Lot!!</span>
-        </div>
-        <div class="half">
-          <label class="">Projct:</label>
-          <span class="AP-flex-max AP-right">!!projct!!</span>
-        </div>
-      </div>
-    </div>
-    <!-- item -->
-    <div class="padding-horizontal" on-tap="selectItem('11')">
-      <!-- item header -->
-      <div class="AP-clear-padding AP-item AP-item-detail">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Batterv Extended Life!!</span>
-        <i class="fa fa-angle-right"></i>
-      </div>
-      <div class="AP-item AP-item-header-detail">
-        <div class="half">
-          <label class="">Sub:</label>
-          <span class="AP-flex-max AP-right">!!Sub!!</span>
-        </div>
-        <div class="half">
-          <label class="">Locator:</label>
-          <span class="AP-flex-max AP-right">!!Locator!!</span>
-        </div>
-      </div>
-      <div class="AP-item AP-item-header-detail AP-padding">
-        <div class="half">
-          <label class="">Lot:</label>
-          <span class="AP-flex-max AP-right">!!Lot!!</span>
-        </div>
-        <div class="half">
-          <label class="">Projct:</label>
-          <span class="AP-flex-max AP-right">!!projct!!</span>
-        </div>
-      </div>
-    </div>
-
 
   </ion-content>
 </ion-view>

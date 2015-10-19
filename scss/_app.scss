@@ -7,8 +7,8 @@
 }
 
 // general html tags
-body {
-    background-color: $secColor-900;
+body, .pane {
+  background-color: $secColor !important;
 }
 /*input[type="search"] { // will not apply search appearnce - currently not used
   -webkit-appearance: textfield;

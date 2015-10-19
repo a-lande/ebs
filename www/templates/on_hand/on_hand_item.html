@@ -5,7 +5,7 @@
     <div class="padding-horizontal AP-onhand">
       <!-- item header -->
       <div class="fa-lg AP-item AP-item-detail AP-clear-border">
-        <span class="AP-flex-max">!!Batterv Extended Life!!</span>
+        <span class="AP-flex-max">{{selectedItem.ITEM}}- {{selectedItem.DESCRIPTION}}</span>
         <i class="fa fa-times" on-tap="closeItem()"></i>
       </div>
 
@@ -13,36 +13,36 @@
 
         <div class="AP-item AP-item-header-detail AP-border">
             <label class="">Sub:</label>
-            <span class="AP-flex-max AP-right">!!Sub!!</span>
+          <span class="AP-flex-max AP-right">{{selectedItem.SUBINVENTORY_CODE}}</span>
         </div>
         <div class="AP-item AP-item-header-detail">
             <label class="">Locator:</label>
-            <span class="AP-flex-max AP-right">!!Locator!!</span>
+          <span class="AP-flex-max AP-right">{{selectedItem.LOCATOR}}</span>
         </div>
         <div class="AP-item AP-item-header-detail">
             <label class="">Lot:</label>
-            <span class="AP-flex-max AP-right">!!Lot!!</span>
+          <span class="AP-flex-max AP-right">{{selectedItem.LOT_NUMBER}}</span>
         </div>
         <div class="AP-item AP-item-header-detail AP-padding">
             <label class="">Projct:</label>
-            <span class="AP-flex-max AP-right">!!projct!!</span>
+          <span class="AP-flex-max AP-right">{{selectedItem.PROJECT_NAME}}</span>
         </div>
 
         <div class="AP-item AP-item-header-detail AP-border">
-            <label class="">CG:</label>
-            <span class="AP-flex-max AP-right">!!CG!!</span>
+          <label class="">Cost Group:</label>
+          <span class="AP-flex-max AP-right">{{selectedItem.COST_GROUP}}</span>
         </div>
         <div class="AP-item AP-item-header-detail">
             <label class="">Task:</label>
-            <span class="AP-flex-max AP-right">!!Task!!</span>
+          <span class="AP-flex-max AP-right">{{selectedItem.TASK_NAME}}</span>
         </div>
         <div class="AP-item AP-item-header-detail">
-            <label class="">Rev:</label>
-            <span class="AP-flex-max AP-right">!!Rev!!</span>
+          <label class="">Revision:</label>
+          <span class="AP-flex-max AP-right">{{selectedItem.REVISION}}</span>
         </div>
         <div class="AP-item AP-item-header-detail AP-padding">
-            <label class="">GRD:</label>
-            <span class="AP-flex-max AP-right">!!GRD!!</span>
+          <label class="">Grade:</label>
+          <span class="AP-flex-max AP-right"></span>
         </div>
 
         <div class="AP-item AP-item-detail" style="padding: 0">
@@ -71,8 +71,10 @@
       </div>
       <div class="AP-item AP-border AP-check-form" on-tap="subinvetoryTransfer()">
         <div style="margin: 10px 0 10px 0">
-          <i style="font-size: 18px; padding-top: 13px" class="fa fa-share-square-o">
-            <label>Sub inventory</label> </i>
+          <label>
+            <i style="font-size: 18px; padding-top: 13px" class="fa fa-share-square-o"></i>
+            Sub inventory
+          </label>
         </div>
       </div>
 
