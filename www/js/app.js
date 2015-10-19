@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.services', 'ebs.ws', 'ngAnimate'])
+angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.services', 'ebs.ws', 'ngAnimate', 'ui-notification'])
 
   .run(function ($rootScope, $ionicPlatform, $http, apWebService, AuthService, $state, $localstorage) {
     $rootScope.appId = 'apebs';
@@ -164,4 +164,16 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/main_menu');
+  })
+
+  .config(function (NotificationProvider) {
+    NotificationProvider.setOptions({
+      delay: 3000,
+      startTop: 25,
+      startRight: 15,
+      verticalSpacing: 25,
+      horizontalSpacing: 20,
+      positionX: 'right',
+      positionY: 'bottom'
+    });
   });
