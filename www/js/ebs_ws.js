@@ -93,6 +93,14 @@
           secUOM: "AVAILABILITY_SECONDARY_UOM_CODE_0",
           secATR: "AVAILABILITY_SATR_0",
           secATT: "AVAILABILITY_SATT_0",
+          init: function () {
+            if (!this.priQty || this.priQty == '') this.priQty = 0;
+            if (!this.priATR || this.priATR == '') this.priATR = 0;
+            if (!this.priATT || this.priATT == '') this.priATT = 0;
+            if (!this.secQty || this.secQty == '') this.secQty = 0;
+            if (!this.secATR || this.secATR == '') this.secATR = 0;
+            if (!this.secATT || this.secATT == '') this.secATT = 0;
+          }
         }
       };
       // deciding which service to call

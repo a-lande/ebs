@@ -572,6 +572,9 @@ angular.module('ebs.controllers', [])
       $rootScope.SubInvItem = $scope.selectedItem;
       $scope.goto('app.SubInvTrans.Item');
     }
+    $scope.itemFilterChanged = function () {
+      if ($scope.selectedValues.itemFilter) $scope.headerCollapsed = true;
+    }
 
   })
 
