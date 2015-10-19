@@ -3,16 +3,17 @@
     <!-- the main list -->
 
     <!-- item-->
-    <div class="padding-horizontal" on-tap="selectItem('11')">
+    <div class="padding-horizontal" on-tap="selectItem(item)"
+         ng-repeat="item in allItems | filter : {ITEM:selectedValues.itemFilter} | limitTo : 50">
       <!-- item header -->
       <div style="padding-top: 10px" class="AP-clear-padding AP-item AP-item-detail AP-clear-border">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Battery Extended Life!!</span>
+        <label>{{item.ITEM}}</label>
+        <span class="AP-flex-max">{{item.DESCRIPTION}}</span>
         <i class="fa fa-angle-right"></i>
       </div>
       <div class="AP-item AP-item-header-detail padding-horizontal AP-padding">
         <label class="">Sub:</label>
-        <span class="AP-flex-max AP-right">!!Sub!!</span>
+        <span class="AP-flex-max">{{item.SUBINVENTORY_CODE}}</span>
       </div>
     </div>
 

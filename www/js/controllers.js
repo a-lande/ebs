@@ -533,9 +533,11 @@ angular.module('ebs.controllers', [])
 
   })
 
-  .controller('OnHandCtrl', function ($rootScope, $scope, apWebService, ebsWS, $timeout) {
+  .controller('OnHandCtrl', function ($rootScope, $scope, apWebService, ebsWS, $timeout, $stateParams) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.selectedValues = {};
+      $scope.headerCollapsed = $scope.fromItem;
+      $scope.fromItem = false;
     });
     apWebService.runService(ebsWS.OnHandSrv).then(function (data) {
       $scope.allItems = data.List;
@@ -561,8 +563,8 @@ angular.module('ebs.controllers', [])
       $scope.goto('app.OnHand.Item');
     };
     $scope.closeItem = function () {
-      $scope.headerShown = true;
       $scope.selectedItem = undefined;
+      $scope.fromItem = true;
       $scope.goto('app.OnHand.List');
     };
     $scope.closeSearch = function () {
@@ -570,6 +572,7 @@ angular.module('ebs.controllers', [])
     }
     $scope.subinvetoryTransfer = function () {
       $rootScope.SubInvItem = $scope.selectedItem;
+      $rootScope.SubInvItem.itemQtys = $scope.itemQtys;
       $scope.goto('app.SubInvTrans.Item');
     }
     $scope.itemFilterChanged = function () {
@@ -582,7 +585,6 @@ angular.module('ebs.controllers', [])
     $scope.$on('$ionicView.enter', function (e) {
       $scope.navTitle = 'OnHand Search';
       $scope.$parent.headerShown = true;
-      $scope.$parent.dDheaderCollapsed = true;
     });
   })
   .controller('OnHandItemCtrl', function ($rootScope, $scope, apWebService, ebsWS) {
@@ -604,59 +606,86 @@ angular.module('ebs.controllers', [])
   })
 
 
-  .controller('SubInvTransCtrl', function ($rootScope, $scope, apWebService, ebsWS) {
+  .controller('SubInvTransCtrl', function ($rootScope, $scope, $timeout, apWebService, ebsWS) {
     $scope.$on('$ionicView.enter', function (e) {
+      $scope.selectedValues = {};
+      $scope.headerCollapsed = $scope.fromItem;
+      $scope.fromItem = false;
     });
     apWebService.runService(ebsWS.OnHandSrv).then(function (data) {
-      $scope.allItems = data.Array;
+      $scope.allItems = data.List;
       console.log($scope.allItems);
-    });
-    apWebService.runService(ebsWS.locationListSrv).then(function (data) {
-      $scope.locationLOV = data.List;
     });
     apWebService.runService(ebsWS.SubInvListSrv).then(function (data) {
       $scope.subInvLOV = data.List;
     });
-    apWebService.runService(ebsWS.ProjectListSrv).then(function (data) {
-      $scope.projectLOV = data.List;
-    });
-    apWebService.runService(ebsWS.LotListSrv).then(function (data) {
-      $scope.lotLOV = data.List;
+    apWebService.runService(ebsWS.UOMListSrv).then(function (data) {
+      $scope.uomLOV = data.List;
     });
     $scope.selectItem = function (item) {
-      $scope.headerShown = false;
+      $timeout(function () { // start the animations
+        $scope.headerShown = false;
+      }, 100);
       $scope.selectedItem = item;
       $scope.goto('app.SubInvTrans.Item');
-    }
+    };
     $scope.closeItem = function () {
-      $scope.headerShown = true;
       $scope.selectedItem = undefined;
+      $scope.fromItem = true;
       $scope.goto('app.SubInvTrans.List');
-    }
+    };
     $scope.closeSearch = function () {
       $scope.headerCollapsed = true;
-    }
+    };
+    $scope.itemFilterChanged = function () {
+      if ($scope.selectedValues.itemFilter) $scope.headerCollapsed = true;
+    };
 
   })
 
   .controller('SubInvTransListCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.navTitle = 'Sub Inventory';
+      $scope.navTitle = 'SubInv. Transfer';
       $scope.$parent.headerShown = true;
-      $scope.$parent.headerCollapsed = true;
     });
   })
-  .controller('SubInvTransItemCtrl', function ($rootScope, $scope, apWebService) {
+  .controller('SubInvTransItemCtrl', function ($rootScope, $scope, apWebService, ebsWS, Notification) {
     $scope.$on('$ionicView.enter', function (e) {
       if ($rootScope.SubInvItem) {
         $scope.$parent.selectedItem = $rootScope.SubInvItem;
         $rootScope.SubInvItem = undefined;
+      } else {
+        var item = $scope.$parent.selectedItem;
+        if (!item) {
+          $scope.goto('app.SubInvTrans.List');
+        }
+        console.log(item);
+        apWebService.runService(ebsWS.OnHandQntSrv(item.ITEM, item.SUBINVENTORY_CODE)).then(function (data) {
+          $scope.$parent.selectedItem.itemQtys = data.Form;
+          $scope.$apply();
+          console.log($scope.$parent.selectedItem.itemQtys);
+        });
       }
-      $scope.navTitle = 'SubInvTrans';
+      $scope.navTitle = 'SubInv. Transfer';
       $scope.$parent.headerShown = false;
 
       console.log($scope.$parent.selectedItem);
     });
+    $scope.itemSave = function () {
+      Notification.warning('not implemented');
+    };
+    var holding = true;
+    $scope.adjustQty = function (addQ, delay) {
+      if (!$scope.$parent.selectedItem.tmpQty || $scope.$parent.selectedItem.tmpQty == '') $scope.$parent.selectedItem.tmpQty = 0;
+      if (delay === undefined) delay = 500;
+      holding = addQ != 0;
+      $scope.$parent.selectedItem.tmpQty += addQ;
+      $timeout(function () {
+        if (holding == true) {
+          $scope.adjustQty(addQ, 200);
+        }
+      }, delay);
+    }
   })
 
 

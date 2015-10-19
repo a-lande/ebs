@@ -13,24 +13,24 @@
         <div class="AP-item AP-item-header" style="margin-top: 15px;">
           <label style="min-width: 80px;">Date:</label>
           <label class="item-input AP-flex-max AP-right">
-            <input type="date">
+            <input type="date" ng-model="selectedValues.date">
           </label>
         </div>
         <div class="AP-item AP-item-header">
           <label style="min-width: 80px;">Time:</label>
           <label class="item-input AP-flex-max AP-right">
-            <input type="Time">
+            <input type="Time" ng-model="selectedValues.time">
           </label>
         </div>
       </div>
       <div ng-show="headerCollapsed">
         <label class="item-input-wrapper" style="margin-top: 15px;">
           <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="search" id="itemFilter" placeholder="Quick Search" ng-model="selectedValues.itemFiler">
+          <input type="search" id="itemFilter" placeholder="Quick Search" ng-model="selectedValues.itemFilter">
         </label>
       </div>
       <div ng-hide="headerCollapsed" class="AP-item AP-flex-max"></div>
-      <div ng-hide="headerCollapsed" class="AP-item AP-item-header AP-check-form" on-tap="countConfirm()">
+      <div ng-hide="headerCollapsed" class="AP-item AP-item-header AP-check-form" on-tap="closeSearch()">
         <div><i class="fa fa-check"></i></div>
       </div>
       <div ng-hide="headerCollapsed" class="AP-item AP-item-header" style="height:50px"></div>

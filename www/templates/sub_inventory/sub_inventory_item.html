@@ -5,54 +5,52 @@
     <div class="padding-horizontal AP-onhand">
       <!-- item header -->
       <div class="fa-lg AP-item AP-item-detail AP-clear-border">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Battery Extended Life!!</span>
+        <label>{{selectedItem.ITEM}}</label>
+        <span class="AP-flex-max">{{selectedItem.DESCRIPTION}}</span>
         <i class="fa fa-times" on-tap="closeItem()"></i>
       </div>
 
       <div class="padding-horizontal">
 
-        <div class="AP-item AP-item-header-detail AP-border">
-          <label class="">Available:</label>
-          <span class="AP-flex-max AP-right">!!586!!</span>
-          <span class="AP-right">!!UOM!!</span>
-        </div>
         <div class="AP-item AP-item-header-detail AP-padding">
           <label class="">On Hand:</label>
-          <span class="AP-flex-max AP-right">!!586!!</span>
-          <span class="AP-right">!!un!!</span>
+          <span class="AP-flex-max AP-right">{{selectedItem.itemQtys.priQty}}</span>
+          <span class="AP-right">{{selectedItem.itemQtys.priUOM}}</span>
+        </div>
+        <div class="AP-item AP-item-header-detail AP-border">
+          <label class="">Available:</label>
+          <span class="AP-flex-max AP-right">{{selectedItem.itemQtys.priATT}}</span>
+          <span class="AP-right">{{selectedItem.itemQtys.priATTUOM}}</span>
         </div>
 
         <div class="AP-item AP-item-header AP-border AP-padding" style="padding-top: 10px">
           <label style="min-width: 90px;">Date:</label>
           <label class="item-input AP-flex-max AP-right">
-            <input type="date">
+            <input type="date" ng-model="selectedValues.date">
           </label>
         </div>
         <div class="AP-item AP-item-header AP-padding">
           <label style="min-width: 90px;">Time:</label>
           <label class="item-input AP-flex-max AP-right">
-            <input type="Time">
+            <input type="Time" ng-model="selectedValues.time">
           </label>
         </div>
 
         <div class="AP-item AP-item-header-detail">
-          <label class="">Sub:</label>
-          <span class="AP-flex-max AP-right">!!sub!!</span>
+          <label class="">From Sub:</label>
+          <span class="AP-flex-max AP-right">{{selectedItem.SUBINVENTORY_CODE}}</span>
         </div>
 
         <div class="AP-item AP-item-header AP-padding" style="padding-top: 10px">
-          <label style="min-width: 90px;">Sub:</label>
-          <select class="AP-right AP-flex-max item-input" ng-model="selectedValues.subInv">
-            <option ng-repeat="option in subInvLOV" id="{{option.key}}">{{option.key}}- {{option.name}}</option>
-          </select>
+          <label style="min-width: 90px;">To Sub:</label>
+          <select class="AP-right AP-flex-max item-input" ng-model="selectedValues.subInv"
+                  ng-options="key as val.name for (key,val) in subInvLOV"></select>
         </div>
 
         <div class="AP-item AP-item-header AP-padding">
           <label style="min-width: 90px;">UOM:</label>
-          <select class="AP-right AP-flex-max item-input" ng-model="selectedValues.subInv">
-            <option>!!UOM!!</option>
-          </select>
+          <select class="AP-right AP-flex-max item-input" ng-model="selectedValues.uom"
+                  ng-options="key as val.name group by val.type for (key,val) in uomLOV"></select>
         </div>
 
         <div class="AP-item AP-item-selected-input">
@@ -60,7 +58,7 @@
 
           <div class="AP-input-container secColor-900">
             <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
-            <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max"/>
+            <input class="AP-right" type="tel" ng-model="selectedItem.tmpQty" class="AP-flex-max"/>
             <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
           </div>
         </div>

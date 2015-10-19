@@ -62,7 +62,7 @@
           var sArray = this.QF_PRIMARY_UOM_QP.split(',');
           this.name = sArray[0];
           this.key = sArray[1];
-          this.type = sArray[2];
+          this.type = sArray[2] ? sArray[2] : '1';
         }
       },
       cache: true
