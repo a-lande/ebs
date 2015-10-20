@@ -649,7 +649,7 @@ angular.module('ebs.controllers', [])
       $scope.$parent.headerShown = true;
     });
   })
-  .controller('SubInvTransItemCtrl', function ($rootScope, $scope, apWebService, ebsWS, Notification) {
+  .controller('SubInvTransItemCtrl', function ($rootScope, $scope, apWebService, ebsWS, Notification, $timeout) {
     $scope.$on('$ionicView.enter', function (e) {
       if ($rootScope.SubInvItem) {
         $scope.$parent.selectedItem = $rootScope.SubInvItem;

@@ -7,8 +7,21 @@
 }
 
 .ui-notification {
+  border-radius: 3.5px;
+  font-size: $font-md;
+  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  min-height: 46px;
   &.success {
-    background-color: $mainColor-100;
+    color: $light;
+    background: $mainColor-100;
+  }
+  &.error {
+    color: $light;
+    background: #F44336;
+  }
+  &.warning {
+    color: $light;
+    background: #FF9800;
   }
 }
 
@@ -73,29 +86,6 @@ h3 {
   font-weight: normal !important;
 
 }
-
-.ui-notification {
-  border-radius: 3.5px;
-  font-size: $font-md;
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
-  min-height: 46px;
-  .message {
-    .success {
-      color: $light;
-      background: red;
-    }
-    .error {
-      color: $light;
-      background: #F44336;
-    }
-    .warning {
-      color: $light;
-      background: #FF9800;
-    }
-  }
-
-}
-
 
 .title-image {
   margin-top: 9px;
