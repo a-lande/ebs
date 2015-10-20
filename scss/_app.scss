@@ -13,7 +13,7 @@
   min-height: 46px;
   &.success {
     color: $light;
-    background: $mainColor-100;
+    background: #2ba6fe;
   }
   &.error {
     color: $light;
@@ -36,8 +36,8 @@ body, .pane {
 .h-default {
   font-family: Raleway;
   font-weight: 400;
-  padding-top: 0px;
-  padding-left: 0px;
+  padding-top: 0;
+  padding-left: 0;
   color: $light;
 
 }

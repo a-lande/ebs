@@ -37,7 +37,7 @@
 .ebsMainMenuLabel {
   font-size: 18px;
   font-family: Raleway !important;
-  padding: 10px;
+  padding-top: 10px;
   overflow: visible;
   white-space: normal;
 }
@@ -142,4 +142,12 @@
 
 .AP-menu {
   word-wrap: break-word;
+}
+
+.padding {
+  padding: 10px 10px 0 10px !important;
+}
+
+.item {
+  padding: 10px 10px 0 10px;
 }
