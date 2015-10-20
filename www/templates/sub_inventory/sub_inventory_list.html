@@ -6,9 +6,9 @@
     <div class="padding-horizontal" on-tap="selectItem(item)"
          ng-repeat="item in allItems | filter : {ITEM:selectedValues.itemFilter} | limitTo : 50">
       <!-- item header -->
-      <div style="padding-top: 10px" class="AP-clear-padding AP-item AP-item-detail AP-clear-border">
-        <label>{{item.ITEM}}</label>
-        <span class="AP-flex-max">{{item.DESCRIPTION}}</span>
+      <div class="AP-clear-padding AP-item AP-item-detail" ng-class="($first)?'AP-clear-border':''">
+        <label style="color: white">{{item.ITEM}}</label>
+        <span style="color: white" class="AP-flex-max">{{item.DESCRIPTION}}</span>
         <i class="fa fa-angle-right"></i>
       </div>
       <div class="AP-item AP-item-header-detail padding-horizontal AP-padding">
@@ -16,47 +16,4 @@
         <span class="AP-flex-max">{{item.SUBINVENTORY_CODE}}</span>
       </div>
     </div>
-
-
-    <!-- DUPLICATE-->
-    <div class="padding-horizontal" on-tap="selectItem('11')">
-      <!-- item header -->
-      <div class="AP-clear-padding AP-item AP-item-detail">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Battery Extended Life!!</span>
-        <i class="fa fa-angle-right"></i>
-      </div>
-      <div class="AP-item AP-item-header-detail padding-horizontal AP-padding">
-        <label class="">Sub:</label>
-        <span class="AP-flex-max AP-right">!!Sub!!</span>
-      </div>
-    </div>
-    <div class="padding-horizontal" on-tap="selectItem('11')">
-      <!-- item header -->
-      <div class="AP-clear-padding AP-item AP-item-detail">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Battery Extended Life!!</span>
-        <i class="fa fa-angle-right"></i>
-      </div>
-      <div class="AP-item AP-item-header-detail padding-horizontal AP-padding">
-        <label class="">Sub:</label>
-        <span class="AP-flex-max AP-right">!!Sub!!</span>
-      </div>
-    </div>
-    <div class="padding-horizontal" on-tap="selectItem('11')">
-      <!-- item header -->
-      <div class="AP-clear-padding AP-item AP-item-detail">
-        <label>!!CM11222!!</label>
-        <span class="AP-flex-max">!!Battery Extended Life!!</span>
-        <i class="fa fa-angle-right"></i>
-      </div>
-      <div class="AP-item AP-item-header-detail padding-horizontal AP-padding">
-        <label class="">Sub:</label>
-        <span class="AP-flex-max AP-right">!!Sub!!</span>
-      </div>
-    </div>
-
-
-  </ion-content>
-</ion-view>
 

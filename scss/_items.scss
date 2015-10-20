@@ -13,7 +13,7 @@
     line-height: 1.42857;
   }
 
-  input, div {
+  input, div, button {
     -ms-flex: 1;
     flex: 1;
     display: flex;
@@ -30,6 +30,12 @@
     flex: none;
   }
 
+  .AP-flex-max-rap {
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .AP-flex-max {
     -ms-flex: 1;
     flex: 1;
@@ -37,7 +43,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
 }
 
 .AP-item-header {
@@ -81,8 +86,7 @@
     }
 
     i {
-      color: $light;
-      background-color: $mainColor-100;
+      color: $secColor-100;
     }
   }
   .AP-input-container {
@@ -104,7 +108,7 @@
 
 .AP-item-detail {
   padding: 10px 0px 10px 0px;
-  border-top: 1px solid $secColor-100;
+  border-top: 1px solid $secColor-300;
 
   label, span {
     color: $secColor-300;
@@ -157,7 +161,7 @@
 }
 
 .AP-item-selected-detail, .AP-item-selected-input {
-  border-bottom: 1px solid $secColor-100;
+  border-bottom: 1px solid $secColor-300;
 
   label, span {
     color: $secColor-300;
@@ -234,7 +238,6 @@
   .AP-input-container {
     input, {
       background-color: $secColor-900;
-
     }
   }
 
@@ -259,7 +262,21 @@
     label, span {
       color: $light !important;
     }
+
   }
+
+  label {
+    min-width: 100px;
+    font-size: $font-sm;
+  }
+  .margin-right {
+    margin-right: 5px;
+  }
+
+  .AP-padding {
+    padding-bottom: 20px;
+  }
+
 }
 
 .AP-border {
@@ -268,3 +285,5 @@
     padding-top: 10px;
   }
 }
+
+

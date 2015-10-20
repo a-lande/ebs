@@ -14,9 +14,9 @@
          ng-repeat="item in allItems | filter : {ITEM:selectedValues.itemFilter, SUBINVENTORY_CODE:selectedValues.subInv, LOT_NUMBER:selectedValues.lot} | limitTo : 50">
       <!-- item header -->
       <div class="AP-clear-padding AP-item AP-item-detail" ng-class="($first)?'AP-clear-border':''">
-        <label>{{item.ITEM}}</label>
-        <span class="AP-flex-max">{{item.DESCRIPTION}}</span>
-        <i class="fa fa-angle-down"></i>
+        <label style="color: white">{{item.ITEM}}</label>
+        <span class="AP-flex-max" style="color: white">{{item.DESCRIPTION}}</span>
+        <i class="fa fa-angle-right"></i>
       </div>
       <div class="AP-item AP-item-header-detail">
         <div class="half">
@@ -34,7 +34,7 @@
           <span class="AP-flex-max AP-right">{{item.LOT_NUMBER}}</span>
         </div>
         <div class="half">
-          <label class="">Projct:</label>
+          <label class="">Project:</label>
           <span class="AP-flex-max AP-right">{{item.PROJECT_NAME}}</span>
         </div>
       </div>

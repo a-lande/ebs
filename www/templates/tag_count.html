@@ -38,7 +38,7 @@
               <span class="AP-flex-max">{{selectedValues.count.name}}</span>
                 <i class="fa" ng-class="(headerCollapsed)?'fa-angle-down':'fa-angle-up'"></i>
             </div>
-            <div style="padding:10px 23px 0px 23px;" ng-hide="headerCollapsed">
+          <div ng-hide="headerCollapsed">
                 <div class="AP-item AP-item-header">
                     <label>Snapshot Date:</label>
                     <span class="AP-flex-max AP-right">{{selectedValues.count.date}}</span>
@@ -48,12 +48,13 @@
                     <span class="AP-flex-max AP-right">{{selectedValues.defaultCounter}}</span>
                 </div>
             </div>
-            <div class="AP-item AP-item-header">
-                <div class="AP-input-container">
-                    <input type="text" ng-model="selectedValues.item" placeholder="Enter Barcode" ng-change="applyFilter()" />
-                    <i class="fa fa-barcode" style=""></i>
-                </div>
-            </div>
+          <div style="margin-top: 10px" class="AP-form">
+            <label class="item-input-wrapper AP-input-container">
+              <i class="fa fa-barcode placeholder-icon"></i>
+              <input style="padding-top: 5px" type="search" placeholder="Enter Barcode"
+                     ng-model="selectedValues.countNameFilter">
+            </label>
+          </div>
         </div>
     </div>
     <ion-content class="AP-bar-subheader" ng-hide="countSelected">
@@ -63,7 +64,8 @@
             </div>
             <label class="item-input-wrapper">
                 <i class="icon ion-ios-search placeholder-icon"></i>
-                <input type="search" id="countNameFilter" placeholder="Search" ng-model="selectedValues.countNameFilter">
+              <input style="padding-top: 2px" type="search" id="countNameFilter" placeholder="Search"
+                     ng-model="selectedValues.countNameFilter">
             </label>
             <div class="AP-item AP-item-detail" ng-repeat="countName in tagCountNames | filter : selectedValues.countNameFilter" ng-class="($first)?'AP-clear-border':''"
                  on-tap="countSelect(countName)">
@@ -78,9 +80,7 @@
             <!-- Item header -->
             <div class="AP-item AP-item-detail" on-tap="itemClick(item,$index)" ng-class="($first||$index-1==selectedValues.selectedIndex)?'AP-clear-border':''">
                 <i class="fa fa-check" ng-show="item.isFinished"></i>
-                <span class="AP-right">{{item.item}}</span>
-              <span class="AP-right" style="color:black">({{item.qty}})</span>
-              <label class="AP-flex-max">{{item.itemDesc}}</label>
+              <span class="" ng-class="(item===currentItem)?'AP-flex-max-rap':'AP-flex-max'">{{item.item}}&nbsp;&nbsp;({{item.qty}})&nbsp;&nbsp;{{item.itemDesc}}</span>
               <i class="fa" ng-class="(item===currentItem)?'fa-times':'fa-angle-down'"></i>
             </div>
             <!-- Additional information for finished items -->
@@ -113,7 +113,8 @@
                     <label>Quantity</label>
                     <div class="AP-input-container">
                       <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
-                      <input class="AP-right" type="tel" ng-model="item.tmpQty" class="AP-flex-max" />
+                      <input style="padding-top: 14px;" class="AP-right" type="tel" ng-model="item.tmpQty"
+                             class="AP-flex-max"/>
                       <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
                     </div>
                   </div>

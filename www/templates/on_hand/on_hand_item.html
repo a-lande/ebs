@@ -5,26 +5,25 @@
     <div class="padding-horizontal AP-onhand">
       <!-- item header -->
       <div class="fa-lg AP-item AP-item-detail AP-clear-border">
-        <span class="AP-flex-max">{{selectedItem.ITEM}}- {{selectedItem.DESCRIPTION}}</span>
+        <span class="AP-flex-max-rap">{{selectedItem.ITEM}}&nbsp;&nbsp;{{selectedItem.DESCRIPTION}}</span>
         <i class="fa fa-times" on-tap="closeItem()"></i>
       </div>
 
-      <div class="padding-horizontal">
 
         <div class="AP-item AP-item-header-detail AP-border">
-            <label class="">Sub:</label>
+          <label class="">Subinventory:</label>
           <span class="AP-flex-max AP-right">{{selectedItem.SUBINVENTORY_CODE}}</span>
         </div>
         <div class="AP-item AP-item-header-detail">
-            <label class="">Locator:</label>
+          <label class="">Locator:</label>
           <span class="AP-flex-max AP-right">{{selectedItem.LOCATOR}}</span>
         </div>
         <div class="AP-item AP-item-header-detail">
-            <label class="">Lot:</label>
+          <label class="">Lot:</label>
           <span class="AP-flex-max AP-right">{{selectedItem.LOT_NUMBER}}</span>
         </div>
         <div class="AP-item AP-item-header-detail AP-padding">
-            <label class="">Projct:</label>
+          <label class="">Project:</label>
           <span class="AP-flex-max AP-right">{{selectedItem.PROJECT_NAME}}</span>
         </div>
 
@@ -33,7 +32,7 @@
           <span class="AP-flex-max AP-right">{{selectedItem.COST_GROUP}}</span>
         </div>
         <div class="AP-item AP-item-header-detail">
-            <label class="">Task:</label>
+          <label class="">Task:</label>
           <span class="AP-flex-max AP-right">{{selectedItem.TASK_NAME}}</span>
         </div>
         <div class="AP-item AP-item-header-detail">
@@ -46,29 +45,36 @@
         </div>
 
         <div class="AP-item AP-item-detail" style="padding: 0">
-          <label>On hand</label>
-          <span class="AP-flex-max AP-right">{{itemQtys.priQty}}</span>
-          <span class="AP-right">{{itemQtys.priUOM}}</span>
+          <label>Availability</label>
         </div>
 
-        <div class="AP-item AP-item-header-detail">
-            <label class="">Reserved:</label>
-            <span class="AP-flex-max AP-right">!!Reserved!!</span>
-        </div>
-        <div class="AP-item AP-item-header-detail">
-            <label class="">Loaded:</label>
-            <span class="AP-flex-max AP-right">!!Loaded!!</span>
-        </div>
-        <div class="AP-item AP-item-header-detail">
-            <label class="">packed:</label>
-            <span class="AP-flex-max AP-right">!!packed!!</span>
-        </div>
-        <div class="AP-item AP-item-header-detail AP-padding">
-            <label class="">Un packed:</label>
-            <span class="AP-flex-max AP-right">!!Un packed!!</span>
-        </div>
-
+      <div class="AP-item AP-item-header-detail AP-padding">
+        <label>On Hand:</label>
+        <span class="AP-flex-max AP-right">{{itemQtys.priQty}}</span>
+        <span class="AP-right">{{itemQtys.priUOM}}</span>
       </div>
+      <div class="AP-item AP-item-header-detail">
+        <label class="">Available to receive:</label>
+        <span class="AP-flex-max AP-right">{{}}</span>
+        <span class="AP-right">{{}}</span>
+      </div>
+      <div class="AP-item AP-item-header-detail AP-padding">
+        <label class="">Secondary:</label>
+        <span class="AP-flex-max AP-right">{{}}</span>
+        <span class="AP-right">{{}}</span>
+      </div>
+      <div class="AP-item AP-item-header-detail">
+        <label class="">Available to transfer:</label>
+        <span class="AP-flex-max AP-right">{{}}</span>
+        <span class="AP-right">{{}}</span>
+      </div>
+      <div class="AP-item AP-item-header-detail AP-padding">
+        <label class="">Secondary:</label>
+        <span class="AP-flex-max AP-right">{{}}</span>
+        <span class="AP-right">{{}}</span>
+      </div>
+
+
       <div class="AP-item AP-border AP-check-form" on-tap="subinvetoryTransfer()">
         <div style="margin: 10px 0 10px 0">
           <label>
@@ -76,9 +82,8 @@
             Sub inventory
           </label>
         </div>
-      </div>
+        </div>
 
-    </div>
 
 
   </ion-content>

@@ -3,52 +3,55 @@
     <ion-header-bar class="bar-stable">
     </ion-header-bar>
   </ion-nav-bar>
-  <ion-content class="AP-login AP-bar-subheader">
+  <div class=" bar AP-login bar-subheader AP-bar-subheader static" style="height: 100%;">
     <div ng-show="error" class="alert alert-danger">{{error}}</div>
-    <form name="loginForm" ng-submit="doLogin()" role="form">
+    <form class="AP-form padding-horizontal" style="height: 100%" name="loginForm" ng-submit="doLogin()" role="form">
       <ion-list class="padding">
-        <ion-item class="item-icon-left error-container error row" ng-show="loginFail">
-          <i class="ion-information-circled col-10 col-center text-center"></i>
 
-          <div class="col">
+        <ion-item class=" error-container error row" ng-show="loginFail">
+          <i class=""></i>
+
+          <div style="border-bottom: 3px solid #F44336;" class="col">
             Login Failed, Error message: {{loginError}}
           </div>
         </ion-item>
         <ion-item>
-          <label class="item item-input item-floating-label"
+          <label class="item item-input"
                  ng-class="{ 'has-errors' : loginForm.username.$dirty&&loginForm.username.$invalid, 'no-errors' : loginForm.username.$dirty&&loginForm.username.$valid}">
-            <span class="input-label">Username</span>
             <input type="text" placeholder="Username" name="username" ng-model="user.name" required>
           </label>
 
           <div class="error-container" ng-show="loginForm.username.$dirty&&loginForm.username.$invalid">
             <div class="error">
-              <i class="ion-information-circled"></i> User Name is required!
+              <i class=""></i> User Name is required!
             </div>
           </div>
         </ion-item>
+        <div class="AP-item AP-item-header" style="height:10px"></div>
+
         <ion-item>
-          <label class="item item-input item-floating-label"
+          <label class="item item-input"
                  ng-class="{ 'has-errors' : loginForm.password.$dirty&&loginForm.password.$invalid, 'no-errors' : loginForm.password.$dirty&&loginForm.password.$valid}">
-            <span class="input-label">Password</span>
             <input type="password" placeholder="password" name="password" ng-model="user.password" required>
           </label>
 
           <div class="error-container" ng-show="loginForm.password.$dirty&&loginForm.password.$invalid">
             <div class="error">
-              <i class="ion-information-circled"></i> Password is required!
+              <i class=""></i> Password is required!
             </div>
           </div>
         </ion-item>
+        <div class="AP-item AP-item-header" style="height:10px"></div>
+
         <ion-item>
-          <button type="submit" class="button button-block button-positive" ng-disabled="loginForm.$invalid">
+          <button style="height: 46px;  max-width: none; width: 100%;" type="submit"
+                  class="button button-block button-positive"
+                  ng-disabled="loginForm.$invalid">
             Sign-In
           </button>
-          <p class="text-center">
-            <a>Forgot password</a>
-          </p>
         </ion-item>
       </ion-list>
+      <img class="AP-AuraPlayer-logo" src="img/AuraPlayer$light.png"/>
     </form>
-  </ion-content>
+  </div>
 </ion-view>

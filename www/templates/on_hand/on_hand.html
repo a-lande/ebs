@@ -12,7 +12,8 @@
       <div>
         <label class="item-input-wrapper" style="margin-top: 15px;">
           <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="search" id="itemFilter" placeholder="Quick Search" ng-model="selectedValues.itemFilter"
+          <input style="padding-top: 2px" type="search" id="itemFilter" placeholder="Quick Search"
+                 ng-model="selectedValues.itemFilter"
                  ng-change="itemFilterChanged()">
         </label>
       </div>
@@ -24,7 +25,7 @@
 
         <ion-item class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
-            <label style="min-width: 70px;">Lot:</label>
+            <label style="min-width: 80px;">Lot:</label>
             <select class="AP-right AP-flex-max" ng-model="selectedValues.lot"
                     ng-options="key as val.name for (key,val) in lotLOV"></select>
           </div>
@@ -32,7 +33,7 @@
 
         <ion-item class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
-            <label style="min-width: 70px;">Sub:</label>
+            <label style="min-width: 80px;">Sub:</label>
             <select class="AP-right AP-flex-max" ng-model="selectedValues.subInv"
                     ng-options="key as val.name for (key,val) in subInvLOV"></select>
           </div>
@@ -40,7 +41,7 @@
 
         <ion-item class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
-            <label style="min-width: 70px;">Project:</label>
+            <label style="min-width: 80px;">Project:</label>
             <select class="AP-right AP-flex-max" ng-model="selectedValues.Project"
                     ng-options="key as val.name for (key,val) in projectLOV"></select>
           </div>
@@ -53,7 +54,7 @@
 
         <ion-item style="padding-top: 5px" class="AP-bar-subheader">
           <div class="AP-item AP-item-header">
-            <label style="min-width: 70px;">View By:</label>
+            <label style="min-width: 80px;">View By:</label>
             <select class="AP-right AP-flex-max" ng-model="selectedValues">
               <option>!!Location!!</option>
             </select>
