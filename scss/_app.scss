@@ -16,73 +16,104 @@
 body, .pane {
   background-color: $secColor !important;
 }
+
 /*input[type="search"] { // will not apply search appearnce - currently not used
   -webkit-appearance: textfield;
 }*/
-.h-default{
-    font-family: Raleway;
-    font-weight: 400;
-    padding-top: 0px;
-    padding-left: 0px;
-    color: $light;
+.h-default {
+  font-family: Raleway;
+  font-weight: 400;
+  padding-top: 0px;
+  padding-left: 0px;
+  color: $light;
 
 }
 h1, h2, h3, h4, h5, h6, h7, h8, h9 {
-    @extend .h-default;
+  @extend .h-default;
 }
+
 h1 {
-    font-size: $font-lg;
+  font-size: $font-lg;
 }
+
 h2 {
-    font-size: $font-md;
+  font-size: $font-md;
 }
 
 h3 {
-    font-size: $font-sm;
+  font-size: $font-sm;
 }
 
 // bars and titles
 .AP-bar {
-    background-color: $mainColor;
-    border-color: $mainColor;
+  background-color: $mainColor;
+  border-color: $mainColor;
 }
 
 .AP-bar-subheader {
-    background-color: $mainColor-700;
-    border-color: $mainColor-700;
+  background-color: $mainColor-700;
+  border-color: $mainColor-700;
 }
+
 .AP-content {
-    background-color: $secColor;
+  background-color: $secColor;
 }
 
 .AP-right {
-    text-align: right;
-    padding-right: 15px;
+  text-align: right;
+  padding-right: 15px;
 }
 
 .title {
-    height: 65px !important;
-    overflow: visible;
-    font-family: Raleway;
-    color: $light;
-    font-size:$font-lg !important;
-    font-weight: normal !important;
+  height: 65px !important;
+  overflow: visible;
+  font-family: Raleway;
+  color: $light;
+  font-size: $font-lg !important;
+  font-weight: normal !important;
+
+}
+
+.ui-notification {
+  border-radius: 3.5px;
+  font-size: $font-md;
+  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  min-height: 46px;
+  .message {
+    .success {
+      color: $light;
+      background: red;
+    }
+    .error {
+      color: $light;
+      background: #F44336;
+    }
+    .warning {
+      color: $light;
+      background: #FF9800;
+    }
+  }
+
 }
 
 
 .title-image {
-    margin-top: 9px;
-    height: 28px;
+  margin-top: 9px;
+  height: 28px;
 }
+
 .bar-subheader {
-//    top: 65px;
+  //    top: 65px;
 }
+
 .bar-header {
-    //height: 65px;
+  //height: 65px;
 }
+
 .has-header {
-//    top: 65px;
+  //    top: 65px;
 }
+
 .has-subheader {
-//    top: 110px
+  //    top: 110px
 }

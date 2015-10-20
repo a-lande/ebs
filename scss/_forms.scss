@@ -8,7 +8,7 @@
 
 .error {
   padding: 10px 16px;
-  font-family: Raleway, "Arial Black", Gadget, sans-serif;
+  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
   font-size: $font-sm;
   text-transform: uppercase;
   color: $secColor-300;
@@ -22,7 +22,7 @@
   vertical-align: middle;
 }
 
-.last-error-container > .error {
+.last-error-container, .error {
   padding: 10px 16px 0;
 }
 
