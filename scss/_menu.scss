@@ -1,3 +1,7 @@
+.bar {
+  background-image: none;
+
+}
 .bar-footer {
   background-color: $mainColor-100;
   border: none;
@@ -15,14 +19,14 @@
 }
 
 .button.button-fab i {
-  font-size: 2rem;
-  margin-top: 9px;
+  font-size: 25px;
+  margin: 11px 0 0 4px;
 }
 
 .AP-button-main-menu {
   border: none;
   color: $light;
-  width: 50%;
+  width: 40%;
   .fa {
     font-size: $fa-lg;
 
@@ -30,22 +34,24 @@
 }
 
 .button-fab {
-  width: 80px !important;
-  height: 80px !important;
+  width: 55px !important;
+  height: 55px !important;
 }
 
 .ebsMainMenuLabel {
-  font-size: 18px;
-  font-family: Raleway !important;
+  font-size: 16 $font-sm;
+  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif !important;
   padding-top: 10px;
   overflow: visible;
   white-space: normal;
+
 }
 
 .ebs-item-divider {
   height: unset !important;
   border-top-style: none !important;
   border-bottom: solid 1px $light !important;
+  font-size: $font-md;
 }
 
 .half {
@@ -149,5 +155,5 @@
 }
 
 .item {
-  padding: 10px 10px 0 10px;
+  padding: 10px 0px 0 0px;
 }
