@@ -1,6 +1,21 @@
-﻿
-// colors
-$light:                 #fff !default;
+﻿/*
+// colors light
+$light:                 #ffffff !default;
+$text-color:            #313131 !default;
+$mainColor:             #525252 !default;
+$mainColor-900:         #b3e5fc !default;
+$mainColor-700:         #ffffff !default;
+$mainColor-100:         #2ba6fe !default;
+$secColor:              #ececec !default;
+$secColor-900:          #ffffff !default;
+$secColor-300:          #797a7a !default;
+$secColor-100:          #0c4da2 !default;
+*/
+
+///*
+// colors Dark
+$light: #ffffff !default;
+$text-color: #ffffff !default;
 $mainColor:             #0c4da2 !default;
 $mainColor-900:         #103b5b !default;
 $mainColor-700:         #1b6498 !default;
@@ -9,6 +24,7 @@ $secColor:              #525252 !default;
 $secColor-900:          #313131 !default;
 $secColor-300:          #bababa !default;
 $secColor-100:          #bad0e0 !default;
+//*/
 
 // font sizes
 $font-sm:               16px;
@@ -16,7 +32,6 @@ $font-md: 20px;
 $font-lg:               24px;
 $fa-md:                 20px;
 $fa-lg:                 30px;
-
 
 // imports
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300,200,100,500,600,700,800,900);

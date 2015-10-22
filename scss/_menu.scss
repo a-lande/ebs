@@ -1,6 +1,11 @@
-.light {
-  color: $light;
+.light * {
+  color: $text-color;
 }
+
+.light:hover * {
+  color: $text-color;
+}
+
 .bar {
   background-image: none;
 }
@@ -31,7 +36,7 @@
 
 .AP-button-main-menu {
   border: none;
-  color: $light;
+  color: $text-color;
   width: 40%;
   .fa {
     font-size: $fa-lg;
@@ -56,7 +61,7 @@
 .ebs-item-divider {
   height: unset !important;
   border-top-style: none !important;
-  border-bottom: solid 1px $light !important;
+  border-bottom: solid 1px $text-color !important;
   font-size: $font-md;
 }
 

@@ -52,7 +52,7 @@
   }
 
   span, input {
-    color: $light;
+    color: $text-color;
   }
   .item-input {
     color: $secColor-300;
@@ -82,7 +82,7 @@
     background-color: $mainColor-900;
     input {
       background-color: $mainColor-900;
-      color: $light !important;
+      color: $text-color !important;
     }
 
     i {
@@ -150,8 +150,8 @@
 }
 
 .AP-item-selected {
-  border-bottom: 1px solid $light;
-  border-top: 1px solid $light;
+  border-bottom: 1px solid $text-color;
+  border-top: 1px solid $text-color;
   border-left: 4px solid $mainColor-100;
   background-color: $secColor-900;
 
@@ -160,7 +160,7 @@
     border-bottom: 1px solid $secColor-100;
   }
   label, span {
-    color: $light;
+    color: $text-color;
   }
 }
 
@@ -195,7 +195,7 @@
     background-color: $secColor;
     input {
       background-color: $secColor;
-      color: $light !important;
+      color: $text-color !important;
     }
 
     i {
@@ -232,7 +232,7 @@
 .ebs-item-divider {
   height: unset !important;
   border-top-style: none !important;
-  border-bottom: solid 1px $light !important;
+  border-bottom: solid 1px $text-color !important;
 }
 
 .AP-onhand {
@@ -264,7 +264,7 @@
   }
   .AP-item {
     label, span {
-      color: $light !important;
+      color: $text-color !important;
     }
 
   }

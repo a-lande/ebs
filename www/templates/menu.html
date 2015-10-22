@@ -27,7 +27,7 @@
 
   <!-- side menu -->
   <ion-side-menu class="AP-side-menu" expose-aside-when="false" side="left">
-    <ion-header-bar id="AP-header-menu" class="bar-stable">
+    <ion-header-bar style="box-shadow: none;" id="AP-header-menu" class="bar-stable">
       <i class="fa fa-close" menu-close></i>
     </ion-header-bar>
     <ion-content class="padding-horizontal" style="padding-top: 0;">
@@ -54,9 +54,10 @@
         <ion-item menu-close on-hold="helpHold()">
           <i class="fa fa-question"></i><label>Help</label><i class="fa fa-angle-right AP-mainColor-100"></i>
         </ion-item>
-        <ion-item menu-close ng-click="">
+        <ion-item style="padding-bottom: 10px" menu-close ng-click="">
           <i style="padding-top: 12px" class="fa fa-info"></i><label style="padding-top: 10px">About</label>
-          <img src="img/AuraPlayer$secColor-300.png" style="height: 60%; width: 60%; padding: 5px 55px 5px 0" />
+          <img src="img/AuraPlayer$secColor-300.png" style="height: 60%; width: 60%; padding: 5px 55px 5px 0"/>
+          <!-- <img src="img/AuraPlayer$secColor.png" style="height: 60%; width: 60%; padding: 5px 55px 5px 0" /> -->
           <i style="padding-top: 12px" class="fa fa-angle-right AP-mainColor-100"></i>
         </ion-item>
         <ion-item menu-close ng-click="logout()">

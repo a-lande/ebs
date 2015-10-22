@@ -40,11 +40,14 @@
   border-radius: 3.5px;
   input, span {
     background-color: $mainColor-900;
-    color: $light;
+    color: $text-color;
 
   }
 }
 
+.placeholder-icon {
+  color: $secColor-300;
+}
 .AP-input-container {
   -ms-flex: 1;
   flex: 1;
@@ -88,7 +91,7 @@
   }
   select {
     background-color: $mainColor-900;
-    color: white;
+    color: $text-color;
     border: none;
     border-radius: 5px;
   }
@@ -165,7 +168,7 @@
     background-color: $mainColor-700;
     input {
       // background-color: $mainColor-700;
-      color: $light;
+      color: $text-color;
       border-radius: 3.5px;
       font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
       font-size: $font-md;
@@ -192,5 +195,7 @@
   }
 }
 
-
+.text-color {
+  color: $text-color !important;
+}
 
