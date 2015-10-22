@@ -115,9 +115,8 @@
                     <label>Quantity</label>
                     <div class="AP-input-container">
                       <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
-                      <input style="padding-top: 14px;" class="AP-right" type="tel" ng-model="item.tmpQty"
-                             return-close="true"
-                             class="AP-flex-max"/>
+                      <input style="padding-top: 14px;" class="AP-right AP-flex-max" type="tel" ng-model="item.tmpQty"
+                             return-close="true" on-return="itemSave()"/>
                       <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
                     </div>
                   </div>
