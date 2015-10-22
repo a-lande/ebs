@@ -26,7 +26,8 @@
       <div ng-show="headerCollapsed">
         <label class="item-input-wrapper" style="margin-top: 15px;">
           <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="search" id="itemFilter" placeholder="Quick Search" ng-model="selectedValues.itemFilter">
+          <input type="search" id="itemFilter" placeholder="Quick Search" ng-model="selectedValues.itemFilter"
+                 return-close="true">
         </label>
       </div>
       <div ng-hide="headerCollapsed" class="AP-item AP-flex-max"></div>
