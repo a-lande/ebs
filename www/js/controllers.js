@@ -645,7 +645,7 @@ angular.module('ebs.controllers', [])
 
   .controller('SubInvTransListCtrl', function ($rootScope, $scope, apWebService) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.navTitle = 'SubInv. Transfer';
+      $scope.navTitle = 'Sub Inv Transfer';
       $scope.$parent.headerShown = true;
     });
   })
