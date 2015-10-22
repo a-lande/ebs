@@ -1,7 +1,10 @@
+.light {
+  color: $light;
+}
 .bar {
   background-image: none;
-
 }
+
 .bar-footer {
   background-color: $mainColor-100;
   border: none;
@@ -9,6 +12,9 @@
   bottom: 0;
 }
 
+.dark-bg {
+  background-color: $secColor;
+}
 .bar-header {
   background-color: $mainColor;
   border: none;
@@ -156,4 +162,16 @@
 
 .item {
   padding: 10px 0px 0 0px;
+}
+
+//fix android left title
+.platform-android {
+  .bar {
+    .title {
+      padding-right: 50px;
+      &.title-left {
+        text-align: center !important;
+      }
+    }
+  }
 }
