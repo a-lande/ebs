@@ -42,7 +42,7 @@
       <div class="AP-item AP-item-header AP-padding" style="padding-top: 20px">
         <label>To Sub:</label>
         <select class="margin-right AP-right AP-flex-max item-input" ng-model="selectedValues.subInv"
-                ng-options="key as val.name for (key,val) in subInvLOV"></select>
+                ng-options="key as key+'-'+val.name for (key,val) in subInvLOV"></select>
       </div>
       <div class="AP-item AP-item-selected-input " style="border-bottom: none; padding: 0 0 20px 0;">
         <label>Quantity:</label>
@@ -56,7 +56,7 @@
       <div class="AP-item AP-item-header AP-padding">
         <label>UOM:</label>
         <select class="margin-right AP-right AP-flex-max item-input" ng-model="selectedValues.uom"
-                ng-options="key as val.name group by val.type for (key,val) in uomLOV"></select>
+                ng-options="key as key+'-'+val.name group by val.type for (key,val) in uomLOV"></select>
       </div>
 
       <div class="AP-border AP-check-form AP-item AP-item-selected-Button">

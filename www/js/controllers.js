@@ -76,9 +76,11 @@ angular.module('ebs.controllers', [])
     }
   })
 
-  .controller('MainMenuCtrl', function ($rootScope, $scope, $timeout, ionicMaterialMotion, ionicMaterialInk, $state) {
+  .controller('MainMenuCtrl', function ($rootScope, $scope, $timeout, ionicMaterialMotion, ionicMaterialInk, $ionicHistory) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.navTitle = $rootScope.MainTitle;
+      $ionicHistory.clearCache();
+      $ionicHistory.clearHistory();
       $timeout(function () { // start the animations
         ionicMaterialMotion.fadeSlideIn({
           selector: '.animate-fade-slide-in .item'
@@ -96,10 +98,6 @@ angular.module('ebs.controllers', [])
         angular.element('#InfoPopUp').css('visibility', 'hidden');
       }
     });
-    $scope.goto = function (state) {
-      $state.go(state);
-    };
-
   })
 
   .controller('TagCountCtrl', function ($rootScope, $scope, $ionicPopover, $timeout, $filter, apWebService, Notification) {
@@ -608,7 +606,7 @@ angular.module('ebs.controllers', [])
 
   .controller('SubInvTransCtrl', function ($rootScope, $scope, $timeout, apWebService, ebsWS) {
     $scope.$on('$ionicView.enter', function (e) {
-      $scope.selectedValues = {};
+      if (!$scope.selectedValues) $scope.selectedValues = {};
       $scope.headerCollapsed = $scope.fromItem;
       $scope.fromItem = false;
     });
@@ -649,30 +647,60 @@ angular.module('ebs.controllers', [])
       $scope.$parent.headerShown = true;
     });
   })
-  .controller('SubInvTransItemCtrl', function ($rootScope, $scope, apWebService, ebsWS, Notification, $timeout) {
+  .controller('SubInvTransItemCtrl', function ($rootScope, $scope, apWebService, ebsWS, Notification, $timeout, $ionicHistory) {
     $scope.$on('$ionicView.enter', function (e) {
+      $scope.navTitle = 'SubInv. Transfer';
+      $scope.$parent.headerShown = false;
       if ($rootScope.SubInvItem) {
         $scope.$parent.selectedItem = $rootScope.SubInvItem;
         $rootScope.SubInvItem = undefined;
-      } else {
-        var item = $scope.$parent.selectedItem;
-        if (!item) {
-          $scope.goto('app.SubInvTrans.List');
-        }
-        console.log(item);
-        apWebService.runService(ebsWS.OnHandQntSrv(item.ITEM, item.SUBINVENTORY_CODE)).then(function (data) {
-          $scope.$parent.selectedItem.itemQtys = data.Form;
-          $scope.$apply();
-          console.log($scope.$parent.selectedItem.itemQtys);
-        });
       }
-      $scope.navTitle = 'SubInv. Transfer';
-      $scope.$parent.headerShown = false;
-
-      console.log($scope.$parent.selectedItem);
+      if (!$scope.$parent.selectedItem) {
+        $scope.goto('app.SubInvTrans.List');
+        return;
+      }
+      updateQty();
     });
+    function updateQty() {
+      var item = $scope.$parent.selectedItem
+      apWebService.runService(ebsWS.OnHandQntSrv(item.ITEM, item.SUBINVENTORY_CODE)).then(function (data) {
+        $scope.$parent.selectedItem.itemQtys = data.Form;
+        $scope.$parent.selectedValues.uom = $scope.$parent.selectedItem.itemQtys.priUOM;
+        $scope.$apply();
+        console.log($scope.$parent.selectedItem.itemQtys);
+      });
+    }
     $scope.itemSave = function () {
-      Notification.warning('not implemented');
+      if (!$scope.selectedValues.date || !$scope.selectedValues.time) {
+        Notification.error({message: 'Please select valid date and time', delay: 10000});
+        return;
+      }
+      if (!$scope.selectedValues.subInv) {
+        Notification.error({message: 'Please select Subinventory to transfer to', delay: 10000});
+        return;
+      }
+      if (!$scope.selectedItem.tmpQty) {
+        Notification.error({message: 'Please select Quantity to transfer', delay: 10000});
+        return;
+      }
+      apWebService.runService(ebsWS.SubInvTrnSrv(
+        $scope.selectedValues.date,
+        $scope.selectedValues.time,
+        $scope.selectedItem.ITEM,
+        $scope.selectedItem.SUBINVENTORY_CODE,
+        $scope.selectedValues.subInv,
+        $scope.selectedItem.tmpQty,
+        $scope.selectedValues.uom)).then(function (data) {
+        if (data.FRMList && data.FRMList[0] && data.FRMList[0].startsWith('FRM-40400')) {
+          Notification.success('Transaction compleated');
+          updateQty();
+        } else {
+          var errorMsg = (data.PopupMessages != '') ? data.PopupMessages : data.FRMList[0];
+          Notification.error({message: errorMsg, delay: 20000});
+        }
+      }, function (data) {
+        Notification.error({message: data.Error, delay: 20000});
+      });
     };
     var holding = true;
     $scope.adjustQty = function (addQ, delay) {
