@@ -10,7 +10,8 @@ angular.module('ebsApp', ['ionic', 'ionic-material', 'ebs.controllers', 'ap.serv
     $rootScope.appId = 'apebs';
     $rootScope.MainTitle = '<img class="title-image" src="img/samsung$light.png"  />';
     $rootScope.hostName = 'http://52.25.115.99:8080/';
-    $rootScope.appVersion = '0.1.2';
+    $rootScope.appVersion = '0.1.3';
+    $rootScope.debugMode = false;
     $rootScope.$on('$stateChangeSuccess',
       function (event, toState, toParams, fromState, fromParams) {
         if (toState.name != 'login') {

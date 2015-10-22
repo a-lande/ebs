@@ -82,7 +82,9 @@
             <!-- Item header -->
             <div class="AP-item AP-item-detail" on-tap="itemClick(item,$index)" ng-class="($first||$index-1==selectedValues.selectedIndex)?'AP-clear-border':''">
                 <i class="fa fa-check" ng-show="item.isFinished"></i>
-              <span class="" ng-class="(item===currentItem)?'AP-flex-max-rap':'AP-flex-max'">{{item.item}}&nbsp;&nbsp;({{item.qty}})&nbsp;&nbsp;{{item.itemDesc}}</span>
+              <span class=""
+                    ng-class="(item===currentItem)?'AP-flex-max-rap':'AP-flex-max'">{{item.item}}&nbsp;&nbsp;<span
+                ng-show="$root.debugMode">({{item.qty}})&nbsp;&nbsp;</span>{{item.itemDesc}}</span>
               <i class="fa" ng-class="(item===currentItem)?'fa-times':'fa-angle-down'"></i>
             </div>
             <!-- Additional information for finished items -->

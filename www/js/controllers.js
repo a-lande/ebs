@@ -59,10 +59,14 @@ angular.module('ebs.controllers', [])
     }
   })
 
-  .controller('MenuCtrl', function ($rootScope, $scope, $state, AuthService, $localstorage, apWebService) {
+  .controller('MenuCtrl', function ($rootScope, $scope, $state, AuthService, $localstorage, apWebService, Notification) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.org = $rootScope.org;
     });
+    $scope.helpHold = function () {
+      $rootScope.debugMode = !$rootScope.debugMode;
+      Notification.warning('Debug mode ' + (($rootScope.debugMode) ? 'Activated' : 'Deactivated'));
+    }
     $scope.goto = function (state) {
       $state.go(state);
     };
@@ -73,6 +77,7 @@ angular.module('ebs.controllers', [])
     };
     $scope.clearCache = function () {
       apWebService.clearCache();
+
     }
   })
 
