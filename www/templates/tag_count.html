@@ -1,6 +1,7 @@
 ﻿<ion-view title="{{navTitle}}">
     <!-- the count selection pre screen -->
-    <div class="bar bar-subheader AP-bar-subheader static" style="height:100%" ng-show="selectionScreen&&countSelected">
+  <div class="bar bar-subheader AP-bar-subheader static" style="height:100%; padding: 0;"
+       ng-show="selectionScreen&&countSelected">
       <form class="padding-horizontal AP-form" style="height:100%">
             <div class="AP-item AP-item-header">
                 <label>Count Name</label>
@@ -49,10 +50,10 @@
                 </div>
             </div>
           <div style="margin-top: 10px" class="AP-form">
-            <label class="item-input-wrapper AP-input-container">
+            <label class=" item-input-wrapper AP-input-container">
               <i class="fa fa-barcode placeholder-icon"></i>
               <input style="padding-top: 5px" type="search" placeholder="Enter Barcode"
-                     ng-model="selectedValues.item" ng-change="applyFilter()">
+                     ng-model="selectedValues.countNameFilter">
             </label>
           </div>
         </div>

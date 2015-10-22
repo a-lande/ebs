@@ -166,6 +166,11 @@
 
 //fix android left title
 .platform-android {
+  .bar.android-log-in {
+    .title {
+      padding-right: 0;
+    }
+  }
   .bar {
     .title {
       padding-right: 50px;
