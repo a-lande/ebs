@@ -52,8 +52,8 @@
           <div style="margin-top: 10px" class="AP-form">
             <label class=" item-input-wrapper AP-input-container">
               <i class="fa fa-barcode placeholder-icon"></i>
-              <input style="padding-top: 5px" type="search" placeholder="Enter Barcode"
-                     ng-model="selectedValues.countNameFilter">
+              <input style="padding-top: 5px" type="search" placeholder="Enter Barcode" return-close="true"
+                     ng-model="selectedValues.item" ng-change="applyFilter()">
             </label>
           </div>
         </div>
@@ -66,6 +66,7 @@
             <label class="item-input-wrapper">
                 <i class="icon ion-ios-search placeholder-icon"></i>
               <input style="padding-top: 2px" type="search" id="countNameFilter" placeholder="Search"
+                     return-close="true"
                      ng-model="selectedValues.countNameFilter">
             </label>
             <div class="AP-item AP-item-detail" ng-repeat="countName in tagCountNames | filter : selectedValues.countNameFilter" ng-class="($first)?'AP-clear-border':''"
@@ -115,6 +116,7 @@
                     <div class="AP-input-container">
                       <i class="fa fa-minus" on-tap="adjustQty(-1)" on-hold="adjustQty(-10)" on-release="adjustQty(0)"></i>
                       <input style="padding-top: 14px;" class="AP-right" type="tel" ng-model="item.tmpQty"
+                             return-close="true"
                              class="AP-flex-max"/>
                       <i class="fa fa-plus" on-tap="adjustQty(1)" on-hold="adjustQty(10)" on-release="adjustQty(0)"></i>
                     </div>
